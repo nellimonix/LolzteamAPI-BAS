@@ -3701,6 +3701,108 @@
     },
     "Marketplace": {
       "ru": "Чат услуг"
+    },
+    "Array of forum ids to exclude from the feed.": {
+      "ru": "Массив идентификаторов форумов, которые следует исключить из ленты."
+    },
+    "List of keywords to exclude specific threads from the feed.": {
+      "ru": "Список ключевых слов для исключения определенных тем из ленты."
+    },
+    "Id of link forum.": {
+      "ru": "Идентификатор ссылки на форум."
+    },
+    "Id of post comment.": {
+      "ru": "Идентификатор комментария к записи."
+    },
+    "Reason of a post comment removal.": {
+      "ru": "Причина удаления комментария к публикации."
+    },
+    "List of fields to include.": {
+      "ru": "Список полей, которые необходимо включить."
+    },
+    "Filter claims by their type.": {
+      "ru": "Отфильтровать заявки по типу."
+    },
+    "Filter claims by their state.": {
+      "ru": "Отфильтровать заявки по статусу."
+    },
+    "Filter by forum section.": {
+      "ru": "Отфильтровать по разделу форума."
+    },
+    "Like type.": {
+      "ru": "Например, тип."
+    },
+    "Likes type.": {
+      "ru": "Тип «Нравится»."
+    },
+    "Page number.": {
+      "ru": "Номер страницы."
+    },
+    "Content type.": {
+      "ru": "Тип содержимого."
+    },
+    "Get only likes from specified user.": {
+      "ru": "Получить лайки только от указанного пользователя."
+    },
+    "Show weekly statistics.": {
+      "ru": "Показать еженедельную статистику."
+    },
+    "Ignore user's conversations.": {
+      "ru": "Игнорировать переписку пользователя."
+    },
+    "Ignore user's content.": {
+      "ru": "Игнорировать контент пользователя."
+    },
+    "Restrict user from viewing your profile.": {
+      "ru": "Запретить пользователю просматривать ваш профиль."
+    },
+    "New content for the profile post comment.": {
+      "ru": "Новый текст для комментария к записи в профиле."
+    },
+    "New conversation title.": {
+      "ru": "Новое название диалога."
+    },
+    "Allow members to invite others.": {
+      "ru": "Разрешить участникам приглашать других."
+    },
+    "Make conversation history visible to new members.": {
+      "ru": "Сделайте историю переписки доступной для просмотра новыми участниками."
+    },
+    "Allow members to edit their own messages.": {
+      "ru": "Разрешить участникам редактировать свои сообщения."
+    },
+    "Allow members to stick messages.": {
+      "ru": "Разрешить участникам закреплять сообщения."
+    },
+    "Allow members to delete their own messages.": {
+      "ru": "Разрешить участникам удалять свои собственные сообщения."
+    },
+    "Content url.": {
+      "ru": "URL-адрес контента."
+    },
+    "Search query string.": {
+      "ru": "Строка поискового запроса."
+    },
+    "Search for recipients.": {
+      "ru": "Поиск получателей."
+    },
+    "List of recipients username's.": {
+      "ru": "Список имен пользователей получателей."
+    },
+    "Id of user to kick from conversation.": {
+      "ru": "Идентификатор пользователя, которого нужно удалить из чата."
+    },
+    "Search query.": {
+      "ru": "Поисковый запрос."
+    },
+    "Search ID.": {
+      "ru": "Идентификатор поиска."
+    },
+    "Duration.": {
+      "ru": "Продолжительность."
+    },
+    "Page number of forms.": {
+      "ru": "Номер страницы анкеты."
     }
   },
   "browser": [],
