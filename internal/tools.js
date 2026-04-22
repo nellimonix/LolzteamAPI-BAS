@@ -113,7 +113,7 @@ _LZTAPI.tools = {
 		)
 	},
 	_auto_delay: function () {
-		var delay = Object(_arguments())['delay'] || 3000
+		var delay = Object(_arguments())['delay'] || 200
 		if (_LZTAPI.bypass_429) {
 			var time_diff = Date.now() - _LZTAPI._auto_delay_time
 			if (time_diff < delay) {

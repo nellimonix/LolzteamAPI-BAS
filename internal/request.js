@@ -105,7 +105,7 @@ _LZTAPI.request = {
 
 		var url = _LZTAPI.tools.reduceString(ctxt.url)
 
-		_call_function(_LZTAPI.tools._auto_delay, { delay: 3000 })!
+		_call_function(_LZTAPI.tools._auto_delay, { delay: 200 })!
 
 		var timeout = Number(ctxt.timeout) || 10000
 		var maxTime = (Number(ctxt.maxTime) || 60000) + Date.now()
