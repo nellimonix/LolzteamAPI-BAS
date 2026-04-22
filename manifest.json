@@ -1,2842 +1,2868 @@
 {
-	"name": "LolzteamAPI",
-	"info": {
-		"en": "A module built on the official API of the zelenka.guru forum.<br>20 requests per minute (3 seconds delay between per request)<br>If you exceed the limit, the response code 429 will be returned to you.<br>Telegram: <a  href='#' onclick=BrowserAutomationStudio_OpenUrl('tg://resolve?domain=llimonix')>@llimonix</a> Forum thread: <a  href='#' onclick=BrowserAutomationStudio_OpenUrl('https://lolz.live/threads/5426271/')>lolz.live/threads/5426271</a>",
-		"ru": "Модуль, построенный на официальном API форума zelenka.guru.<br>20 запросов в минуту (задержка между каждым запросом составляет 3 секунды)<br>Если вы превысите лимит, вам будет возвращен код ответа 429.<br>Telegram: <a  href='#' onclick=BrowserAutomationStudio_OpenUrl('tg://resolve?domain=llimonix')>@llimonix</a> Тема на форуме: <a  href='#' onclick=BrowserAutomationStudio_OpenUrl('https://lolz.live/threads/5426271/')>lolz.live/threads/5426271</a>"
-	},
-	"icon": "icon.png",
-	"description": "A module built on the official API of the zelenka.guru forum",
-	"description_small": {
-		"en": "LOLZTEAM API",
-		"ru": "LOLZTEAM API"
-	},
-	"major_version": 1,
-	"minor_version": 1,
-	"developer_name": "llimonix",
-	"developer_email": "llimonix123@yandex.ru",
-	"developer_site": "https://github.com/llimonix",
-	"api_version": 1,
-	"actions": [
-		{
-			"name": "lztapi_settings",
-			"description": {
-				"en": "Default settings",
-				"ru": "Настройки по умолчанию"
-			},
-			"template": "LOLZTEAM API by llimonix -> {{baseUrl}}",
-			"is_element": false,
-			"interface": "lztapi_settings_interface.js",
-			"select": "lztapi_settings_select.js",
-			"code": [
-				{
-					"file": "lztapi_settings_code.js",
-					"name": "lztapi_settings_code"
-				}
-			]
-		},
-		{
-			"name": "lztapi_get_categories",
-			"description": {
-				"en": "Categories list",
-				"ru": "Список категорий"
-			},
-			"template": "-> {{Save}}",
-			"is_element": false,
-			"interface": "lztapi_get_categories_interface.js",
-			"select": "lztapi_get_categories_select.js",
-			"code": [
-				{
-					"file": "lztapi_get_categories_code.js",
-					"name": "lztapi_get_categories_code"
-				}
-			]
-		},
-		{
-			"name": "lztapi_get_category",
-			"description": {
-				"en": "Category details",
-				"ru": "Подробности категории"
-			},
-			"template": "{{categoryId}} -> {{Save}}",
-			"is_element": false,
-			"interface": "lztapi_get_category_interface.js",
-			"select": "lztapi_get_category_select.js",
-			"code": [
-				{
-					"file": "lztapi_get_category_code.js",
-					"name": "lztapi_get_category_code"
-				}
-			]
-		},
-		{
-			"name": "lztapi_get_forums",
-			"description": {
-				"en": "Forums list",
-				"ru": "Список разделов"
-			},
-			"template": "-> {{Save}}",
-			"is_element": false,
-			"interface": "lztapi_get_forums_interface.js",
-			"select": "lztapi_get_forums_select.js",
-			"code": [
-				{
-					"file": "lztapi_get_forums_code.js",
-					"name": "lztapi_get_forums_code"
-				}
-			]
-		},
-		{
-			"name": "lztapi_get_forum",
-			"description": {
-				"en": "Forum details",
-				"ru": "Подробности раздела"
-			},
-			"template": "{{forumId}} -> {{Save}}",
-			"is_element": false,
-			"interface": "lztapi_get_forum_interface.js",
-			"select": "lztapi_get_forum_select.js",
-			"code": [
-				{
-					"file": "lztapi_get_forum_code.js",
-					"name": "lztapi_get_forum_code"
-				}
-			]
-		},
-		{
-			"name": "lztapi_get_followers",
-			"description": {
-				"en": "List subscribers forum",
-				"ru": "Список подписчиков раздела"
-			},
-			"template": "{{forumId}} -> {{Save}}",
-			"is_element": false,
-			"interface": "lztapi_get_followers_interface.js",
-			"select": "lztapi_get_followers_select.js",
-			"code": [
-				{
-					"file": "lztapi_get_followers_code.js",
-					"name": "lztapi_get_followers_code"
-				}
-			]
-		},
-		{
-			"name": "lztapi_get_followed_forums",
-			"description": {
-				"en": "List followed forums by current user.",
-				"ru": "Список разделов, на которые подписан текущий пользователь"
-			},
-			"template": "{{total}} -> {{Save}}",
-			"is_element": false,
-			"interface": "lztapi_get_followed_forums_interface.js",
-			"select": "lztapi_get_followed_forums_select.js",
-			"code": [
-				{
-					"file": "lztapi_get_followed_forums_code.js",
-					"name": "lztapi_get_followed_forums_code"
-				}
-			]
-		},
-		{
-			"name": "lztapi_follow_forum",
-			"description": {
-				"en": "Follow Forum",
-				"ru": "Подписаться на раздел"
-			},
-			"template": "{{forumId}} -> {{Save}}",
-			"is_element": false,
-			"interface": "lztapi_follow_forum_interface.js",
-			"select": "lztapi_follow_forum_select.js",
-			"code": [
-				{
-					"file": "lztapi_follow_forum_code.js",
-					"name": "lztapi_follow_forum_code"
-				}
-			]
-		},
-		{
-			"name": "lztapi_unfollow_forum",
-			"description": {
-				"en": "Unfollow Forum",
-				"ru": "Отписаться от раздела"
-			},
-			"template": "{{forumId}} -> {{Save}}",
-			"is_element": false,
-			"interface": "lztapi_unfollow_forum_interface.js",
-			"select": "lztapi_unfollow_forum_select.js",
-			"code": [
-				{
-					"file": "lztapi_unfollow_forum_code.js",
-					"name": "lztapi_unfollow_forum_code"
-				}
-			]
-		},
-		{
-			"name": "lztapi_get_pages",
-			"description": {
-				"en": "Pages list",
-				"ru": "Список страниц"
-			},
-			"template": "-> {{Save}}",
-			"is_element": false,
-			"interface": "lztapi_get_pages_interface.js",
-			"select": "lztapi_get_pages_select.js",
-			"code": [
-				{
-					"file": "lztapi_get_pages_code.js",
-					"name": "lztapi_get_pages_code"
-				}
-			]
-		},
-		{
-			"name": "lztapi_get_page",
-			"description": {
-				"en": "Page details",
-				"ru": "Подробности страницы"
-			},
-			"template": "{{pageId}} -> {{Save}}",
-			"is_element": false,
-			"interface": "lztapi_get_page_interface.js",
-			"select": "lztapi_get_page_select.js",
-			"code": [
-				{
-					"file": "lztapi_get_page_code.js",
-					"name": "lztapi_get_page_code"
-				}
-			]
-		},
-		{
-			"name": "lztapi_get_threads",
-			"description": {
-				"en": "Threads list",
-				"ru": "Список тем"
-			},
-			"template": "-> {{Save}}",
-			"is_element": false,
-			"interface": "lztapi_get_threads_interface.js",
-			"select": "lztapi_get_threads_select.js",
-			"code": [
-				{
-					"file": "lztapi_get_threads_code.js",
-					"name": "lztapi_get_threads_code"
-				}
-			]
-		},
-		{
-			"name": "lztapi_get_thread",
-			"description": {
-				"en": "Thread details",
-				"ru": "Подробности темы"
-			},
-			"template": "{{threadId}} -> {{Save}}",
-			"is_element": false,
-			"interface": "lztapi_get_thread_interface.js",
-			"select": "lztapi_get_thread_select.js",
-			"code": [
-				{
-					"file": "lztapi_get_thread_code.js",
-					"name": "lztapi_get_thread_code"
-				}
-			]
-		},
-		{
-			"name": "lztapi_create_thread",
-			"description": {
-				"en": "Create Thread",
-				"ru": "Создать тему"
-			},
-			"template": "({{forum_id}}) {{post_body}} -> {{Save}}",
-			"is_element": false,
-			"interface": "src/threads/create/lztapi_create_thread_interface.js",
-			"select": "src/threads/create/lztapi_create_thread_select.js",
-			"code": [
-				{
-					"file": "src/threads/create/lztapi_create_thread_code.js",
-					"name": "src/threads/create/lztapi_create_thread_code"
-				}
-			]
-		},
-		{
-			"name": "lztapi_create_contest",
-			"description": {
-				"en": "Create Contest",
-				"ru": "Создать розыгрыш"
-			},
-			"template": "({{require_like_count}} : {{require_total_like_count}}) {{post_body}} -> {{Save}}",
-			"is_element": false,
-			"interface": "lztapi_create_contest_interface.js",
-			"select": "lztapi_create_contest_select.js",
-			"code": [
-				{
-					"file": "lztapi_create_contest_code.js",
-					"name": "lztapi_create_contest_code"
-				}
-			]
-		},
-		{
-			"name": "lztapi_create_arbitrage",
-			"description": {
-				"en": "Create Arbitrage",
-				"ru": "Создать арбитраж"
-			},
-			"template": "({{as_responder}} : {{as_amount}}{{currency}}) {{post_body}} -> {{Save}}",
-			"is_element": false,
-			"interface": "lztapi_create_arbitrage_interface.js",
-			"select": "lztapi_create_arbitrage_select.js",
-			"code": [
-				{
-					"file": "lztapi_create_arbitrage_code.js",
-					"name": "lztapi_create_arbitrage_code"
-				}
-			]
-		},
-		{
-			"name": "lztapi_edit_thread",
-			"description": {
-				"en": "Edit Thread",
-				"ru": "Редактировать тему"
-			},
-			"template": "{{threadId}} -> {{Save}}",
-			"is_element": false,
-			"interface": "lztapi_edit_thread_interface.js",
-			"select": "lztapi_edit_thread_select.js",
-			"code": [
-				{
-					"file": "lztapi_edit_thread_code.js",
-					"name": "lztapi_edit_thread_code"
-				}
-			]
-		},
-		{
-			"name": "lztapi_delete_thread",
-			"description": {
-				"en": "Delete Thread",
-				"ru": "Удалить тему"
-			},
-			"template": "{{threadId}} -> {{Save}}",
-			"is_element": false,
-			"interface": "lztapi_delete_thread_interface.js",
-			"select": "lztapi_delete_thread_select.js",
-			"code": [
-				{
-					"file": "lztapi_delete_thread_code.js",
-					"name": "lztapi_delete_thread_code"
-				}
-			]
-		},
-		{
-			"name": "lztapi_bump_thread",
-			"description": {
-				"en": "Bump Thread",
-				"ru": "Поднять тему"
-			},
-			"template": "{{threadId}} -> {{Save}}",
-			"is_element": false,
-			"interface": "src/threads/bump/lztapi_bump_thread_interface.js",
-			"select": "src/threads/bump/lztapi_bump_thread_select.js",
-			"code": [
-				{
-					"file": "src/threads/bump/lztapi_bump_thread_code.js",
-					"name": "lztapi_bump_thread_code"
-				}
-			]
-		},
-		{
-			"name": "lztapi_move_thread",
-			"description": {
-				"en": "Move Thread",
-				"ru": "Переместить тему"
-			},
-			"template": "{{threadId}} : {{node_id}} -> {{Save}}",
-			"is_element": false,
-			"interface": "lztapi_move_thread_interface.js",
-			"select": "lztapi_move_thread_select.js",
-			"code": [
-				{
-					"file": "lztapi_move_thread_code.js",
-					"name": "lztapi_move_thread_code"
-				}
-			]
-		},
-		{
-			"name": "lztapi_get_thread_followers",
-			"description": {
-				"en": "List thread's followers",
-				"ru": "Список подписчиков темы"
-			},
-			"template": "{{threadId}} -> {{Save}}",
-			"is_element": false,
-			"interface": "lztapi_get_thread_followers_interface.js",
-			"select": "lztapi_get_thread_followers_select.js",
-			"code": [
-				{
-					"file": "lztapi_get_thread_followers_code.js",
-					"name": "lztapi_get_thread_followers_code"
-				}
-			]
-		},
-		{
-			"name": "lztapi_get_followed_threads",
-			"description": {
-				"en": "List followed threads by current user",
-				"ru": "Список тем, на которые подписан текущий пользователь"
-			},
-			"template": "-> {{Save}}",
-			"is_element": false,
-			"interface": "lztapi_get_followed_threads_interface.js",
-			"select": "lztapi_get_followed_threads_select.js",
-			"code": [
-				{
-					"file": "lztapi_get_followed_threads_code.js",
-					"name": "lztapi_get_followed_threads_code"
-				}
-			]
-		},
-		{
-			"name": "lztapi_follow_thread",
-			"description": {
-				"en": "Follow Thread",
-				"ru": "Подписаться на тему"
-			},
-			"template": "{{threadId}} -> {{Save}}",
-			"is_element": false,
-			"interface": "lztapi_follow_thread_interface.js",
-			"select": "lztapi_follow_thread_select.js",
-			"code": [
-				{
-					"file": "lztapi_follow_thread_code.js",
-					"name": "lztapi_follow_thread_code"
-				}
-			]
-		},
-		{
-			"name": "lztapi_unfollow_thread",
-			"description": {
-				"en": "Unfollow Thread",
-				"ru": "Отписаться от темы"
-			},
-			"template": "{{threadId}} -> {{Save}}",
-			"is_element": false,
-			"interface": "lztapi_unfollow_thread_interface.js",
-			"select": "lztapi_unfollow_thread_select.js",
-			"code": [
-				{
-					"file": "lztapi_unfollow_thread_code.js",
-					"name": "lztapi_unfollow_thread_code"
-				}
-			]
-		},
-		{
-			"name": "lztapi_get_navigation_elements",
-			"description": {
-				"en": "Navigation list to the thread",
-				"ru": "Список навигации для перехода к теме"
-			},
-			"template": "{{threadId}} -> {{Save}}",
-			"is_element": false,
-			"interface": "lztapi_get_navigation_elements_interface.js",
-			"select": "lztapi_get_navigation_elements_select.js",
-			"code": [
-				{
-					"file": "lztapi_get_navigation_elements_code.js",
-					"name": "lztapi_get_navigation_elements_code"
-				}
-			]
-		},
-		{
-			"name": "lztapi_get_poll",
-			"description": {
-				"en": "Information poll",
-				"ru": "Информация о голосовании"
-			},
-			"template": "{{threadId}} -> {{Save}}",
-			"is_element": false,
-			"interface": "lztapi_get_poll_interface.js",
-			"select": "lztapi_get_poll_select.js",
-			"code": [
-				{
-					"file": "lztapi_get_poll_code.js",
-					"name": "lztapi_get_poll_code"
-				}
-			]
-		},
-		{
-			"name": "lztapi_vote_poll",
-			"description": {
-				"en": "Vote on a thread poll",
-				"ru": "Проголосовать в голосовании"
-			},
-			"template": "{{threadId}} -> {{Save}}",
-			"is_element": false,
-			"interface": "lztapi_vote_poll_interface.js",
-			"select": "lztapi_vote_poll_select.js",
-			"code": [
-				{
-					"file": "lztapi_vote_poll_code.js",
-					"name": "lztapi_vote_poll_code"
-				}
-			]
-		},
-		{
-			"name": "lztapi_get_unread_threads",
-			"description": {
-				"en": "List unread threads",
-				"ru": "Список непрочитанных тем"
-			},
-			"template": "-> {{Save}}",
-			"is_element": false,
-			"interface": "lztapi_get_unread_threads_interface.js",
-			"select": "lztapi_get_unread_threads_select.js",
-			"code": [
-				{
-					"file": "lztapi_get_unread_threads_code.js",
-					"name": "lztapi_get_unread_threads_code"
-				}
-			]
-		},
-		{
-			"name": "lztapi_get_recent_threads",
-			"description": {
-				"en": "List recent threads",
-				"ru": "Список последних тем"
-			},
-			"template": "-> {{Save}}",
-			"is_element": false,
-			"interface": "lztapi_get_recent_threads_interface.js",
-			"select": "lztapi_get_recent_threads_select.js",
-			"code": [
-				{
-					"file": "lztapi_get_recent_threads_code.js",
-					"name": "lztapi_get_recent_threads_code"
-				}
-			]
-		},
-		{
-			"name": "lztapi_get_post_comments",
-			"description": {
-				"en": "Comment list",
-				"ru": "Список комментариев"
-			},
-			"template": "{{postId}} -> {{Save}}",
-			"is_element": false,
-			"interface": "lztapi_get_post_comments_interface.js",
-			"select": "lztapi_get_post_comments_select.js",
-			"code": [
-				{
-					"file": "lztapi_get_post_comments_code.js",
-					"name": "lztapi_get_post_comments_code"
-				}
-			]
-		},
-		{
-			"name": "lztapi_create_post_comment",
-			"description": {
-				"en": "Create comment",
-				"ru": "Создать комментарий"
-			},
-			"template": "({{postId}}) {{comment_body}} -> {{Save}}",
-			"is_element": false,
-			"interface": "lztapi_create_post_comment_interface.js",
-			"select": "lztapi_create_post_comment_select.js",
-			"code": [
-				{
-					"file": "lztapi_create_post_comment_code.js",
-					"name": "lztapi_create_post_comment_code"
-				}
-			]
-		},
-		{
-			"name": "lztapi_get_posts",
-			"description": {
-				"en": "List posts",
-				"ru": "Список сообщений"
-			},
-			"template": "-> {{Save}}",
-			"is_element": false,
-			"interface": "lztapi_get_posts_interface.js",
-			"select": "lztapi_get_posts_select.js",
-			"code": [
-				{
-					"file": "lztapi_get_posts_code.js",
-					"name": "lztapi_get_posts_code"
-				}
-			]
-		},
-		{
-			"name": "lztapi_get_post",
-			"description": {
-				"en": "Post details",
-				"ru": "Подробности сообщения"
-			},
-			"template": "{{postId}} -> {{Save}}",
-			"is_element": false,
-			"interface": "lztapi_get_post_interface.js",
-			"select": "lztapi_get_post_select.js",
-			"code": [
-				{
-					"file": "lztapi_get_post_code.js",
-					"name": "lztapi_get_post_code"
-				}
-			]
-		},
-		{
-			"name": "lztapi_create_post",
-			"description": {
-				"en": "Create Post",
-				"ru": "Создать сообщение"
-			},
-			"template": "{{post_body}} -> {{Save}}",
-			"is_element": false,
-			"interface": "lztapi_create_post_interface.js",
-			"select": "lztapi_create_post_select.js",
-			"code": [
-				{
-					"file": "lztapi_create_post_code.js",
-					"name": "lztapi_create_post_code"
-				}
-			]
-		},
-		{
-			"name": "lztapi_edit_post",
-			"description": {
-				"en": "Edit Post",
-				"ru": "Редактировать сообщение"
-			},
-			"template": "({{postId}}) {{post_body}} -> {{Save}}",
-			"is_element": false,
-			"interface": "lztapi_edit_post_interface.js",
-			"select": "lztapi_edit_post_select.js",
-			"code": [
-				{
-					"file": "lztapi_edit_post_code.js",
-					"name": "lztapi_edit_post_code"
-				}
-			]
-		},
-		{
-			"name": "lztapi_delete_post",
-			"description": {
-				"en": "Delete Post",
-				"ru": "Удалить сообщение"
-			},
-			"template": "{{postId}} -> {{Save}}",
-			"is_element": false,
-			"interface": "lztapi_delete_post_interface.js",
-			"select": "lztapi_delete_post_select.js",
-			"code": [
-				{
-					"file": "lztapi_delete_post_code.js",
-					"name": "lztapi_delete_post_code"
-				}
-			]
-		},
-		{
-			"name": "lztapi_get_post_likes",
-			"description": {
-				"en": "List users who liked a post",
-				"ru": "Список пользователей, которым понравилось сообщение"
-			},
-			"template": "{{postId}} -> {{Save}}",
-			"is_element": false,
-			"interface": "lztapi_get_post_likes_interface.js",
-			"select": "lztapi_get_post_likes_select.js",
-			"code": [
-				{
-					"file": "lztapi_get_post_likes_code.js",
-					"name": "lztapi_get_post_likes_code"
-				}
-			]
-		},
-		{
-			"name": "lztapi_like_post",
-			"description": {
-				"en": "Like Post",
-				"ru": "Нравится сообщение"
-			},
-			"template": "{{postId}} -> {{Save}}",
-			"is_element": false,
-			"interface": "lztapi_like_post_interface.js",
-			"select": "lztapi_like_post_select.js",
-			"code": [
-				{
-					"file": "lztapi_like_post_code.js",
-					"name": "lztapi_like_post_code"
-				}
-			]
-		},
-		{
-			"name": "lztapi_unlike_post",
-			"description": {
-				"en": "Unlike Post",
-				"ru": "Не нравится сообщение"
-			},
-			"template": "{{postId}} -> {{Save}}",
-			"is_element": false,
-			"interface": "lztapi_unlike_post_interface.js",
-			"select": "lztapi_unlike_post_select.js",
-			"code": [
-				{
-					"file": "lztapi_unlike_post_code.js",
-					"name": "lztapi_unlike_post_code"
-				}
-			]
-		},
-		{
-			"name": "lztapi_report_post",
-			"description": {
-				"en": "Report Post",
-				"ru": "Пожаловаться на сообщение"
-			},
-			"template": "{{postId}} : {{message}} -> {{Save}}",
-			"is_element": false,
-			"interface": "lztapi_report_post_interface.js",
-			"select": "lztapi_report_post_select.js",
-			"code": [
-				{
-					"file": "lztapi_report_post_code.js",
-					"name": "lztapi_report_post_code"
-				}
-			]
-		},
-		{
-			"name": "lztapi_get_profile_post_comments",
-			"description": {
-				"en": "List profile post comments",
-				"ru": "Список комментариев сообщения профиля"
-			},
-			"template": "{{profilePostId}} -> {{Save}}",
-			"is_element": false,
-			"interface": "lztapi_get_profile_post_comments_interface.js",
-			"select": "lztapi_get_profile_post_comments_select.js",
-			"code": [
-				{
-					"file": "lztapi_get_profile_post_comments_code.js",
-					"name": "lztapi_get_profile_post_comments_code"
-				}
-			]
-		},
-		{
-			"name": "lztapi_get_profile_post_comment",
-			"description": {
-				"en": "Details profile post comment",
-				"ru": "Подробности о комментарии к сообщению профиля"
-			},
-			"template": "{{profilePostId}} : {{commentId}} -> {{Save}}",
-			"is_element": false,
-			"interface": "lztapi_get_profile_post_comment_interface.js",
-			"select": "lztapi_get_profile_post_comment_select.js",
-			"code": [
-				{
-					"file": "lztapi_get_profile_post_comment_code.js",
-					"name": "lztapi_get_profile_post_comment_code"
-				}
-			]
-		},
-		{
-			"name": "lztapi_create_profile_post_comment",
-			"description": {
-				"en": "Create a new profile post comment",
-				"ru": "Создать комментарий к сообщению профиля"
-			},
-			"template": "({{profilePostId}}) {{comment_body}} -> {{Save}}",
-			"is_element": false,
-			"interface": "lztapi_create_profile_post_comment_interface.js",
-			"select": "lztapi_create_profile_post_comment_select.js",
-			"code": [
-				{
-					"file": "lztapi_create_profile_post_comment_code.js",
-					"name": "lztapi_create_profile_post_comment_code"
-				}
-			]
-		},
-		{
-			"name": "lztapi_get_profile_posts",
-			"description": {
-				"en": "List profile posts",
-				"ru": "Список сообщений профиля"
-			},
-			"template": "{{userId}} -> {{Save}}",
-			"is_element": false,
-			"interface": "lztapi_get_profile_posts_interface.js",
-			"select": "lztapi_get_profile_posts_select.js",
-			"code": [
-				{
-					"file": "lztapi_get_profile_posts_code.js",
-					"name": "lztapi_get_profile_posts_code"
-				}
-			]
-		},
-		{
-			"name": "lztapi_get_profile_post",
-			"description": {
-				"en": "Profile post details",
-				"ru": "Подробности сообщения профиля"
-			},
-			"template": "{{profilePostId}} -> {{Save}}",
-			"is_element": false,
-			"interface": "lztapi_get_profile_post_interface.js",
-			"select": "lztapi_get_profile_post_select.js",
-			"code": [
-				{
-					"file": "lztapi_get_profile_post_code.js",
-					"name": "lztapi_get_profile_post_code"
-				}
-			]
-		},
-		{
-			"name": "lztapi_create_profile_post",
-			"description": {
-				"en": "Create Profile Post",
-				"ru": "Создать сообщение в профиле"
-			},
-			"template": "({{user_id}}) {{post_body}} -> {{Save}}",
-			"is_element": false,
-			"interface": "lztapi_create_profile_post_interface.js",
-			"select": "lztapi_create_profile_post_select.js",
-			"code": [
-				{
-					"file": "lztapi_create_profile_post_code.js",
-					"name": "lztapi_create_profile_post_code"
-				}
-			]
-		},
-		{
-			"name": "lztapi_edit_profile_post",
-			"description": {
-				"en": "Edit Profile Post",
-				"ru": "Редактировать сообщение профиля"
-			},
-			"template": "({{profilePostId}}) {{post_body}} -> {{Save}}",
-			"is_element": false,
-			"interface": "lztapi_edit_profile_post_interface.js",
-			"select": "lztapi_edit_profile_post_select.js",
-			"code": [
-				{
-					"file": "lztapi_edit_profile_post_code.js",
-					"name": "lztapi_edit_profile_post_code"
-				}
-			]
-		},
-		{
-			"name": "lztapi_delete_profile_post",
-			"description": {
-				"en": "Delete Profile Post",
-				"ru": "Удалить сообщение профиля"
-			},
-			"template": "{{profilePostId}} -> {{Save}}",
-			"is_element": false,
-			"interface": "lztapi_delete_profile_post_interface.js",
-			"select": "lztapi_delete_profile_post_select.js",
-			"code": [
-				{
-					"file": "lztapi_delete_profile_post_code.js",
-					"name": "lztapi_delete_profile_post_code"
-				}
-			]
-		},
-		{
-			"name": "lztapi_get_profile_post_likes",
-			"description": {
-				"en": "List users who liked a profile post",
-				"ru": "Список пользователей, которым понравилось сообщение профиля"
-			},
-			"template": "{{profilePostId}} -> {{Save}}",
-			"is_element": false,
-			"interface": "lztapi_get_profile_post_likes_interface.js",
-			"select": "lztapi_get_profile_post_likes_select.js",
-			"code": [
-				{
-					"file": "lztapi_get_profile_post_likes_code.js",
-					"name": "lztapi_get_profile_post_likes_code"
-				}
-			]
-		},
-		{
-			"name": "lztapi_like_profile_post",
-			"description": {
-				"en": "Like Profile Post",
-				"ru": "Нравится сообщение профиля"
-			},
-			"template": "{{profilePostId}} -> {{Save}}",
-			"is_element": false,
-			"interface": "lztapi_like_profile_post_interface.js",
-			"select": "lztapi_like_profile_post_select.js",
-			"code": [
-				{
-					"file": "lztapi_like_profile_post_code.js",
-					"name": "lztapi_like_profile_post_code"
-				}
-			]
-		},
-		{
-			"name": "lztapi_unlike_profile_post",
-			"description": {
-				"en": "Unlike Profile Post",
-				"ru": "Не нравится сообщение профиля"
-			},
-			"template": "{{profilePostId}} -> {{Save}}",
-			"is_element": false,
-			"interface": "lztapi_unlike_profile_post_interface.js",
-			"select": "lztapi_unlike_profile_post_select.js",
-			"code": [
-				{
-					"file": "lztapi_unlike_profile_post_code.js",
-					"name": "lztapi_unlike_profile_post_code"
-				}
-			]
-		},
-		{
-			"name": "lztapi_report_profile_post",
-			"description": {
-				"en": "Report Profile Post",
-				"ru": "Пожаловаться на сообщение профиля"
-			},
-			"template": "{{profilePostId}} : {{message}} -> {{Save}}",
-			"is_element": false,
-			"interface": "lztapi_report_profile_post_interface.js",
-			"select": "lztapi_report_profile_post_select.js",
-			"code": [
-				{
-					"file": "lztapi_report_profile_post_code.js",
-					"name": "lztapi_report_profile_post_code"
-				}
-			]
-		},
-		{
-			"name": "lztapi_upload_avatar",
-			"description": {
-				"en": "Upload Avatar",
-				"ru": "Загрузить аватар"
-			},
-			"template": "{{userId}} -> {{Save}}",
-			"is_element": false,
-			"interface": "lztapi_upload_avatar_interface.js",
-			"select": "lztapi_upload_avatar_select.js",
-			"code": [
-				{
-					"file": "lztapi_upload_avatar_code.js",
-					"name": "lztapi_upload_avatar_code"
-				}
-			]
-		},
-		{
-			"name": "lztapi_crop_avatar",
-			"description": {
-				"en": "Crop Avatar",
-				"ru": "Обрезать аватар"
-			},
-			"template": "({{userId}}) {{crop}} -> {{Save}}",
-			"is_element": false,
-			"interface": "lztapi_crop_avatar_interface.js",
-			"select": "lztapi_crop_avatar_select.js",
-			"code": [
-				{
-					"file": "lztapi_crop_avatar_code.js",
-					"name": "lztapi_crop_avatar_code"
-				}
-			]
-		},
-		{
-			"name": "lztapi_delete_avatar",
-			"description": {
-				"en": "Delete Avatar",
-				"ru": "Удалить аватар"
-			},
-			"template": "{{userId}} -> {{Save}}",
-			"is_element": false,
-			"interface": "lztapi_delete_avatar_interface.js",
-			"select": "lztapi_delete_avatar_select.js",
-			"code": [
-				{
-					"file": "lztapi_delete_avatar_code.js",
-					"name": "lztapi_delete_avatar_code"
-				}
-			]
-		},
-		{
-			"name": "lztapi_upload_background",
-			"description": {
-				"en": "Upload Background",
-				"ru": "Загрузить фон"
-			},
-			"template": "{{userId}} -> {{Save}}",
-			"is_element": false,
-			"interface": "lztapi_upload_background_interface.js",
-			"select": "lztapi_upload_background_select.js",
-			"code": [
-				{
-					"file": "lztapi_upload_background_code.js",
-					"name": "lztapi_upload_background_code"
-				}
-			]
-		},
-		{
-			"name": "lztapi_crop_background",
-			"description": {
-				"en": "Crop Background",
-				"ru": "Обрезать фон"
-			},
-			"template": "({{userId}}) {{crop}} -> {{Save}}",
-			"is_element": false,
-			"interface": "lztapi_crop_background_interface.js",
-			"select": "lztapi_crop_background_select.js",
-			"code": [
-				{
-					"file": "lztapi_crop_background_code.js",
-					"name": "lztapi_crop_background_code"
-				}
-			]
-		},
-		{
-			"name": "lztapi_delete_background",
-			"description": {
-				"en": "Delete Background",
-				"ru": "Удалить фон"
-			},
-			"template": "{{userId}} -> {{Save}}",
-			"is_element": false,
-			"interface": "lztapi_delete_background_interface.js",
-			"select": "lztapi_delete_background_select.js",
-			"code": [
-				{
-					"file": "lztapi_delete_background_code.js",
-					"name": "lztapi_delete_background_code"
-				}
-			]
-		},
-		{
-			"name": "lztapi_get_users",
-			"description": {
-				"en": "Users list",
-				"ru": "Список пользователей"
-			},
-			"template": "-> {{Save}}",
-			"is_element": false,
-			"interface": "lztapi_get_users_interface.js",
-			"select": "lztapi_get_users_select.js",
-			"code": [
-				{
-					"file": "lztapi_get_users_code.js",
-					"name": "lztapi_get_users_code"
-				}
-			]
-		},
-		{
-			"name": "lztapi_get_user_fields",
-			"description": {
-				"en": "List user fields",
-				"ru": "Список полей пользователя"
-			},
-			"template": "-> {{Save}}",
-			"is_element": false,
-			"interface": "lztapi_get_user_fields_interface.js",
-			"select": "lztapi_get_user_fields_select.js",
-			"code": [
-				{
-					"file": "lztapi_get_user_fields_code.js",
-					"name": "lztapi_get_user_fields_code"
-				}
-			]
-		},
-		{
-			"name": "lztapi_find_users",
-			"description": {
-				"en": "Find Users",
-				"ru": "Поиск пользователей"
-			},
-			"template": "-> {{Save}}",
-			"is_element": false,
-			"interface": "lztapi_find_users_interface.js",
-			"select": "lztapi_find_users_select.js",
-			"code": [
-				{
-					"file": "lztapi_find_users_code.js",
-					"name": "lztapi_find_users_code"
-				}
-			]
-		},
-		{
-			"name": "lztapi_get_user",
-			"description": {
-				"en": "User details",
-				"ru": "Подробности о пользователе"
-			},
-			"template": "{{userId}} -> {{Save}}",
-			"is_element": false,
-			"interface": "lztapi_get_user_interface.js",
-			"select": "lztapi_get_user_select.js",
-			"code": [
-				{
-					"file": "lztapi_get_user_code.js",
-					"name": "lztapi_get_user_code"
-				}
-			]
-		},
-		{
-			"name": "lztapi_edit_user",
-			"description": {
-				"en": "Edit User",
-				"ru": "Редактировать пользователя"
-			},
-			"template": "{{userId}} -> {{Save}}",
-			"is_element": false,
-			"interface": "lztapi_edit_user_interface.js",
-			"select": "lztapi_edit_user_select.js",
-			"code": [
-				{
-					"file": "lztapi_edit_user_code.js",
-					"name": "lztapi_edit_user_code"
-				}
-			]
-		},
-		{
-			"name": "lztapi_get_user_followers",
-			"description": {
-				"en": "List user's followers",
-				"ru": "Список подписчиков пользователя"
-			},
-			"template": "{{userId}} -> {{Save}}",
-			"is_element": false,
-			"interface": "lztapi_get_user_followers_interface.js",
-			"select": "lztapi_get_user_followers_select.js",
-			"code": [
-				{
-					"file": "lztapi_get_user_followers_code.js",
-					"name": "lztapi_get_user_followers_code"
-				}
-			]
-		},
-		{
-			"name": "lztapi_get_followed_users_by_user",
-			"description": {
-				"en": "List users whom are followed by a user",
-				"ru": "Список пользователей, на которых подписан пользователь"
-			},
-			"template": "{{userId}} -> {{Save}}",
-			"is_element": false,
-			"interface": "lztapi_get_followed_users_by_user_interface.js",
-			"select": "lztapi_get_followed_users_by_user_select.js",
-			"code": [
-				{
-					"file": "lztapi_get_followed_users_by_user_code.js",
-					"name": "lztapi_get_followed_users_by_user_code"
-				}
-			]
-		},
-		{
-			"name": "lztapi_follow_user",
-			"description": {
-				"en": "Follow User",
-				"ru": "Подписаться на пользователя"
-			},
-			"template": "{{userId}} -> {{Save}}",
-			"is_element": false,
-			"interface": "lztapi_follow_user_interface.js",
-			"select": "lztapi_follow_user_select.js",
-			"code": [
-				{
-					"file": "lztapi_follow_user_code.js",
-					"name": "lztapi_follow_user_code"
-				}
-			]
-		},
-		{
-			"name": "lztapi_unfollow_user",
-			"description": {
-				"en": "Unfollow User",
-				"ru": "Отписаться от пользователя"
-			},
-			"template": "{{userId}} -> {{Save}}",
-			"is_element": false,
-			"interface": "lztapi_unfollow_user_interface.js",
-			"select": "lztapi_unfollow_user_select.js",
-			"code": [
-				{
-					"file": "lztapi_unfollow_user_code.js",
-					"name": "lztapi_unfollow_user_code"
-				}
-			]
-		},
-		{
-			"name": "lztapi_get_ignored_users",
-			"description": {
-				"en": "List ignored users",
-				"ru": "Список игнорируемых пользователей"
-			},
-			"template": "-> {{Save}}",
-			"is_element": false,
-			"interface": "lztapi_get_ignored_users_interface.js",
-			"select": "lztapi_get_ignored_users_select.js",
-			"code": [
-				{
-					"file": "lztapi_get_ignored_users_code.js",
-					"name": "lztapi_get_ignored_users_code"
-				}
-			]
-		},
-		{
-			"name": "lztapi_ignore_user",
-			"description": {
-				"en": "Ignore User",
-				"ru": "Игнорировать пользователя"
-			},
-			"template": "{{userId}} -> {{Save}}",
-			"is_element": false,
-			"interface": "lztapi_ignore_user_interface.js",
-			"select": "lztapi_ignore_user_select.js",
-			"code": [
-				{
-					"file": "lztapi_ignore_user_code.js",
-					"name": "lztapi_ignore_user_code"
-				}
-			]
-		},
-		{
-			"name": "lztapi_unignore_user",
-			"description": {
-				"en": "Unignore User",
-				"ru": "Не игнорировать пользователя"
-			},
-			"template": "{{userId}} -> {{Save}}",
-			"is_element": false,
-			"interface": "lztapi_unignore_user_interface.js",
-			"select": "lztapi_unignore_user_select.js",
-			"code": [
-				{
-					"file": "lztapi_unignore_user_code.js",
-					"name": "lztapi_unignore_user_code"
-				}
-			]
-		},
-		{
-			"name": "lztapi_get_contents",
-			"description": {
-				"en": "List contents created by user",
-				"ru": "Список содержимого, созданного пользователем"
-			},
-			"template": "{{userId}} -> {{Save}}",
-			"is_element": false,
-			"interface": "lztapi_get_contents_interface.js",
-			"select": "lztapi_get_contents_select.js",
-			"code": [
-				{
-					"file": "lztapi_get_contents_code.js",
-					"name": "lztapi_get_contents_code"
-				}
-			]
-		},
-		{
-			"name": "lztapi_get_conversation_messages",
-			"description": {
-				"en": "List messages conversation",
-				"ru": "Список сообщений в диалоге"
-			},
-			"template": "{{conversation_id}} -> {{Save}}",
-			"is_element": false,
-			"interface": "lztapi_get_conversation_messages_interface.js",
-			"select": "lztapi_get_conversation_messages_select.js",
-			"code": [
-				{
-					"file": "lztapi_get_conversation_messages_code.js",
-					"name": "lztapi_get_conversation_messages_code"
-				}
-			]
-		},
-		{
-			"name": "lztapi_get_conversation_message",
-			"description": {
-				"en": "Message details",
-				"ru": "Подробности сообщения диалога"
-			},
-			"template": "{{messageId}} -> {{Save}}",
-			"is_element": false,
-			"interface": "lztapi_get_conversation_message_interface.js",
-			"select": "lztapi_get_conversation_message_select.js",
-			"code": [
-				{
-					"file": "lztapi_get_conversation_message_code.js",
-					"name": "lztapi_get_conversation_message_code"
-				}
-			]
-		},
-		{
-			"name": "lztapi_create_conversation_message",
-			"description": {
-				"en": "Create conversation message",
-				"ru": "Создать сообщение диалога"
-			},
-			"template": "({{conversation_id}}) {{message_body}} -> {{Save}}",
-			"is_element": false,
-			"interface": "lztapi_create_conversation_message_interface.js",
-			"select": "lztapi_create_conversation_message_select.js",
-			"code": [
-				{
-					"file": "lztapi_create_conversation_message_code.js",
-					"name": "lztapi_create_conversation_message_code"
-				}
-			]
-		},
-		{
-			"name": "lztapi_edit_conversation_message",
-			"description": {
-				"en": "Edit conversation message",
-				"ru": "Редактировать сообщение диалога"
-			},
-			"template": "({{messageId}}) {{message_body}} -> {{Save}}",
-			"is_element": false,
-			"interface": "lztapi_edit_conversation_message_interface.js",
-			"select": "lztapi_edit_conversation_message_select.js",
-			"code": [
-				{
-					"file": "lztapi_edit_conversation_message_code.js",
-					"name": "lztapi_edit_conversation_message_code"
-				}
-			]
-		},
-		{
-			"name": "lztapi_get_conversations",
-			"description": {
-				"en": "List conversations",
-				"ru": "Список диалогов"
-			},
-			"template": "-> {{Save}}",
-			"is_element": false,
-			"interface": "lztapi_get_conversations_interface.js",
-			"select": "lztapi_get_conversations_select.js",
-			"code": [
-				{
-					"file": "lztapi_get_conversations_code.js",
-					"name": "lztapi_get_conversations_code"
-				}
-			]
-		},
-		{
-			"name": "lztapi_get_conversation",
-			"description": {
-				"en": "Conversation details",
-				"ru": "Подробности диалога"
-			},
-			"template": "{{conversationId}} -> {{Save}}",
-			"is_element": false,
-			"interface": "lztapi_get_conversation_interface.js",
-			"select": "lztapi_get_conversation_select.js",
-			"code": [
-				{
-					"file": "lztapi_get_conversation_code.js",
-					"name": "lztapi_get_conversation_code"
-				}
-			]
-		},
-		{
-			"name": "lztapi_create_conversation",
-			"description": {
-				"en": "Create conversation",
-				"ru": "Создать диалог"
-			},
-			"template": "-> {{Save}}",
-			"is_element": false,
-			"interface": "lztapi_create_conversation_interface.js",
-			"select": "lztapi_create_conversation_select.js",
-			"code": [
-				{
-					"file": "lztapi_create_conversation_code.js",
-					"name": "lztapi_create_conversation_code"
-				}
-			]
-		},
-		{
-			"name": "lztapi_leave_conversation",
-			"description": {
-				"en": "Leave conversation",
-				"ru": "Покинуть диалог"
-			},
-			"template": "{{conversationId}} : {{delete_type}} -> {{Save}}",
-			"is_element": false,
-			"interface": "lztapi_leave_conversation_interface.js",
-			"select": "lztapi_leave_conversation_select.js",
-			"code": [
-				{
-					"file": "lztapi_leave_conversation_code.js",
-					"name": "lztapi_leave_conversation_code"
-				}
-			]
-		},
-		{
-			"name": "lztapi_get_chats",
-			"description": {
-				"en": "List chatbox rooms",
-				"ru": "Список комнат чата"
-			},
-			"template": "{{room_id}} -> {{Save}}",
-			"is_element": false,
-			"interface": "lztapi_get_chats_interface.js",
-			"select": "lztapi_get_chats_select.js",
-			"code": [
-				{
-					"file": "lztapi_get_chats_code.js",
-					"name": "lztapi_get_chats_code"
-				}
-			]
-		},
-		{
-			"name": "lztapi_get_ignored_users_chats",
-			"description": {
-				"en": "List ignored chat users",
-				"ru": "Список игнорируемых пользователей чата"
-			},
-			"template": "-> {{Save}}",
-			"is_element": false,
-			"interface": "lztapi_get_ignored_users_chats_interface.js",
-			"select": "lztapi_get_ignored_users_chats_select.js",
-			"code": [
-				{
-					"file": "lztapi_get_ignored_users_chats_code.js",
-					"name": "lztapi_get_ignored_users_chats_code"
-				}
-			]
-		},
-		{
-			"name": "lztapi_ignore_chat_user",
-			"description": {
-				"en": "Ignore chat user",
-				"ru": "Игнорировать пользователя чата"
-			},
-			"template": "{{user_id}} -> {{Save}}",
-			"is_element": false,
-			"interface": "lztapi_ignore_chat_user_interface.js",
-			"select": "lztapi_ignore_chat_user_select.js",
-			"code": [
-				{
-					"file": "lztapi_ignore_chat_user_code.js",
-					"name": "lztapi_ignore_chat_user_code"
-				}
-			]
-		},
-		{
-			"name": "lztapi_unignore_chat_user",
-			"description": {
-				"en": "Unignore chat user",
-				"ru": "Не игнорировать пользователя чата"
-			},
-			"template": "{{user_id}} -> {{Save}}",
-			"is_element": false,
-			"interface": "lztapi_unignore_chat_user_interface.js",
-			"select": "lztapi_unignore_chat_user_select.js",
-			"code": [
-				{
-					"file": "lztapi_unignore_chat_user_code.js",
-					"name": "lztapi_unignore_chat_user_code"
-				}
-			]
-		},
-		{
-			"name": "lztapi_get_chat_messages",
-			"description": {
-				"en": "List chat messages",
-				"ru": "Список сообщений чата"
-			},
-			"template": "{{room_id}} -> {{Save}}",
-			"is_element": false,
-			"interface": "lztapi_get_chat_messages_interface.js",
-			"select": "lztapi_get_chat_messages_select.js",
-			"code": [
-				{
-					"file": "lztapi_get_chat_messages_code.js",
-					"name": "lztapi_get_chat_messages_code"
-				}
-			]
-		},
-		{
-			"name": "lztapi_create_chat_message",
-			"description": {
-				"en": "Create chat message",
-				"ru": "Создать сообщение чата"
-			},
-			"template": "({{room_id}}) {{message}} -> {{Save}}",
-			"is_element": false,
-			"interface": "lztapi_create_chat_message_interface.js",
-			"select": "lztapi_create_chat_message_select.js",
-			"code": [
-				{
-					"file": "lztapi_create_chat_message_code.js",
-					"name": "lztapi_create_chat_message_code"
-				}
-			]
-		},
-		{
-			"name": "lztapi_edit_chat_message",
-			"description": {
-				"en": "Edit chat message",
-				"ru": "Редактировать сообщение чата"
-			},
-			"template": "({{message_id}}) {{message}} -> {{Save}}",
-			"is_element": false,
-			"interface": "lztapi_edit_chat_message_interface.js",
-			"select": "lztapi_edit_chat_message_select.js",
-			"code": [
-				{
-					"file": "lztapi_edit_chat_message_code.js",
-					"name": "lztapi_edit_chat_message_code"
-				}
-			]
-		},
-		{
-			"name": "lztapi_delete_chat_message",
-			"description": {
-				"en": "Delete chat message",
-				"ru": "Удалить сообщение чата"
-			},
-			"template": "{{message_id}} -> {{Save}}",
-			"is_element": false,
-			"interface": "lztapi_delete_chat_message_interface.js",
-			"select": "lztapi_delete_chat_message_select.js",
-			"code": [
-				{
-					"file": "lztapi_delete_chat_message_code.js",
-					"name": "lztapi_delete_chat_message_code"
-				}
-			]
-		},
-		{
-			"name": "lztapi_report_chat_message",
-			"description": {
-				"en": "Report chat message",
-				"ru": "Пожаловаться на сообщение чата"
-			},
-			"template": "({{message_id}}) {{message}} -> {{Save}}",
-			"is_element": false,
-			"interface": "lztapi_report_chat_message_interface.js",
-			"select": "lztapi_report_chat_message_select.js",
-			"code": [
-				{
-					"file": "lztapi_report_chat_message_code.js",
-					"name": "lztapi_report_chat_message_code"
-				}
-			]
-		},
-		{
-			"name": "lztapi_get_notifications",
-			"description": {
-				"en": "List notifications",
-				"ru": "Список уведомлений"
-			},
-			"template": "-> {{Save}}",
-			"is_element": false,
-			"interface": "lztapi_get_notifications_interface.js",
-			"select": "lztapi_get_notifications_select.js",
-			"code": [
-				{
-					"file": "lztapi_get_notifications_code.js",
-					"name": "lztapi_get_notifications_code"
-				}
-			]
-		},
-		{
-			"name": "lztapi_get_notification",
-			"description": {
-				"en": "Notification details",
-				"ru": "Подробности уведомления"
-			},
-			"template": "{{notificationId}} -> {{Save}}",
-			"is_element": false,
-			"interface": "lztapi_get_notification_interface.js",
-			"select": "lztapi_get_notification_select.js",
-			"code": [
-				{
-					"file": "lztapi_get_notification_code.js",
-					"name": "lztapi_get_notification_code"
-				}
-			]
-		},
-		{
-			"name": "lztapi_mark_notification_read",
-			"description": {
-				"en": "Mark the notification(s) as read",
-				"ru": "Отметить прочитанным уведомление(-я)"
-			},
-			"template": "-> {{Save}}",
-			"is_element": false,
-			"interface": "lztapi_mark_notification_read_interface.js",
-			"select": "lztapi_mark_notification_read_select.js",
-			"code": [
-				{
-					"file": "lztapi_mark_notification_read_code.js",
-					"name": "lztapi_mark_notification_read_code"
-				}
-			]
-		},
-		{
-			"name": "lztapi_get_popular_tags",
-			"description": {
-				"en": "List popular tags",
-				"ru": "Список популярных тегов"
-			},
-			"template": "-> {{Save}}",
-			"is_element": false,
-			"interface": "lztapi_get_popular_tags_interface.js",
-			"select": "lztapi_get_popular_tags_select.js",
-			"code": [
-				{
-					"file": "lztapi_get_popular_tags_code.js",
-					"name": "lztapi_get_popular_tags_code"
-				}
-			]
-		},
-		{
-			"name": "lztapi_get_tags",
-			"description": {
-				"en": "List tags",
-				"ru": "Список тегов"
-			},
-			"template": "-> {{Save}}",
-			"is_element": false,
-			"interface": "lztapi_get_tags_interface.js",
-			"select": "lztapi_get_tags_select.js",
-			"code": [
-				{
-					"file": "lztapi_get_tags_code.js",
-					"name": "lztapi_get_tags_code"
-				}
-			]
-		},
-		{
-			"name": "lztapi_get_tagged_content",
-			"description": {
-				"en": "List tagged contents",
-				"ru": "Список содержимого с тегами"
-			},
-			"template": "{{tagId}} -> {{Save}}",
-			"is_element": false,
-			"interface": "lztapi_get_tagged_content_interface.js",
-			"select": "lztapi_get_tagged_content_select.js",
-			"code": [
-				{
-					"file": "lztapi_get_tagged_content_code.js",
-					"name": "lztapi_get_tagged_content_code"
-				}
-			]
-		},
-		{
-			"name": "lztapi_get_filtered_content",
-			"description": {
-				"en": "List tags with filters",
-				"ru": "Список тегов с фильтрами"
-			},
-			"template": "{{tag}} -> {{Save}}",
-			"is_element": false,
-			"interface": "lztapi_get_filtered_content_interface.js",
-			"select": "lztapi_get_filtered_content_select.js",
-			"code": [
-				{
-					"file": "lztapi_get_filtered_content_code.js",
-					"name": "lztapi_get_filtered_content_code"
-				}
-			]
-		},
-		{
-			"name": "lztapi_search",
-			"description": {
-				"en": "Search all",
-				"ru": "Поиск всего"
-			},
-			"template": "-> {{Save}}",
-			"is_element": false,
-			"interface": "lztapi_search_interface.js",
-			"select": "lztapi_search_select.js",
-			"code": [
-				{
-					"file": "lztapi_search_code.js",
-					"name": "lztapi_search_code"
-				}
-			]
-		},
-		{
-			"name": "lztapi_search_thread",
-			"description": {
-				"en": "Search for threads",
-				"ru": "Поиск тем"
-			},
-			"template": "-> {{Save}}",
-			"is_element": false,
-			"interface": "lztapi_search_thread_interface.js",
-			"select": "lztapi_search_thread_select.js",
-			"code": [
-				{
-					"file": "lztapi_search_thread_code.js",
-					"name": "lztapi_search_thread_code"
-				}
-			]
-		},
-		{
-			"name": "lztapi_search_post",
-			"description": {
-				"en": "Search for posts",
-				"ru": "Поиск сообщений"
-			},
-			"template": "-> {{Save}}",
-			"is_element": false,
-			"interface": "lztapi_search_post_interface.js",
-			"select": "lztapi_search_post_select.js",
-			"code": [
-				{
-					"file": "lztapi_search_post_code.js",
-					"name": "lztapi_search_post_code"
-				}
-			]
-		},
-		{
-			"name": "lztapi_search_profile_posts",
-			"description": {
-				"en": "Search for profile posts",
-				"ru": "Поиск сообщений профиля"
-			},
-			"template": "-> {{Save}}",
-			"is_element": false,
-			"interface": "lztapi_search_profile_posts_interface.js",
-			"select": "lztapi_search_profile_posts_select.js",
-			"code": [
-				{
-					"file": "lztapi_search_profile_posts_code.js",
-					"name": "lztapi_search_profile_posts_code"
-				}
-			]
-		},
-		{
-			"name": "lztapi_search_tagged",
-			"description": {
-				"en": "Search by tags",
-				"ru": "Поиск по тегам"
-			},
-			"template": "-> {{Save}}",
-			"is_element": false,
-			"interface": "lztapi_search_tagged_interface.js",
-			"select": "lztapi_search_tagged_select.js",
-			"code": [
-				{
-					"file": "lztapi_search_tagged_code.js",
-					"name": "lztapi_search_tagged_code"
-				}
-			]
-		},
-		{
-			"name": "lztapi_get_navigation",
-			"description": {
-				"en": "List navigation elements",
-				"ru": "Список элементов навигации"
-			},
-			"template": "-> {{Save}}",
-			"is_element": false,
-			"interface": "lztapi_get_navigation_interface.js",
-			"select": "lztapi_get_navigation_select.js",
-			"code": [
-				{
-					"file": "lztapi_get_navigation_code.js",
-					"name": "lztapi_get_navigation_code"
-				}
-			]
-		},
-		{
-			"name": "lztapi_batch_record",
-			"description": {
-				"en": "Record batch requests",
-				"ru": "Записать пакетные запросы"
-			},
-			"template": "-> {{Save}}",
-			"is_element": false,
-			"interface": "src/batch/lztapi_batch_record_interface.js",
-			"select": "src/batch/lztapi_batch_record_select.js",
-			"code": [
-				{
-					"file": "src/batch/lztapi_batch_record_code.js",
-					"name": "lztapi_batch_record_code"
-				}
-			]
-		},
-		{
-			"name": "lztapi_batch_stop",
-			"description": {
-				"en": "Stop batch requests",
-				"ru": "Остановить пакетные запросы"
-			},
-			"template": "-> {{Save}}",
-			"is_element": false,
-			"interface": "src/batch/lztapi_batch_stop_interface.js",
-			"select": "src/batch/lztapi_batch_stop_select.js",
-			"code": [
-				{
-					"file": "src/batch/lztapi_batch_stop_code.js",
-					"name": "lztapi_batch_stop_code"
-				}
-			]
-		},
-		{
-			"name": "lztapi_batch_execute",
-			"description": {
-				"en": "Execute batch requests",
-				"ru": "Выполнить пакетные запросы"
-			},
-			"template": "-> {{Save}}",
-			"is_element": false,
-			"interface": "src/batch/lztapi_batch_execute_interface.js",
-			"select": "src/batch/lztapi_batch_execute_select.js",
-			"code": [
-				{
-					"file": "src/batch/lztapi_batch_execute_code.js",
-					"name": "lztapi_batch_execute_code"
-				}
-			]
-		}
-	],
-	"localize": {
-		"Proxy Settings": {"ru": "Настройки прокси"},
-		"Use a proxy": { "ru": "Использовать прокси"},
-		"By default, the LOLZ API works without a proxy, this action installs a proxy": {
-			"ru": "По умолчанию LOLZ API работает без прокси, это действие устанавливает прокси"
-		},
-		"Reassigning errors": { "ru": "Переназначение ошибок" },
-		"It is recommended to leave the default settings": {
-			"ru": "Рекомендуется оставить настройки по умолчанию"
-		},
-		"Error codes that calls <code>Fail</code> action.": {
-			"ru": "Коды ошибок, вызывающие действие <code>Fail</code>."
-		},
-		"Multiple error codes.": { "ru": "Множество кодов ошибок." },
-		"Dont restart thread.": { "ru": "Не перезапускать поток." },
-		"Script End": { "ru": "Прервать Скрипт" },
-		"Error codes that calls <code>Script End</code> action.": {
-			"ru": "Коды ошибок, вызывающие действие <code>Прервать Скрипт</code>."
-		},
-		"Error codes to ignore.": {
-			"ru": "Коды ошибок, которые нужно игнорировать."
-		},
-		"Token": { "ru": "Токен" },
-		"All fields of this group are optional": {
-			"ru": "Все поля этой группы необязательны"
-		},
-		"Must be separated by <code>,</code>.": {
-			"ru": "Должны быть разделены <code>,</code>."
-		},
-		"Requests delivery": { "ru": "Доставка запросов" },
-		"It is recommended to leave the default settings, or increase them if you have a slow Internet connection": {
-			"ru": "Рекомендуется оставить настройки по умолчанию или увеличить их, если у вас медленное интернет-соединение"
-		},
-		"Timeout": { "ru": "Таймаут" },
-		"Maximum waiting time per request.": {
-			"ru": "Максимальное время ожидания одного запроса."
-		},
-		"Wait 1 second.": { "ru": "Ждать 1 секунду." },
-		"Wait 5 seconds.": { "ru": "Ждать 5 секунд." },
-		"Wait 10 seconds.": { "ru": "Ждать 10 секунд." },
-		"Interval": { "ru": "Интервал" },
-		"Interval for sending requests.": {
-			"ru": "Интервал отправки запросов."
-		},
-		"Send request every second.": {
-			"ru": "Отправить запрос каждую секунду."
-		},
-		"Send request every 5 seconds.": {
-			"ru": "Отправить запрос каждые 5 секунд."
-		},
-		"Send request every 10 seconds.": {
-			"ru": "Отправить запрос каждые 10 секунд."
-		},
-		"Time threshold": {
-			"ru": "Временной порог"
-		},
-		"Maximum execution time.": {
-			"ru": "Максимальное время выполнения."
-		},
-		"Perform an action no more than 1 second.": {
-			"ru": "Выполнять действие не более 1 секунды."
-		},
-		"Perform an action no more than 5 seconds.": {
-			"ru": "Выполнять действие не более 5 секунд."
-		},
-		"Perform an action no more than 10 seconds.": {
-			"ru": "Выполнять действие не более 10 секунд."
-		},
-        "Ordering of categories.": {
-            "ru": "Порядок расположения категорий."
-        },
-		"Ordering of threads.": {
-            "ru": "Порядок расположения тем."
-        },
-        "List of all categories in the system.": {
-            "ru": "Список всех категорий в системе."
-        },
-        "ID of the parent forum. If there is, filter out the categories that are direct children of this forum.": {
-            "ru": "Идентификатор раздела. Если существует, отфильтруйте категории, которые являются прямыми дочерними по отношению к этому разделу."
-        },
-        "ID of the parent category. If it exists, filter out the categories that are direct children of that category": {
-            "ru": "Идентификатор категории. Если существует, отфильтруйте категории, которые являются прямыми дочерними по отношению к этой категории."
-        },
-        "Detail information of a category.": {
-            "ru": "Подробная информация о категории."
-        },
-        "BaseUrl": {
-            "ru": "Базовый URL"
-        },
-        "Id of parent category. If exists, filter forums that are direct children of that category.": {
-            "ru": "Идентификатор категории. Если существует, отфильтруйте разделы, которые являются прямыми дочерними для этой категории."
-        },
-        "Id of parent forum. If exists, filter forums that are direct children of that forum.": {
-            "ru": "Идентификатор раздела. Если существует, отфильтруйте разделы, которые являются прямыми дочерними по отношению к этому разделу."
-        },
-        "Ordering of forums.": {
-            "ru": "Порядок расположения разделов."
-        },
-        "List of all forums in the system.": {
-            "ru": "Список всех разделов в системе."
-        },
-        "Detail information of a forum.": {
-            "ru": "Подробная информация о разделе."
-        },
-        "List of a forum's followers. For privacy reason, only the current user will be included in the list (if the user follows the specified forum).": {
-            "ru": "Список подписчиков раздела. По соображениям конфиденциальности в список будет включен только текущий пользователь (если он подписан на указанный раздел)."
-        },
-        "Whether to receive notification for post (<code>enabled</code>) or just thread (<code>disabled</code>)": {
-            "ru": "Отправлять уведомления, если новые сообщения (<code>enabled</code>) или просто новые темы (<code>disabled</code>)"
-        },
-        "Whether to receive notification as alert": {
-            "ru": "Отправлять уведомления через оповещения"
-        },
-        "Whether to receive notification as email": {
-            "ru": "Отправлять уведомления через электронную почту"
-        },
-        "Follow a forum.": {
-            "ru": "Подписаться на раздел."
-        },
-        "Unfollow a forum.": {
-            "ru": "Отписаться от раздела."
-        },
-        "Return only the count of forum as forums_total": {
-            "ru": "Возвращать только количество разделов в виде forums_total"
-        },
-        "List of followed forums by current user.": {
-            "ru": "Список разделов, на которые подписан текущий пользователь."
-        },
-        "Id of parent page. If exists, filter pages that are direct children of that page.": {
-            "ru": "Идентификатор страницы. Если существует, отфильтрует страницы, которые являются прямыми дочерними по отношению к этой странице."
-        },
-        "Ordering of pages.": {
-            "ru": "Порядок расположения страниц."
-        },
-        "List of all pages in the system.": {
-            "ru": "Список всех страниц в системе."
-        },
-        "Detail information of a page.": {
-            "ru": "Подробная информация о странице."
-        },
-        "Id of parent element. If exists, filter elements that are direct children of that element.": {
-            "ru": "Идентификатор элемента. если существует, отфильтрует элементы, которые являются прямыми дочерними по отношению к этому элементу."
-        },
-        "List of navigation elements within the system.": {
-            "ru": "Список навигационных элементов в системе."
-        },
-        "Id of the containing forum.": {
-            "ru": "Идентификатор содержащего раздела."
-        },
-        "Filter to get only threads created by the specified user.": {
-            "ru": "Фильтр для получения тем созданных указанным пользователем."
-        },
-        "Filter to get only threads with the specified prefix.": {
-            "ru": "Фильтр для получения тем с указанным префиксом."
-        },
-        "Filter to get only threads with the specified tag.": {
-            "ru": "Фильтр для получения тем с указанным тегом."
-        },
-        "Page number of threads.": {
-            "ru": "Номер страницы тем."
-        },
-        "Number of threads in a page.": {
-            "ru": "Количество тем в странице."
-        },
-        "List of threads in a forum (with pagination).": {
-            "ru": "Список тем в разделе (с разбивкой по страницам)."
-        },
-        "Id of the target forum.": {
-            "ru": "Идентификатор раздела."
-        },
-        "Thread title.": {
-            "ru": "Заголовок темы."
-        },
-		"Thread english title.": {
-            "ru": "Заголовок темы на английском."
-        },
-		"Can be skipped if <code>title_en</code> set.": {
-            "ru": "Может быть пропущен, если задан <code>title_en</code>."
-        },
-		"Can be skipped if <code>title</code> set.": {
-            "ru": "Может быть пропущен, если задан <code>title</code>."
-        },
-        "Prefix ids.": {
-            "ru": "Идентификаторы префикса."
-        },
-        "Thread tags.": {
-            "ru": "Теги."
-        },
-        "Content of the new thread.": {
-            "ru": "Содержание новой темы."
-        },
-        "Create a new thread.": {
-            "ru": "Создать новую тему."
-        },
-        "Id of the target thread.": {
-            "ru": "Идентификатор темы."
-        },
-        "Detail information of a thread.": {
-            "ru": "Подробная информация о теме."
-        },
-        "Reason of the thread removal.": {
-            "ru": "Причина удаления темы."
-        },
-        "Delete a thread.": {
-            "ru": "Удалить тему."
-        },
-        "List of a thread's followers. For privacy reason, only the current user will be included in the list.": {
-            "ru": "Список подписчиков темы. По соображениям конфиденциальности в список будет включен только текущий пользователь"
-        },
-        "Follow a thread.": {
-            "ru": "Подписаться на тему."
-        },
-        "Unfollow a thread.": {
-            "ru": "Отписаться от темы."
-        },
-        "Return only the count of threads as threads_total": {
-            "ru": "Возвращать только количество тем в виде threads_total"
-        },
-        "List of followed threads by current user.": {
-            "ru": "Список тем, на которые подписан текущий пользователь."
-        },
-        "List of navigation elements to reach the specified thread.": {
-            "ru": "Список элементов навигации для перехода к указанной теме."
-        },
-        "Detail information of a poll.": {
-            "ru": "Подробная информация о голосовании."
-        },
-        "The id of the response to vote for. Can be skipped if <code>response_ids</code> set.": {
-            "ru": "Идентификатор ответа, за который нужно проголосовать. Может быть пропущен, если задан <code>response_ids</code>."
-        },
-        "Vote on a thread poll.": {
-            "ru": "Проголосовать в голосовании."
-        },
-        "Maximum number of result threads. The limit may get decreased if the value is too large (depending on the system configuration).": {
-            "ru": "Максимальное количество тем на одной страницу. Ограничение может быть уменьшено, если значение слишком велико (в зависимости от конфигурации системы)."
-        },
-        "List of unread threads (must be logged in).": {
-            "ru": "Список непрочитанных тем (необходимо войти)."
-        },
-        "Maximum number of days to search for threads.": {
-            "ru": "Максимальное количество дней для поиска тем."
-        },
-        "Id of the container forum to search for threads. Child forums of the specified forum will be included in the search.": {
-            "ru": "Идентификатор раздела для поиска тем. Дочерние разделы указанного раздела будут включены в поиск."
-        },
-        "List of recent threads.": {
-            "ru": "Список последних тем."
-        },
-        "Bump a thread.": {
-            "ru": "Поднять тему."
-        },
-        "Id of a post, posts that are in the same page with the specified post will be returned. <code>thread_id</code> may be skipped.": {
-            "ru": "Идентификатор сообщения, будут возвращены сообщения, которые находятся на одной странице с указанным сообщением. <code>thread_id</code> может быть пропущен."
-        },
-        "Page number of posts.": {
-            "ru": "Номер страницы сообщений."
-        },
-        "Number of posts in a page. Default value depends on the system configuration.": {
-            "ru": "Количество сообщений в странице. По умолчанию значение определяется настройками системы."
-        },
-        "Ordering of posts.": {
-            "ru": "Порядок расположения сообщений."
-        },
-        "List of posts in a thread (with pagination).": {
-            "ru": "Список сообщений в теме (с разбивкой по страницам)."
-        },
-        "Content of the new post.": {
-            "ru": "Содержание нового сообщения."
-        },
-        "Id of the quote post. It's possible to skip <code>thread_id</code> if this parameter is provided. An extra check is performed if both parameters exist and does not match.": {
-            "ru": "Идентификатор сообщения для её цитирования. Можно пропустить <code>thread_id</code>, если указан этот параметр. Дополнительная проверка выполняется, если оба параметра существуют и не совпадают"
-        },
-        "Create a new post.": {
-            "ru": "Создать новое сообщение."
-        },
-        "Detail information of a post.": {
-            "ru": "Подробная информация о сообщении."
-        },
-        "Reason of the post removal.": {
-            "ru": "Причина удаления сообщения."
-        },
-        "Delete a post.": {
-            "ru": "Удалить сообщение."
-        },
-        "Edit a post.": {
-            "ru": "Редактировать сообщение."
-        },
-        "Page number of users.": {
-            "ru": "Номер страницы с пользователями."
-        },
-        "Number of users in a page. Default value depends on the system configuration.": {
-            "ru": "Количество пользователей в странице. По умолчанию значение определяется настройками системы."
-        },
-        "List of users who liked a post.": {
-            "ru": "Список пользователей, которым понравилось сообщение."
-        },
-        "Like a post.": {
-            "ru": "Нравится сообщение."
-        },
-        "Unlike a post.": {
-            "ru": "Не нравится сообщение."
-        },
-        "Report a profile post.": {
-            "ru": "Пожаловаться на сообщение в профиле."
-        },
-        "Reason of the report.": {
-            "ru": "Причина жалобы."
-        },
-        "Report a post.": {
-            "ru": "Пожаловаться на сообщение."
-        },
-        "The time in milliseconds (e.g. 1652177794083) before last comment date.": {
-            "ru": "Время в миллисекундах (например, 1652177794083) до даты последнего комментария."
-        },
-        "List of post comments in a thread.": {
-            "ru": "Список комментариев к сообщениям в теме."
-        },
-		"List of comments of a profile post.": {
-            "ru": "Список комментариев к сообщению профиля."
-        },
-        "Content of the new post comment.": {
-            "ru": "Содержание нового комментария к сообщению."
-        },
-        "Create a new post comment.": {
-            "ru": "Создать новый комментарий к сообщению."
-        },
-		"Create a new profile post comment.": {
-            "ru": "Создать новый комментарий к сообщению в профиле."
-        },
-        "List of popular tags (no pagination).": {
-            "ru": "Список популярных тегов (без разбивки по страницам)."
-        },
-        "List of tags.": {
-            "ru": "Список тегов."
-        },
-        "Number of tagged contents in a page.": {
-            "ru": "Количество тегов в странице."
-        },
-        "Page number of tagged contents.": {
-            "ru": "Номер страницы тегов."
-        },
-        "List of tagged contents.": {
-            "ru": "Список содержимого с тегами."
-        },
-        "Tag to filter. Tags start with the query will be returned.": {
-            "ru": "Тег для фильтрации. Будут возвращены теги, начинающиеся с запроса."
-        },
-        "Filtered list of tags.": {
-            "ru": "Отфильтрованный список тегов."
-        },
-        "Number of users in a page.": {
-            "ru": "Количество пользователей на странице."
-        },
-        "List of users (with pagination).": {
-            "ru": "Список пользователей (с разбивкой по страницам)."
-        },
-        "List of user fields.": {
-            "ru": "Список пользовательских полей."
-        },
-        "Username to filter. Usernames start with the query will be returned.": {
-            "ru": "Имя пользователя для фильтрации. Будут возвращены имена пользователей, начинающиеся с запроса."
-        },
-        "Custom fields to filter.": {
-            "ru": "Пользовательские поля для фильтрации."
-        },
-        "Detail information of a user.": {
-            "ru": "Подробная информация о пользователе."
-        },
-        "User ID.": {
-            "ru": "Идентификатор пользователя."
-        },
-        "Base64 data of the avatar.": {
-            "ru": "Данные в формате Base64 для аватара."
-        },
-		"Base64 data of the background. Background image must be 1920x1080 pixels.": {
-            "ru": "Данные в формате Base64 для фона. Фоновое изображение должно иметь размер 1920x1080 пикселей."
-        },
-        "Upload avatar for a user.": {
-            "ru": "Загрузить аватар пользователя."
-        },
-        "Delete avatar for a user.": {
-            "ru": "Удалить аватар пользователя."
-        },
-        "Ordering of followers.": {
-            "ru": "Порядок расположения подписчиков."
-        },
-        "Number of followers in a page.": {
-            "ru": "Количество подписчиков в странице."
-        },
-        "Page number of followers.": {
-            "ru": "Номер страницы подписчиков."
-        },
-        "List of a user's followers.": {
-            "ru": "Список подписчиков пользователя."
-        },
-        "Follow a user.": {
-            "ru": "Подписаться на пользователя."
-        },
-        "Unfollow a user.": {
-            "ru": "Отписаться от пользователя."
-        },
-        "Ordering of users.": {
-            "ru": "Порядок расположения пользователей."
-        },
-        "List of users whom are followed by a user.": {
-            "ru": "Список пользователей, на которых подписан пользователь."
-        },
-        "List of ignored users of current user.": {
-            "ru": "Список игнорируемых пользователей текущего пользователя."
-        },
-        "Ignore a user.": {
-            "ru": "Игнорировать пользователя."
-        },
-        "Stop ignoring a user.": {
-            "ru": "Перестать игнорировать пользователя."
-        },
-        "Number of profile posts in a page.": {
-            "ru": "Количество сообщений профиля в странице."
-        },
-        "List of contents created by user (with pagination).": {
-            "ru": "Список содержимого, созданного пользователем (с разбивкой по страницам)."
-        },
-        "Content of the new profile post.": {
-            "ru": "Содержание нового сообщения профиля"
-        },
-        "Create a new profile post on a user timeline.": {
-            "ru": "Создайте новое сообщение в профиле на временной шкале пользователя."
-        },
-        "Detail information of a profile post.": {
-            "ru": "Подробная информация о сообщении профиля."
-        },
-        "New content of the profile post.": {
-            "ru": "Новое содержание сообщения профиля."
-        },
-        "Edit a profile post.": {
-            "ru": "Редактировать сообщение профиля."
-        },
-        "Reason of the profile post removal.": {
-            "ru": "Причина удаления сообщения профиля."
-        },
-        "Delete a profile post.": {
-            "ru": "Удалить сообщение профиля"
-        },
-        "List of users who liked a profile post.": {
-            "ru": "Список пользователей, которым понравилось сообщение в профиле."
-        },
-        "Like a profile post.": {
-            "ru": "Нравится сообщение профиля."
-        },
-        "Unlike a profile post.": {
-            "ru": "Не нравится сообщение профиля."
-        },
-        "Date to get older comments. Please note that this entry point does not support the page parameter but it still does support limit.": {
-            "ru": "Укажите дату, чтобы получить более старые комментарии. Пожалуйста, обратите внимание, что эта точка входа не поддерживает параметр страницы, но она по-прежнему поддерживает ограничение."
-        },
-        "Content of the new profile post comment.": {
-            "ru": "Содержание нового комментария к сообщению профиля."
-        },
-        "Detail information of a profile post comment.": {
-            "ru": "Подробная информация о комментарии к сообщению профиля."
-        },
-        "Number of conversations in a page.": {
-            "ru": "Количество диалогов в странице."
-        },
-        "Page number of conversations." : {
-            "ru": "Номер страницы диалогов."
-        },
-        "List of conversations (with pagination).": {
-            "ru": "Список диалогов (с разбивкой по страницам)."
-        },
-        "Detail information of a conversation.": {
-            "ru": "Подробная информация о диалоге."
-        },
-        "Leave the conversation.": {
-            "ru": "Покинуть диалог."
-        },
-        "Date to get newer messages.": {
-            "ru": "Дата для получения новых сообщений."
-        },
-        "Date to get older messages.": {
-            "ru": "Дата для получения более старых сообщений."
-        },
-        "Number of messages in a page.": {
-            "ru": "Количество сообщений в странице."
-        },
-        "Ordering of messages.": {
-            "ru": "Порядок расположения сообщений."
-        },
-        "Page number of messages.": {
-            "ru": "Номер страницы сообщений."
-        },
-        "List of messages in a conversation (with pagination).": {
-            "ru": "Список сообщений в диалоге (с разбивкой по страницам)."
-        },
-        "Content of the new message.": {
-            "ru": "Содержание нового сообщения."
-        },
-        "Create a new conversation message.": {
-            "ru": "Создать новое сообщение в диалоге."
-        },
-        "Detail information of a message.": {
-            "ru": "Подробная информация о сообщении в диалоге."
-        },
-        "New content of the message.": {
-            "ru": "Новое содержание сообщения."
-        },
-        "Edit a message.": {
-            "ru": "Редактировать сообщение в диалоге."
-        },
-        "List of notifications (both read and unread).": {
-            "ru": "Список уведомлений (как прочитанных, так и непрочитанных)."
-        },
-        "Get associated content of notification. The response depends on the content type.": {
-            "ru": "Получить содержимое уведомления. Ответ зависит от типа контента."
-        },
-        "If <code>notification_id</code> is omitted, it's mark all existing notifications as read.": {
-            "ru": "Если <code>notification_id</code> не указан, то все существующие уведомления будут помечены как прочитанные."
-        },
-        "Mark single notification or all existing notifications read.": {
-            "ru": "Отметьте одно уведомление или все существующие уведомления прочитанными."
-        },
-        "Search query. Can be skipped if <code>user_id</code> is set.": {
-            "ru": "Поисковый запрос. Может быть пропущен, если задан <code>user_id</code>."
-        },
-        "Tag to search for tagged contents.": {
-            "ru": "Тег для поиска содержимого с тегами."
-        },
-        "Id of the creator to search for contents.": {
-            "ru": "Идентификатор создателя для поиска содержимого."
-        },
-        "Id of the container forum to search for contents. Child forums of the specified forum will be included in the search.": {
-            "ru": "Идентификатор раздела для поиска содержимого. Дочерние разделы указанного раздела будут включены в поиск."
-        },
-        "Number of results in a page.": {
-            "ru": "Количество результатов в странице."
-        },
-        "Page number of results.": {
-            "ru": "Номер страницы результатов."
-        },
-        "Search for all supported contents.": {
-            "ru": "Поиск по всему поддерживаемому содержимому."
-        },
-        "Number of post data to be returned.": {
-            "ru": "Количество возвращаемых данных о сообщении."
-        },
-        "Search for posts.": {
-            "ru": "Поиск сообщений."
-        },
-        "Search for threads.": {
-            "ru": "Поиск тем."
-        },
-        "Search for tagged contents.": {
-            "ru": "Поиск содержимого по тегам."
-        },
-        "Edit a user.": {
-            "ru": "Редактировать пользователя."
-        },
-		"You can find the API access token on the /account/api page.": {
-            "ru": "Токен доступа к API можно найти на странице /account/api."
-        },
-		"Bypass status code 429 by sleep": {
-            "ru": "Обход кода состояния 429 с помощью сна"
-        },
-		"Id of parent category. If exists, filter categories that are direct children of that category.": {
-            "ru": "Идентификатор родительской категории. Если существует, фильтрует категории, которые являются прямыми дочерними категориями этой категории."
-        },
-		"Id of parent forum. If exists, filter categories that are direct children of that forum.": {
-            "ru": "Идентификатор родительского форума. Если существует, отфильтровать категории, которые являются прямыми детьми этого форума."
-        },
-		"Id of category.": {
-            "ru": "Идентификатор категории."
-        },
-		"Id of forum.": {
-            "ru": "Идентификатор раздела."
-        },
-		"Id of thread.": {
-            "ru": "Идентификатор темы."
-        },
-		"Id of recipient.": {
-            "ru": "Идентификатор получателя."
-        },
-		"Id of needed conversation.": {
-            "ru": "Идентификатор диалога."
-        },
-		"Id of post.": {
-            "ru": "Идентификатор сообщения."
-        },
-		"Id of profile post.": {
-            "ru": "Идентификатор сообщения профиля."
-        },
-		"Id of message.": {
-            "ru": "Идентификатор сообщения."
-        },
-		"Id of new primary group. (Require admincp scope)": {
-            "ru": "Идентификатор новой основной группы. (Требуются права admincp)"
-        },
-		"Id of group you want to display.": {
-            "ru": "Идентификатор группы, которую вы хотите отобразить."
-        },
-		"Id of conversation.": {
-            "ru": "Идентификатор диалога."
-        },
-		"Id of notification.": {
-            "ru": "Идентификатор уведомления."
-        },
-		"Id of page.": {
-            "ru": "Идентификатор страницы."
-        },
-		"Id of the containing thread.": {
-            "ru": "Идентификатор темы."
-        },
-		"Id of profile post comment.": {
-            "ru": "Идентификатор комментария сообщения."
-        },
-		"Id of tag.": {
-            "ru": "Идентификатор тега."
-        },
-		"Id of user.": {
-            "ru": "Идентификатор пользователя."
-        },
-		"Specify multiple prefix IDs.": {
-            "ru": "Укажите несколько идентификаторов префикса."
-        },
-		"Specify multiple tags.": {
-            "ru": "Укажите несколько тегов."
-        },
-		"Specify multiple prizes.": {
-            "ru": "Укажите несколько призов."
-        },
-		"Specify multiple secondary groups ids.": {
-            "ru": "Укажите несколько идентификаторов вторичных групп."
-        },
-		"Specify multiple fields.": {
-            "ru": "Укажите несколько полей."
-        },
-		"Specify multiple response IDs.": {
-            "ru": "Укажите несколько идентификаторов ответа."
-        },
-		"Minimal contest amount. (Only for 766 forumId)": {
-            "ru": "Минимальная сумма розыгрыша. (Только для идентификатора раздела 766)"
-        },
-		"All threads": {
-            "ru": "Все темы"
-        },
-		"Only sticky threads": {
-            "ru": "Только закрепленные темы"
-        },
-		"Non-sticky threads": {
-            "ru": "Только незакрепленные темы"
-        },
-		"Hide contacts": {
-            "ru": "Скрывать контакты в теме"
-        },
-		"Allow ask hidden content": {
-            "ru": "Разрешить просить \"Личный\" (если есть \"хайд\" в теме)"
-        },
-		"Allow to reply only users with chosen or higher group.": {
-            "ru": "Разрешите отвечать только пользователям с выбранной или более высокой группой."
-        },
-		"Allow commenting if user can't post in thread": {
-            "ru": "Разрешить комментировать сообщения, если нет прав писать сообщения"
-        },
-		"Don't alert followers about thread creation": {
-            "ru": "Не оповещать подписчиков о создании темы"
-        },
-		"Watch thread state": {
-            "ru": "Подписаться на тему..."
-        },
-		"Receive forum notifications of new posts in this thread.": {
-            "ru": "и получать уведомления о новых сообщениях"
-        },
-		"Receive email notifications of new posts in this thread.": {
-            "ru": "и получать уведомления на электронную почту"
-        },
-		"This function is not tested and in case of errors please contact the module creator!": {
-            "ru": "Эта функция не протестирована, и в случае возникновения ошибок, пожалуйста, свяжитесь с создателем модуля!"
-        },
-		"Content of the new contest.": {
-            "ru": "Содержание нового розыгрыша."
-        },
-		"Money": {
-            "ru": "Деньги"
-        },
-		"Upgrades": {
-            "ru": "Привилегии"
-        },
-		"Prize": {
-            "ru": "Приз"
-        },
-		"Conditions for participation": {
-            "ru": "Условия для участия"
-        },
-		"Sympathies for this week.": {
-            "ru": "Количество симпатий за эту неделю."
-        },
-		"Sympathies for all time.": {
-            "ru": "Количество симпатий за все время."
-        },
-		"Giveaway duration value. The maximum duration is 3 days.": {
-            "ru": "Длительность розыгрыша (максимум 3 дня)."
-        },
-		"Giveaway duration type. The maximum duration is 3 days.": {
-            "ru": "Тип продолжительности розыгрыша (максимум 3 дня)."
-        },
-		"Winner count (prize count).": {
-            "ru": "Количество победителей (призов)."
-        },
-		"How much money will each winner receive.": {
-            "ru": "Сколько денег получит каждый победитель?"
-        },
-		"Enable the distribution of money prizes by places": {
-            "ru": "Включить распределение по местам"
-        },
-		"How much money will receive each place.": {
-            "ru": "Сколько денег получит каждое место."
-        },
-		"Which upgrade will each winner receive.": {
-            "ru": "Какую привилегию получит каждый победитель?"
-        },
-		"Secret answer of your account.": {
-            "ru": "Ответьте на секретный вопрос."
-        },
-		"To whom the complaint is filed. Specify a nickname or a link to the profile.": {
-            "ru": "На кого подается жалоба. Укажите никнейм или ссылку на профиль."
-        },
-		"Did you buy account on the market?": {
-            "ru": "Вы купили аккаунт на Маркете?"
-        },
-		"Indicate the amount by which the responder deceived you.": {
-            "ru": "Укажите сумму, на которую вас обманул ответчик."
-        },
-		"The transaction took place through a guarantor or there was a transfer to the market with a hold?": {
-            "ru": "Сделка происходила через гаранта или \"безопасную сделку\"?"
-        },
-		"You should describe what's happened.<br><ul><li>describe the situation in a nutshell. If you wish, you can describe the situation in more detail using the \"Spoiler\" function</li><li>attach screenshots of correspondence. You must upload to the site Imgur - for convenience, use Ctrl + V when uploading screenshots to the album</li><li>other evidence</li><li>notify the respondent about the complaint you created, familiarize him with hidden content</li></ul>Describe the situation in as much detail as possible.": {
-            "ru": "Опишите, что произошло.<br><ul><li>опишите ситуацию в двух словах. При желании вы можете описать ситуацию более подробно с помощью функции \"Спойлер\"</li><li>приложите скриншоты переписки. Загружать нужно на сайт Imgur - для удобства используйте Ctrl + V при загрузке скриншотов в альбом</li><li>другие доказательства</li><li>уведомите ответчика о созданной вами жалобе, ознакомьте его со скрытым содержимым</li></ul>Опишите ситуацию как можно подробнее."
-        },
-		"Item id.": {
-            "ru": "Укажите идентификатор аккаунта на Маркете, ее можно взять, зайдя на страницу \"Мои покупки\"."
-        },
-		"Contacts and wallets of the responder. Specify the known data about the responder (Skype, Vkontakte, Qiwi, WebMoney, etc.), if any.": {
-            "ru": "Укажите известные данные об ответчике (Telegram, VK, QIWI и др.) , если такие имеются."
-        },
-		"Currency of Arbitrage.": {
-            "ru": "Валюта арбитража."
-        },
-		"Pay arbitrage claim now or later. (Only for <code>transfer_type = not_safe</code>)": {
-            "ru": "Оплатить арбитражное требование сейчас или позже. (Только для <code>transfer_type = not_safe</code>)"
-        },
-		"Funds transfer recipient. Upload a receipt for the transfer of funds, use the \"View receipt\" button in your wallet. Must be uploaded to Imgur. Write \"no\" if you have not paid.": {
-            "ru": "Загрузите квитанцию перевода средств, используйте кнопку \"Посмотреть квитанцию\" в кошельке. Необходимо загрузить на сайт imgur.com. Напишите \"нет\", если вы не производили оплату."
-        },
-		"Screenshot showing the respondent's Telegram login. If the correspondence was conducted in Telegram, upload a screenshot that will display the respondent's Telegram login against the background of your dialogue. The screenshot must be uploaded to Imgur. If the correspondence was conducted elsewhere, write \"no\".": {
-            "ru": "Если переписка велась в Telegram, загрузите скриншот, на котором будет отображен логин Telegram ответчика на фоне вашего диалога. Скриншот необходимо загрузить на сайт imgur.com. Если переписка велась в другом месте, напишите \"нет\"."
-        },
-		"Discussion state: Open": {
-            "ru": "Статус темы: Открыто"
-        },
-		"Forum id.": {
-            "ru": "Идентификатор раздела."
-        },
-		"Apply thread prefix": {
-            "ru": "Применить префикс темы"
-        },
-		"Send a notification to users who are followed to target node": {
-            "ru": "Отправка уведомления пользователям, которые следят за разделом"
-        },
-		"Move a thread to another forum.": {
-            "ru": "Переместить тему в другой раздел."
-        },
-		"List of ids of responses (if the poll allows multiple choices).": {
-            "ru": "Список идентификаторов ответов (если опрос допускает множественный выбор)."
-        },
-		"Number of thread data to be returned. Default value is 20.": {
-            "ru": "Количество возвращаемых данных о теме. Значение по умолчанию - 20."
-        },
-		"Comment id to get older comments.": {
-            "ru": "Идентификатор комментария, чтобы получить старые комментарии."
-        },
-		"Content of the post.": {
-            "ru": "Содержание сообщения."
-        },
-		"User id.": {
-            "ru": "Идентификатор пользователя."
-        },
-		"List of profile posts (with pagination).": {
-            "ru": "Список сообщений профиля (с разбивкой по страницам)."
-        },
-		"Page number of contents.": {
-            "ru": "Номер страницы содержания."
-        },
-		"Number of contents in a page.": {
-            "ru": "Количество содержимого в странице."
-        },
-		"The starting point of the selection by width.": {
-            "ru": "Начальная точка выбора по ширине."
-        },
-		"The starting point of the selection by height.": {
-            "ru": "Начальная точка выбора по высоте."
-        },
-		"Selection size. Minimum value - 16.": {
-            "ru": "Размер выбора. Минимальное значение - 16."
-        },
-		"Selection size. Minimum value - 100.": {
-            "ru": "Размер выбора. Минимальное значение - 100."
-        },
-		"Crop avatar for a user.": {
-            "ru": "Обрезать аватар пользователя."
-        },
-		"Upload background for a user.": {
-            "ru": "Загрузить фон пользователя."
-        },
-		"Crop background for a user.": {
-            "ru": "Обрезать фон пользователя."
-        },
-		"Delete background for a user.": {
-            "ru": "Удалить фон пользователя."
-        },
-		"List of users filtered by username, email or custom fields.": {
-            "ru": "Список пользователей, отфильтрованных по имени пользователя, электронной почте или пользовательским полям."
-        },
-		"Email to filter. Requires admincp scope.": {
-            "ru": "Электронная почта для фильтрации. Требуются права admincp."
-        },
-		"User location field.": {
-            "ru": "Поле местоположения пользователя."
-        },
-		"User occupation field.": {
-            "ru": "Поле род занятий пользователя."
-        },
-		"User homepage field.": {
-            "ru": "Поле сайт пользователя."
-        },
-		"User interests field.": {
-            "ru": "Поле интересы пользователя."
-        },
-		"User thread link for \"innovator\" trophy.": {
-            "ru": "Поле Трофей \"Инноватор\" пользователя."
-        },
-		"User thread link for \"innovator 2.0\" trophy.": {
-            "ru": "Поле Трофей \"Инноватор 2.0\" пользователя."
-        },
-		"User thread link for \"innovator 3.0\" trophy.": {
-            "ru": "Поле Трофей \"Инноватор 3.0\" пользователя."
-        },
-		"User scam url field.": {
-            "ru": "Поле скам пользователя."
-        },
-		"User maecenas value field.": {
-            "ru": "Поле меценатство пользователя."
-        },
-		"User telegram field.": {
-            "ru": "Поле telegram пользователя.."
-        },
-		"User vk field.": {
-            "ru": "Поле vk пользователя."
-        },
-		"User steam field.": {
-            "ru": "Поле steam пользователя."
-        },
-		"User jabber field.": {
-            "ru": "Поле jabber пользователя."
-        },
-		"Your discord.": {
-            "ru": "Поле discord пользователя."
-        },
-		"User lztDeposit field.": {
-            "ru": "Поле страховой депозит пользователя."
-        },
-		"User ban_reason field.": {
-            "ru": "Поле причина блокировки пользователя."
-        },
-		"New custom title of the user.": {
-            "ru": "Новый статус пользователя."
-        },
-		"List ids of new secondary groups. (Require admincp scope)": {
-            "ru": "Список идентификаторов новых вторичных групп. (Требуются права admincp)"
-        },
-		"Your date of birth (day).": {
-            "ru": "Дата рождения (день)."
-        },
-		"Your date of birth (month).": {
-            "ru": "Дата рождения (месяц)."
-        },
-		"Your date of birth (year).": {
-            "ru": "Дата рождения (год)."
-        },
-        "Return only the user count as users_total": {
-            "ru": "Возвращать только количество пользователей в виде users_total"
-        },
-		"Message. Required if <code>is_group = disabled</code>": {
-            "ru": "Сообщение. Требуется, если <code>is_group = disabled</code>."
-        },
-		"Is group. Set <code>disabled</code> if personal conversation, or set <code>enabled</code> if group": {
-            "ru": "Группа (беседа). Установите <code>disabled</code>, если личный диалог, или установите <code>enabled</code>, если группа (беседа)"
-        },
-		"List of recipients username's. Max recipients count is 10 (Separated by comma).": {
-            "ru": "Список имен пользователей получателей. Максимальное количество получателей - 10 (через запятую)."
-        },
-		"Specify multiple username's.": {
-            "ru": "Укажите несколько имен пользователей"
-        },
-		"The title of new conversation.": {
-            "ru": "Название новой группы."
-        },
-		"Open invite": {
-            "ru": "Разрешить участникам подключать к переписке других пользователей"
-        },
-		"Is conversation locked": {
-            "ru": "Диалог закрыт"
-        },
-		"Allow edit messages": {
-            "ru": "Разрешить редактирование своих сообщений"
-        },
-		"Create a new conversation.": {
-            "ru": "Создать новый диалог."
-        },
-		"Deletion type.": {
-            "ru": "Обработка новых ответов."
-        },
-		"Accept future messages.<br/>": {
-            "ru": "Принимать последующие сообщения.<br/>"
-        },
-		"Ignore future messages.<br/>": {
-            "ru": "Игнорировать последующие сообщения.<br/>"
-        },
-		"Should this conversation receive further responses in the future, this conversation will be restored to your inbox.": {
-            "ru": "Если появятся новые ответы, то переписка будет восстановлена у Вас во входящих."
-        },
-		"You will not be notified of any future responses and the conversation will remain deleted.": {
-            "ru": "Вы не будете получать уведомления о новых ответах, а переписка будет оставаться удалённой."
-        },
-		"Page number of tags list.": {
-            "ru": "Номер страницы тегов."
-        },
-		"Number of thread data to be returned.": {
-            "ru": "Количество возвращаемых данных о теме."
-        },
-		"Search for profile posts.": {
-            "ru": "Поиск сообщений профиля."
-        },
-		"List tags to search for tagged contents.": {
-            "ru": "Список тегов для поиска содержимого с тегами."
-        },
-		"Create a new contest.": {
-            "ru": "Создать новый розыгрыш."
-        },
-		"Create a Arbitrage.": {
-            "ru": "Создать новый арбитраж."
-        },
-		"Edit a thread.": {
-            "ru": "Редактировать тему"
-        },
-		"Recording of batch requests. The maximum number of jobs in a batch is 10.": {
-            "ru": "Запись пакетных запросов. Максимальное количество заданий в партии - 10."
-        },
-		"Stop recording batch requests and retrieve the list.": {
-            "ru": "Остановить запись пакетных запросов и получить список."
-        },
-		"Execute multiple API requests at once. Maximum batch jobs is 10.": {
-            "ru": "Выполнение нескольких API-запросов одновременно. Максимальное количество заданий в партии - 10."
-        },
-		"Batch jobs.": {
-            "ru": "Пакетные задания."
-        },
-		"Only staff members and curators can reply in thread.": {
-            "ru": "Только Команда Форума и Кураторы."
-        },
-		"Everyone can reply in thread.": {
-            "ru": "Все."
-        },
-		"Local and higher can reply in thread.": {
-            "ru": "Местный и выше."
-        },
-		"Resident or higher can reply in thread.": {
-            "ru": "Постоялец и выше"
-        },
-		"Expert or higher can reply in thread.": {
-            "ru": "Эксперт и выше"
-        },
-		"Guru and higher can reply in thread.": {
-            "ru": "Гуру и выше."
-        },
-		"Artificial Intelligence and higher can reply in thread.": {
-            "ru": "Искусственный интеллект и выше."
-        },
-		"Room id.": {
-            "ru": "Идентификатор комнаты."
-        },
-		"Content of the chat message.": {
-            "ru": "Содержание сообщения чата."
-        },
-		"Create chat message.": {
-            "ru": "Создать сообщение чата."
-        },
-		"Message id.": {
-            "ru": "Идентификатор сообщения чата."
-        },
-		"Delete chat message.": {
-            "ru": "Удалить сообщение чата."
-        },
-		"New content of the chat message.": {
-            "ru": "Новое содержание сообщения чата."
-        },
-		"Edit chat message.": {
-            "ru": "Редактировать сообщение чата."
-        },
-		"Message id to get older chat messages.": {
-            "ru": "Идентификатор сообщения для получения более старых сообщений чата."
-        },
-		"List chat messages.": {
-            "ru": "Список сообщений чата."
-        },
-		"List chatbox rooms.": {
-            "ru": "Список комнат чата."
-        },
-        "List ignored chat users.": {
-            "ru": "Список игнорируемых пользователей чата."
-        },
-        "Ignore chat user.": {
-            "ru": "Игнорировать пользователя чата."
-        },
-        "Report reason.": {
-            "ru": "Причина жалобы."
-        },
-        "Report chat message.": {
-            "ru": "Пожаловаться на сообщение чата."
-        },
-        "Chat": {
-            "ru": "Общий чат"
-        },
-        "Market chat": {
-            "ru": "Маркет чат"
-        },
-        "Newbie chat": {
-            "ru": "Чат для новичков"
-        },
-        "Marketplace": {
-            "ru": "Чат услуг"
+  "name": "LolzteamAPI",
+  "info": {
+    "en": "A module built on the official API of the zelenka.guru forum.<br>20 requests per minute (3 seconds delay between per request)<br>If you exceed the limit, the response code 429 will be returned to you.<br>Telegram: <a  href='#' onclick=BrowserAutomationStudio_OpenUrl('tg://resolve?domain=llimonix')>@llimonix</a> Forum thread: <a  href='#' onclick=BrowserAutomationStudio_OpenUrl('https://lolz.live/threads/5426271/')>lolz.live/threads/5426271</a>",
+    "ru": "Модуль, построенный на официальном API форума zelenka.guru.<br>20 запросов в минуту (задержка между каждым запросом составляет 3 секунды)<br>Если вы превысите лимит, вам будет возвращен код ответа 429.<br>Telegram: <a  href='#' onclick=BrowserAutomationStudio_OpenUrl('tg://resolve?domain=llimonix')>@llimonix</a> Тема на форуме: <a  href='#' onclick=BrowserAutomationStudio_OpenUrl('https://lolz.live/threads/5426271/')>lolz.live/threads/5426271</a>"
+  },
+  "icon": "icon.png",
+  "description": "A module built on the official API of the zelenka.guru forum",
+  "description_small": {
+    "en": "LOLZTEAM API",
+    "ru": "LOLZTEAM API"
+  },
+  "major_version": 1,
+  "minor_version": 1,
+  "developer_name": "llimonix",
+  "developer_email": "llimonix123@yandex.ru",
+  "developer_site": "https://github.com/llimonix",
+  "api_version": 1,
+  "actions": [
+    {
+      "name": "lztapi_settings",
+      "description": {
+        "en": "Default settings",
+        "ru": "Настройки по умолчанию"
+      },
+      "template": "LOLZTEAM API by llimonix -> {{baseUrl}}",
+      "is_element": false,
+      "interface": "src/settings/lztapi_settings_interface.js",
+      "select": "src/settings/lztapi_settings_select.js",
+      "code": [
+        {
+          "file": "src/settings/lztapi_settings_code.js",
+          "name": "lztapi_settings_code"
         }
-	},
-	"browser": [],
-	"depends": [],
-	"embeddeddata": [],
-	"engine": [
-		"engine.js",
-		"internal/tools.js",
-		"internal/errors.js",
-		"internal/request.js"
-	],
-	"languages": [],
-	"modules": [],
-	"is_autogenerated": true
+      ]
+    },
+    {
+      "name": "lztapi_get_categories",
+      "description": {
+        "en": "Categories list",
+        "ru": "Список категорий"
+      },
+      "template": "-> {{Save}}",
+      "is_element": false,
+      "interface": "src/categories/list/lztapi_get_categories_interface.js",
+      "select": "src/categories/list/lztapi_get_categories_select.js",
+      "code": [
+        {
+          "file": "src/categories/list/lztapi_get_categories_code.js",
+          "name": "lztapi_get_categories_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_get_category",
+      "description": {
+        "en": "Category details",
+        "ru": "Подробности категории"
+      },
+      "template": "{{categoryId}} -> {{Save}}",
+      "is_element": false,
+      "interface": "src/categories/get/lztapi_get_category_interface.js",
+      "select": "src/categories/get/lztapi_get_category_select.js",
+      "code": [
+        {
+          "file": "src/categories/get/lztapi_get_category_code.js",
+          "name": "lztapi_get_category_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_get_forums",
+      "description": {
+        "en": "Forums list",
+        "ru": "Список разделов"
+      },
+      "template": "-> {{Save}}",
+      "is_element": false,
+      "interface": "src/forums/list/lztapi_get_forums_interface.js",
+      "select": "src/forums/list/lztapi_get_forums_select.js",
+      "code": [
+        {
+          "file": "src/forums/list/lztapi_get_forums_code.js",
+          "name": "lztapi_get_forums_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_get_forum",
+      "description": {
+        "en": "Forum details",
+        "ru": "Подробности раздела"
+      },
+      "template": "{{forumId}} -> {{Save}}",
+      "is_element": false,
+      "interface": "src/forums/get/lztapi_get_forum_interface.js",
+      "select": "src/forums/get/lztapi_get_forum_select.js",
+      "code": [
+        {
+          "file": "src/forums/get/lztapi_get_forum_code.js",
+          "name": "lztapi_get_forum_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_get_followers",
+      "description": {
+        "en": "List subscribers forum",
+        "ru": "Список подписчиков раздела"
+      },
+      "template": "{{forumId}} -> {{Save}}",
+      "is_element": false,
+      "interface": "src/forums/followers/lztapi_get_followers_interface.js",
+      "select": "src/forums/followers/lztapi_get_followers_select.js",
+      "code": [
+        {
+          "file": "src/forums/followers/lztapi_get_followers_code.js",
+          "name": "lztapi_get_followers_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_get_followed_forums",
+      "description": {
+        "en": "List followed forums by current user.",
+        "ru": "Список разделов, на которые подписан текущий пользователь"
+      },
+      "template": "{{total}} -> {{Save}}",
+      "is_element": false,
+      "interface": "src/forums/followed/lztapi_get_followed_forums_interface.js",
+      "select": "src/forums/followed/lztapi_get_followed_forums_select.js",
+      "code": [
+        {
+          "file": "src/forums/followed/lztapi_get_followed_forums_code.js",
+          "name": "lztapi_get_followed_forums_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_follow_forum",
+      "description": {
+        "en": "Follow Forum",
+        "ru": "Подписаться на раздел"
+      },
+      "template": "{{forumId}} -> {{Save}}",
+      "is_element": false,
+      "interface": "src/forums/follow/lztapi_follow_forum_interface.js",
+      "select": "src/forums/follow/lztapi_follow_forum_select.js",
+      "code": [
+        {
+          "file": "src/forums/follow/lztapi_follow_forum_code.js",
+          "name": "lztapi_follow_forum_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_unfollow_forum",
+      "description": {
+        "en": "Unfollow Forum",
+        "ru": "Отписаться от раздела"
+      },
+      "template": "{{forumId}} -> {{Save}}",
+      "is_element": false,
+      "interface": "src/forums/unfollow/lztapi_unfollow_forum_interface.js",
+      "select": "src/forums/unfollow/lztapi_unfollow_forum_select.js",
+      "code": [
+        {
+          "file": "src/forums/unfollow/lztapi_unfollow_forum_code.js",
+          "name": "lztapi_unfollow_forum_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_get_pages",
+      "description": {
+        "en": "Pages list",
+        "ru": "Список страниц"
+      },
+      "template": "-> {{Save}}",
+      "is_element": false,
+      "interface": "src/pages/list/lztapi_get_pages_interface.js",
+      "select": "src/pages/list/lztapi_get_pages_select.js",
+      "code": [
+        {
+          "file": "src/pages/list/lztapi_get_pages_code.js",
+          "name": "lztapi_get_pages_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_get_page",
+      "description": {
+        "en": "Page details",
+        "ru": "Подробности страницы"
+      },
+      "template": "{{pageId}} -> {{Save}}",
+      "is_element": false,
+      "interface": "src/pages/get/lztapi_get_page_interface.js",
+      "select": "src/pages/get/lztapi_get_page_select.js",
+      "code": [
+        {
+          "file": "src/pages/get/lztapi_get_page_code.js",
+          "name": "lztapi_get_page_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_get_threads",
+      "description": {
+        "en": "Threads list",
+        "ru": "Список тем"
+      },
+      "template": "-> {{Save}}",
+      "is_element": false,
+      "interface": "src/threads/list/lztapi_get_threads_interface.js",
+      "select": "src/threads/list/lztapi_get_threads_select.js",
+      "code": [
+        {
+          "file": "src/threads/list/lztapi_get_threads_code.js",
+          "name": "lztapi_get_threads_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_get_thread",
+      "description": {
+        "en": "Thread details",
+        "ru": "Подробности темы"
+      },
+      "template": "{{threadId}} -> {{Save}}",
+      "is_element": false,
+      "interface": "src/threads/get/lztapi_get_thread_interface.js",
+      "select": "src/threads/get/lztapi_get_thread_select.js",
+      "code": [
+        {
+          "file": "src/threads/get/lztapi_get_thread_code.js",
+          "name": "lztapi_get_thread_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_create_thread",
+      "description": {
+        "en": "Create Thread",
+        "ru": "Создать тему"
+      },
+      "template": "({{forum_id}}) {{post_body}} -> {{Save}}",
+      "is_element": false,
+      "interface": "src/threads/create/lztapi_create_thread_interface.js",
+      "select": "src/threads/create/lztapi_create_thread_select.js",
+      "code": [
+        {
+          "file": "src/threads/create/lztapi_create_thread_code.js",
+          "name": "lztapi_create_thread_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_create_contest",
+      "description": {
+        "en": "Create Contest",
+        "ru": "Создать розыгрыш"
+      },
+      "template": "({{require_like_count}} : {{require_total_like_count}}) {{post_body}} -> {{Save}}",
+      "is_element": false,
+      "interface": "src/threads/create/contests/lztapi_create_contest_interface.js",
+      "select": "src/threads/create/contests/lztapi_create_contest_select.js",
+      "code": [
+        {
+          "file": "src/threads/create/contests/lztapi_create_contest_code.js",
+          "name": "lztapi_create_contest_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_create_arbitrage",
+      "description": {
+        "en": "Create Arbitrage",
+        "ru": "Создать арбитраж"
+      },
+      "template": "({{as_responder}} : {{as_amount}}{{currency}}) {{post_body}} -> {{Save}}",
+      "is_element": false,
+      "interface": "src/threads/create/arbitrage/lztapi_create_arbitrage_interface.js",
+      "select": "src/threads/create/arbitrage/lztapi_create_arbitrage_select.js",
+      "code": [
+        {
+          "file": "src/threads/create/arbitrage/lztapi_create_arbitrage_code.js",
+          "name": "lztapi_create_arbitrage_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_edit_thread",
+      "description": {
+        "en": "Edit Thread",
+        "ru": "Редактировать тему"
+      },
+      "template": "{{threadId}} -> {{Save}}",
+      "is_element": false,
+      "interface": "src/threads/edit/lztapi_edit_thread_interface.js",
+      "select": "src/threads/edit/lztapi_edit_thread_select.js",
+      "code": [
+        {
+          "file": "src/threads/edit/lztapi_edit_thread_code.js",
+          "name": "lztapi_edit_thread_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_delete_thread",
+      "description": {
+        "en": "Delete Thread",
+        "ru": "Удалить тему"
+      },
+      "template": "{{threadId}} -> {{Save}}",
+      "is_element": false,
+      "interface": "src/threads/delete/lztapi_delete_thread_interface.js",
+      "select": "src/threads/delete/lztapi_delete_thread_select.js",
+      "code": [
+        {
+          "file": "src/threads/delete/lztapi_delete_thread_code.js",
+          "name": "lztapi_delete_thread_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_bump_thread",
+      "description": {
+        "en": "Bump Thread",
+        "ru": "Поднять тему"
+      },
+      "template": "{{threadId}} -> {{Save}}",
+      "is_element": false,
+      "interface": "src/threads/bump/lztapi_bump_thread_interface.js",
+      "select": "src/threads/bump/lztapi_bump_thread_select.js",
+      "code": [
+        {
+          "file": "src/threads/bump/lztapi_bump_thread_code.js",
+          "name": "lztapi_bump_thread_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_move_thread",
+      "description": {
+        "en": "Move Thread",
+        "ru": "Переместить тему"
+      },
+      "template": "{{threadId}} : {{node_id}} -> {{Save}}",
+      "is_element": false,
+      "interface": "src/threads/move/lztapi_move_thread_interface.js",
+      "select": "src/threads/move/lztapi_move_thread_select.js",
+      "code": [
+        {
+          "file": "src/threads/move/lztapi_move_thread_code.js",
+          "name": "lztapi_move_thread_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_get_thread_followers",
+      "description": {
+        "en": "List thread's followers",
+        "ru": "Список подписчиков темы"
+      },
+      "template": "{{threadId}} -> {{Save}}",
+      "is_element": false,
+      "interface": "src/threads/followers/lztapi_get_thread_followers_interface.js",
+      "select": "src/threads/followers/lztapi_get_thread_followers_select.js",
+      "code": [
+        {
+          "file": "src/threads/followers/lztapi_get_thread_followers_code.js",
+          "name": "lztapi_get_thread_followers_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_get_followed_threads",
+      "description": {
+        "en": "List followed threads by current user",
+        "ru": "Список тем, на которые подписан текущий пользователь"
+      },
+      "template": "-> {{Save}}",
+      "is_element": false,
+      "interface": "src/threads/followed/lztapi_get_followed_threads_interface.js",
+      "select": "src/threads/followed/lztapi_get_followed_threads_select.js",
+      "code": [
+        {
+          "file": "src/threads/followed/lztapi_get_followed_threads_code.js",
+          "name": "lztapi_get_followed_threads_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_follow_thread",
+      "description": {
+        "en": "Follow Thread",
+        "ru": "Подписаться на тему"
+      },
+      "template": "{{threadId}} -> {{Save}}",
+      "is_element": false,
+      "interface": "src/threads/follow/lztapi_follow_thread_interface.js",
+      "select": "src/threads/follow/lztapi_follow_thread_select.js",
+      "code": [
+        {
+          "file": "src/threads/follow/lztapi_follow_thread_code.js",
+          "name": "lztapi_follow_thread_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_unfollow_thread",
+      "description": {
+        "en": "Unfollow Thread",
+        "ru": "Отписаться от темы"
+      },
+      "template": "{{threadId}} -> {{Save}}",
+      "is_element": false,
+      "interface": "src/threads/unfollow/lztapi_unfollow_thread_interface.js",
+      "select": "src/threads/unfollow/lztapi_unfollow_thread_select.js",
+      "code": [
+        {
+          "file": "src/threads/unfollow/lztapi_unfollow_thread_code.js",
+          "name": "lztapi_unfollow_thread_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_get_navigation_elements",
+      "description": {
+        "en": "Navigation list to the thread",
+        "ru": "Список навигации для перехода к теме"
+      },
+      "template": "{{threadId}} -> {{Save}}",
+      "is_element": false,
+      "interface": "src/navigation/elements/lztapi_get_navigation_elements_interface.js",
+      "select": "src/navigation/elements/lztapi_get_navigation_elements_select.js",
+      "code": [
+        {
+          "file": "src/navigation/elements/lztapi_get_navigation_elements_code.js",
+          "name": "lztapi_get_navigation_elements_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_get_poll",
+      "description": {
+        "en": "Information poll",
+        "ru": "Информация о голосовании"
+      },
+      "template": "{{threadId}} -> {{Save}}",
+      "is_element": false,
+      "interface": "src/threads/poll/get/lztapi_get_poll_interface.js",
+      "select": "src/threads/poll/get/lztapi_get_poll_select.js",
+      "code": [
+        {
+          "file": "src/threads/poll/get/lztapi_get_poll_code.js",
+          "name": "lztapi_get_poll_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_vote_poll",
+      "description": {
+        "en": "Vote on a thread poll",
+        "ru": "Проголосовать в голосовании"
+      },
+      "template": "{{threadId}} -> {{Save}}",
+      "is_element": false,
+      "interface": "src/threads/poll/vote/lztapi_vote_poll_interface.js",
+      "select": "src/threads/poll/vote/lztapi_vote_poll_select.js",
+      "code": [
+        {
+          "file": "src/threads/poll/vote/lztapi_vote_poll_code.js",
+          "name": "lztapi_vote_poll_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_get_unread_threads",
+      "description": {
+        "en": "List unread threads",
+        "ru": "Список непрочитанных тем"
+      },
+      "template": "-> {{Save}}",
+      "is_element": false,
+      "interface": "src/threads/unread/lztapi_get_unread_threads_interface.js",
+      "select": "src/threads/unread/lztapi_get_unread_threads_select.js",
+      "code": [
+        {
+          "file": "src/threads/unread/lztapi_get_unread_threads_code.js",
+          "name": "lztapi_get_unread_threads_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_get_recent_threads",
+      "description": {
+        "en": "List recent threads",
+        "ru": "Список последних тем"
+      },
+      "template": "-> {{Save}}",
+      "is_element": false,
+      "interface": "src/threads/recent/lztapi_get_recent_threads_interface.js",
+      "select": "src/threads/recent/lztapi_get_recent_threads_select.js",
+      "code": [
+        {
+          "file": "src/threads/recent/lztapi_get_recent_threads_code.js",
+          "name": "lztapi_get_recent_threads_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_get_post_comments",
+      "description": {
+        "en": "Comment list",
+        "ru": "Список комментариев"
+      },
+      "template": "{{postId}} -> {{Save}}",
+      "is_element": false,
+      "interface": "src/posts/comments/list/lztapi_get_post_comments_interface.js",
+      "select": "src/posts/comments/list/lztapi_get_post_comments_select.js",
+      "code": [
+        {
+          "file": "src/posts/comments/list/lztapi_get_post_comments_code.js",
+          "name": "lztapi_get_post_comments_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_create_post_comment",
+      "description": {
+        "en": "Create comment",
+        "ru": "Создать комментарий"
+      },
+      "template": "({{postId}}) {{comment_body}} -> {{Save}}",
+      "is_element": false,
+      "interface": "src/posts/comments/create/lztapi_create_post_comment_interface.js",
+      "select": "src/posts/comments/create/lztapi_create_post_comment_select.js",
+      "code": [
+        {
+          "file": "src/posts/comments/create/lztapi_create_post_comment_code.js",
+          "name": "lztapi_create_post_comment_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_get_posts",
+      "description": {
+        "en": "List posts",
+        "ru": "Список сообщений"
+      },
+      "template": "-> {{Save}}",
+      "is_element": false,
+      "interface": "src/posts/list/lztapi_get_posts_interface.js",
+      "select": "src/posts/list/lztapi_get_posts_select.js",
+      "code": [
+        {
+          "file": "src/posts/list/lztapi_get_posts_code.js",
+          "name": "lztapi_get_posts_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_get_post",
+      "description": {
+        "en": "Post details",
+        "ru": "Подробности сообщения"
+      },
+      "template": "{{postId}} -> {{Save}}",
+      "is_element": false,
+      "interface": "src/posts/get/lztapi_get_post_interface.js",
+      "select": "src/posts/get/lztapi_get_post_select.js",
+      "code": [
+        {
+          "file": "src/posts/get/lztapi_get_post_code.js",
+          "name": "lztapi_get_post_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_create_post",
+      "description": {
+        "en": "Create Post",
+        "ru": "Создать сообщение"
+      },
+      "template": "{{post_body}} -> {{Save}}",
+      "is_element": false,
+      "interface": "src/posts/create/lztapi_create_post_interface.js",
+      "select": "src/posts/create/lztapi_create_post_select.js",
+      "code": [
+        {
+          "file": "src/posts/create/lztapi_create_post_code.js",
+          "name": "lztapi_create_post_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_edit_post",
+      "description": {
+        "en": "Edit Post",
+        "ru": "Редактировать сообщение"
+      },
+      "template": "({{postId}}) {{post_body}} -> {{Save}}",
+      "is_element": false,
+      "interface": "src/posts/edit/lztapi_edit_post_interface.js",
+      "select": "src/posts/edit/lztapi_edit_post_select.js",
+      "code": [
+        {
+          "file": "src/posts/edit/lztapi_edit_post_code.js",
+          "name": "lztapi_edit_post_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_delete_post",
+      "description": {
+        "en": "Delete Post",
+        "ru": "Удалить сообщение"
+      },
+      "template": "{{postId}} -> {{Save}}",
+      "is_element": false,
+      "interface": "src/posts/delete/lztapi_delete_post_interface.js",
+      "select": "src/posts/delete/lztapi_delete_post_select.js",
+      "code": [
+        {
+          "file": "src/posts/delete/lztapi_delete_post_code.js",
+          "name": "lztapi_delete_post_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_get_post_likes",
+      "description": {
+        "en": "List users who liked a post",
+        "ru": "Список пользователей, которым понравилось сообщение"
+      },
+      "template": "{{postId}} -> {{Save}}",
+      "is_element": false,
+      "interface": "src/posts/likes/lztapi_get_post_likes_interface.js",
+      "select": "src/posts/likes/lztapi_get_post_likes_select.js",
+      "code": [
+        {
+          "file": "src/posts/likes/lztapi_get_post_likes_code.js",
+          "name": "lztapi_get_post_likes_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_like_post",
+      "description": {
+        "en": "Like Post",
+        "ru": "Нравится сообщение"
+      },
+      "template": "{{postId}} -> {{Save}}",
+      "is_element": false,
+      "interface": "src/posts/like/lztapi_like_post_interface.js",
+      "select": "src/posts/like/lztapi_like_post_select.js",
+      "code": [
+        {
+          "file": "src/posts/like/lztapi_like_post_code.js",
+          "name": "lztapi_like_post_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_unlike_post",
+      "description": {
+        "en": "Unlike Post",
+        "ru": "Не нравится сообщение"
+      },
+      "template": "{{postId}} -> {{Save}}",
+      "is_element": false,
+      "interface": "src/posts/unlike/lztapi_unlike_post_interface.js",
+      "select": "src/posts/unlike/lztapi_unlike_post_select.js",
+      "code": [
+        {
+          "file": "src/posts/unlike/lztapi_unlike_post_code.js",
+          "name": "lztapi_unlike_post_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_report_post",
+      "description": {
+        "en": "Report Post",
+        "ru": "Пожаловаться на сообщение"
+      },
+      "template": "{{postId}} : {{message}} -> {{Save}}",
+      "is_element": false,
+      "interface": "src/posts/report/lztapi_report_post_interface.js",
+      "select": "src/posts/report/lztapi_report_post_select.js",
+      "code": [
+        {
+          "file": "src/posts/report/lztapi_report_post_code.js",
+          "name": "lztapi_report_post_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_get_profile_post_comments",
+      "description": {
+        "en": "List profile post comments",
+        "ru": "Список комментариев сообщения профиля"
+      },
+      "template": "{{profilePostId}} -> {{Save}}",
+      "is_element": false,
+      "interface": "src/profile-posts/comments/list/lztapi_get_profile_post_comments_interface.js",
+      "select": "src/profile-posts/comments/list/lztapi_get_profile_post_comments_select.js",
+      "code": [
+        {
+          "file": "src/profile-posts/comments/list/lztapi_get_profile_post_comments_code.js",
+          "name": "lztapi_get_profile_post_comments_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_get_profile_post_comment",
+      "description": {
+        "en": "Details profile post comment",
+        "ru": "Подробности о комментарии к сообщению профиля"
+      },
+      "template": "{{profilePostId}} : {{commentId}} -> {{Save}}",
+      "is_element": false,
+      "interface": "src/profile-posts/comments/get/lztapi_get_profile_post_comment_interface.js",
+      "select": "src/profile-posts/comments/get/lztapi_get_profile_post_comment_select.js",
+      "code": [
+        {
+          "file": "src/profile-posts/comments/get/lztapi_get_profile_post_comment_code.js",
+          "name": "lztapi_get_profile_post_comment_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_create_profile_post_comment",
+      "description": {
+        "en": "Create a new profile post comment",
+        "ru": "Создать комментарий к сообщению профиля"
+      },
+      "template": "({{profilePostId}}) {{comment_body}} -> {{Save}}",
+      "is_element": false,
+      "interface": "src/profile-posts/comments/create/lztapi_create_profile_post_comment_interface.js",
+      "select": "src/profile-posts/comments/create/lztapi_create_profile_post_comment_select.js",
+      "code": [
+        {
+          "file": "src/profile-posts/comments/create/lztapi_create_profile_post_comment_code.js",
+          "name": "lztapi_create_profile_post_comment_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_get_profile_posts",
+      "description": {
+        "en": "List profile posts",
+        "ru": "Список сообщений профиля"
+      },
+      "template": "{{userId}} -> {{Save}}",
+      "is_element": false,
+      "interface": "src/profile-posts/list/lztapi_get_profile_posts_interface.js",
+      "select": "src/profile-posts/list/lztapi_get_profile_posts_select.js",
+      "code": [
+        {
+          "file": "src/profile-posts/list/lztapi_get_profile_posts_code.js",
+          "name": "lztapi_get_profile_posts_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_get_profile_post",
+      "description": {
+        "en": "Profile post details",
+        "ru": "Подробности сообщения профиля"
+      },
+      "template": "{{profilePostId}} -> {{Save}}",
+      "is_element": false,
+      "interface": "src/profile-posts/get/lztapi_get_profile_post_interface.js",
+      "select": "src/profile-posts/get/lztapi_get_profile_post_select.js",
+      "code": [
+        {
+          "file": "src/profile-posts/get/lztapi_get_profile_post_code.js",
+          "name": "lztapi_get_profile_post_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_create_profile_post",
+      "description": {
+        "en": "Create Profile Post",
+        "ru": "Создать сообщение в профиле"
+      },
+      "template": "({{user_id}}) {{post_body}} -> {{Save}}",
+      "is_element": false,
+      "interface": "src/profile-posts/create/lztapi_create_profile_post_interface.js",
+      "select": "src/profile-posts/create/lztapi_create_profile_post_select.js",
+      "code": [
+        {
+          "file": "src/profile-posts/create/lztapi_create_profile_post_code.js",
+          "name": "lztapi_create_profile_post_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_edit_profile_post",
+      "description": {
+        "en": "Edit Profile Post",
+        "ru": "Редактировать сообщение профиля"
+      },
+      "template": "({{profilePostId}}) {{post_body}} -> {{Save}}",
+      "is_element": false,
+      "interface": "src/profile-posts/edit/lztapi_edit_profile_post_interface.js",
+      "select": "src/profile-posts/edit/lztapi_edit_profile_post_select.js",
+      "code": [
+        {
+          "file": "src/profile-posts/edit/lztapi_edit_profile_post_code.js",
+          "name": "lztapi_edit_profile_post_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_delete_profile_post",
+      "description": {
+        "en": "Delete Profile Post",
+        "ru": "Удалить сообщение профиля"
+      },
+      "template": "{{profilePostId}} -> {{Save}}",
+      "is_element": false,
+      "interface": "src/profile-posts/delete/lztapi_delete_profile_post_interface.js",
+      "select": "src/profile-posts/delete/lztapi_delete_profile_post_select.js",
+      "code": [
+        {
+          "file": "src/profile-posts/delete/lztapi_delete_profile_post_code.js",
+          "name": "lztapi_delete_profile_post_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_get_profile_post_likes",
+      "description": {
+        "en": "List users who liked a profile post",
+        "ru": "Список пользователей, которым понравилось сообщение профиля"
+      },
+      "template": "{{profilePostId}} -> {{Save}}",
+      "is_element": false,
+      "interface": "src/profile-posts/likes/lztapi_get_profile_post_likes_interface.js",
+      "select": "src/profile-posts/likes/lztapi_get_profile_post_likes_select.js",
+      "code": [
+        {
+          "file": "src/profile-posts/likes/lztapi_get_profile_post_likes_code.js",
+          "name": "lztapi_get_profile_post_likes_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_like_profile_post",
+      "description": {
+        "en": "Like Profile Post",
+        "ru": "Нравится сообщение профиля"
+      },
+      "template": "{{profilePostId}} -> {{Save}}",
+      "is_element": false,
+      "interface": "src/profile-posts/like/lztapi_like_profile_post_interface.js",
+      "select": "src/profile-posts/like/lztapi_like_profile_post_select.js",
+      "code": [
+        {
+          "file": "src/profile-posts/like/lztapi_like_profile_post_code.js",
+          "name": "lztapi_like_profile_post_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_unlike_profile_post",
+      "description": {
+        "en": "Unlike Profile Post",
+        "ru": "Не нравится сообщение профиля"
+      },
+      "template": "{{profilePostId}} -> {{Save}}",
+      "is_element": false,
+      "interface": "src/profile-posts/unlike/lztapi_unlike_profile_post_interface.js",
+      "select": "src/profile-posts/unlike/lztapi_unlike_profile_post_select.js",
+      "code": [
+        {
+          "file": "src/profile-posts/unlike/lztapi_unlike_profile_post_code.js",
+          "name": "lztapi_unlike_profile_post_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_report_profile_post",
+      "description": {
+        "en": "Report Profile Post",
+        "ru": "Пожаловаться на сообщение профиля"
+      },
+      "template": "{{profilePostId}} : {{message}} -> {{Save}}",
+      "is_element": false,
+      "interface": "src/profile-posts/report/lztapi_report_profile_post_interface.js",
+      "select": "src/profile-posts/report/lztapi_report_profile_post_select.js",
+      "code": [
+        {
+          "file": "src/profile-posts/report/lztapi_report_profile_post_code.js",
+          "name": "lztapi_report_profile_post_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_upload_avatar",
+      "description": {
+        "en": "Upload Avatar",
+        "ru": "Загрузить аватар"
+      },
+      "template": "{{userId}} -> {{Save}}",
+      "is_element": false,
+      "interface": "src/users/avatar/upload/lztapi_upload_avatar_interface.js",
+      "select": "src/users/avatar/upload/lztapi_upload_avatar_select.js",
+      "code": [
+        {
+          "file": "src/users/avatar/upload/lztapi_upload_avatar_code.js",
+          "name": "lztapi_upload_avatar_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_crop_avatar",
+      "description": {
+        "en": "Crop Avatar",
+        "ru": "Обрезать аватар"
+      },
+      "template": "({{userId}}) {{crop}} -> {{Save}}",
+      "is_element": false,
+      "interface": "src/users/avatar/crop/lztapi_crop_avatar_interface.js",
+      "select": "src/users/avatar/crop/lztapi_crop_avatar_select.js",
+      "code": [
+        {
+          "file": "src/users/avatar/crop/lztapi_crop_avatar_code.js",
+          "name": "lztapi_crop_avatar_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_delete_avatar",
+      "description": {
+        "en": "Delete Avatar",
+        "ru": "Удалить аватар"
+      },
+      "template": "{{userId}} -> {{Save}}",
+      "is_element": false,
+      "interface": "src/users/avatar/delete/lztapi_delete_avatar_interface.js",
+      "select": "src/users/avatar/delete/lztapi_delete_avatar_select.js",
+      "code": [
+        {
+          "file": "src/users/avatar/delete/lztapi_delete_avatar_code.js",
+          "name": "lztapi_delete_avatar_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_upload_background",
+      "description": {
+        "en": "Upload Background",
+        "ru": "Загрузить фон"
+      },
+      "template": "{{userId}} -> {{Save}}",
+      "is_element": false,
+      "interface": "src/users/background/upload/lztapi_upload_background_interface.js",
+      "select": "src/users/background/upload/lztapi_upload_background_select.js",
+      "code": [
+        {
+          "file": "src/users/background/upload/lztapi_upload_background_code.js",
+          "name": "lztapi_upload_background_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_crop_background",
+      "description": {
+        "en": "Crop Background",
+        "ru": "Обрезать фон"
+      },
+      "template": "({{userId}}) {{crop}} -> {{Save}}",
+      "is_element": false,
+      "interface": "src/users/background/crop/lztapi_crop_background_interface.js",
+      "select": "src/users/background/crop/lztapi_crop_background_select.js",
+      "code": [
+        {
+          "file": "src/users/background/crop/lztapi_crop_background_code.js",
+          "name": "lztapi_crop_background_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_delete_background",
+      "description": {
+        "en": "Delete Background",
+        "ru": "Удалить фон"
+      },
+      "template": "{{userId}} -> {{Save}}",
+      "is_element": false,
+      "interface": "src/users/background/delete/lztapi_delete_background_interface.js",
+      "select": "src/users/background/delete/lztapi_delete_background_select.js",
+      "code": [
+        {
+          "file": "src/users/background/delete/lztapi_delete_background_code.js",
+          "name": "lztapi_delete_background_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_get_users",
+      "description": {
+        "en": "Users list",
+        "ru": "Список пользователей"
+      },
+      "template": "-> {{Save}}",
+      "is_element": false,
+      "interface": "src/users/list/lztapi_get_users_interface.js",
+      "select": "src/users/list/lztapi_get_users_select.js",
+      "code": [
+        {
+          "file": "src/users/list/lztapi_get_users_code.js",
+          "name": "lztapi_get_users_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_get_user_fields",
+      "description": {
+        "en": "List user fields",
+        "ru": "Список полей пользователя"
+      },
+      "template": "-> {{Save}}",
+      "is_element": false,
+      "interface": "src/users/fields/lztapi_get_user_fields_interface.js",
+      "select": "src/users/fields/lztapi_get_user_fields_select.js",
+      "code": [
+        {
+          "file": "src/users/fields/lztapi_get_user_fields_code.js",
+          "name": "lztapi_get_user_fields_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_find_users",
+      "description": {
+        "en": "Find Users",
+        "ru": "Поиск пользователей"
+      },
+      "template": "-> {{Save}}",
+      "is_element": false,
+      "interface": "src/users/find/lztapi_find_users_interface.js",
+      "select": "src/users/find/lztapi_find_users_select.js",
+      "code": [
+        {
+          "file": "src/users/find/lztapi_find_users_code.js",
+          "name": "lztapi_find_users_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_get_user",
+      "description": {
+        "en": "User details",
+        "ru": "Подробности о пользователе"
+      },
+      "template": "{{userId}} -> {{Save}}",
+      "is_element": false,
+      "interface": "src/users/get/lztapi_get_user_interface.js",
+      "select": "src/users/get/lztapi_get_user_select.js",
+      "code": [
+        {
+          "file": "src/users/get/lztapi_get_user_code.js",
+          "name": "lztapi_get_user_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_edit_user",
+      "description": {
+        "en": "Edit User",
+        "ru": "Редактировать пользователя"
+      },
+      "template": "{{userId}} -> {{Save}}",
+      "is_element": false,
+      "interface": "src/users/edit/lztapi_edit_user_interface.js",
+      "select": "src/users/edit/lztapi_edit_user_select.js",
+      "code": [
+        {
+          "file": "src/users/edit/lztapi_edit_user_code.js",
+          "name": "lztapi_edit_user_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_get_user_followers",
+      "description": {
+        "en": "List user's followers",
+        "ru": "Список подписчиков пользователя"
+      },
+      "template": "{{userId}} -> {{Save}}",
+      "is_element": false,
+      "interface": "src/users/followers/lztapi_get_user_followers_interface.js",
+      "select": "src/users/followers/lztapi_get_user_followers_select.js",
+      "code": [
+        {
+          "file": "src/users/followers/lztapi_get_user_followers_code.js",
+          "name": "lztapi_get_user_followers_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_get_followed_users_by_user",
+      "description": {
+        "en": "List users whom are followed by a user",
+        "ru": "Список пользователей, на которых подписан пользователь"
+      },
+      "template": "{{userId}} -> {{Save}}",
+      "is_element": false,
+      "interface": "src/users/followings/lztapi_get_followed_users_by_user_interface.js",
+      "select": "src/users/followings/lztapi_get_followed_users_by_user_select.js",
+      "code": [
+        {
+          "file": "src/users/followings/lztapi_get_followed_users_by_user_code.js",
+          "name": "lztapi_get_followed_users_by_user_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_follow_user",
+      "description": {
+        "en": "Follow User",
+        "ru": "Подписаться на пользователя"
+      },
+      "template": "{{userId}} -> {{Save}}",
+      "is_element": false,
+      "interface": "src/users/follow/lztapi_follow_user_interface.js",
+      "select": "src/users/follow/lztapi_follow_user_select.js",
+      "code": [
+        {
+          "file": "src/users/follow/lztapi_follow_user_code.js",
+          "name": "lztapi_follow_user_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_unfollow_user",
+      "description": {
+        "en": "Unfollow User",
+        "ru": "Отписаться от пользователя"
+      },
+      "template": "{{userId}} -> {{Save}}",
+      "is_element": false,
+      "interface": "src/users/unfollow/lztapi_unfollow_user_interface.js",
+      "select": "src/users/unfollow/lztapi_unfollow_user_select.js",
+      "code": [
+        {
+          "file": "src/users/unfollow/lztapi_unfollow_user_code.js",
+          "name": "lztapi_unfollow_user_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_get_ignored_users",
+      "description": {
+        "en": "List ignored users",
+        "ru": "Список игнорируемых пользователей"
+      },
+      "template": "-> {{Save}}",
+      "is_element": false,
+      "interface": "src/users/ignored/lztapi_get_ignored_users_interface.js",
+      "select": "src/users/ignored/lztapi_get_ignored_users_select.js",
+      "code": [
+        {
+          "file": "src/users/ignored/lztapi_get_ignored_users_code.js",
+          "name": "lztapi_get_ignored_users_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_ignore_user",
+      "description": {
+        "en": "Ignore User",
+        "ru": "Игнорировать пользователя"
+      },
+      "template": "{{userId}} -> {{Save}}",
+      "is_element": false,
+      "interface": "src/users/ignore/lztapi_ignore_user_interface.js",
+      "select": "src/users/ignore/lztapi_ignore_user_select.js",
+      "code": [
+        {
+          "file": "src/users/ignore/lztapi_ignore_user_code.js",
+          "name": "lztapi_ignore_user_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_unignore_user",
+      "description": {
+        "en": "Unignore User",
+        "ru": "Не игнорировать пользователя"
+      },
+      "template": "{{userId}} -> {{Save}}",
+      "is_element": false,
+      "interface": "src/users/unignore/lztapi_unignore_user_interface.js",
+      "select": "src/users/unignore/lztapi_unignore_user_select.js",
+      "code": [
+        {
+          "file": "src/users/unignore/lztapi_unignore_user_code.js",
+          "name": "lztapi_unignore_user_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_get_contents",
+      "description": {
+        "en": "List contents created by user",
+        "ru": "Список содержимого, созданного пользователем"
+      },
+      "template": "{{userId}} -> {{Save}}",
+      "is_element": false,
+      "interface": "src/users/timeline/lztapi_get_contents_interface.js",
+      "select": "src/users/timeline/lztapi_get_contents_select.js",
+      "code": [
+        {
+          "file": "src/users/timeline/lztapi_get_contents_code.js",
+          "name": "lztapi_get_contents_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_get_conversation_messages",
+      "description": {
+        "en": "List messages conversation",
+        "ru": "Список сообщений в диалоге"
+      },
+      "template": "{{conversation_id}} -> {{Save}}",
+      "is_element": false,
+      "interface": "src/conversations/messages/list/lztapi_get_conversation_messages_interface.js",
+      "select": "src/conversations/messages/list/lztapi_get_conversation_messages_select.js",
+      "code": [
+        {
+          "file": "src/conversations/messages/list/lztapi_get_conversation_messages_code.js",
+          "name": "lztapi_get_conversation_messages_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_get_conversation_message",
+      "description": {
+        "en": "Message details",
+        "ru": "Подробности сообщения диалога"
+      },
+      "template": "{{messageId}} -> {{Save}}",
+      "is_element": false,
+      "interface": "src/conversations/messages/get/lztapi_get_conversation_message_interface.js",
+      "select": "src/conversations/messages/get/lztapi_get_conversation_message_select.js",
+      "code": [
+        {
+          "file": "src/conversations/messages/get/lztapi_get_conversation_message_code.js",
+          "name": "lztapi_get_conversation_message_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_create_conversation_message",
+      "description": {
+        "en": "Create conversation message",
+        "ru": "Создать сообщение диалога"
+      },
+      "template": "({{conversation_id}}) {{message_body}} -> {{Save}}",
+      "is_element": false,
+      "interface": "src/conversations/messages/create/lztapi_create_conversation_message_interface.js",
+      "select": "src/conversations/messages/create/lztapi_create_conversation_message_select.js",
+      "code": [
+        {
+          "file": "src/conversations/messages/create/lztapi_create_conversation_message_code.js",
+          "name": "lztapi_create_conversation_message_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_edit_conversation_message",
+      "description": {
+        "en": "Edit conversation message",
+        "ru": "Редактировать сообщение диалога"
+      },
+      "template": "({{messageId}}) {{message_body}} -> {{Save}}",
+      "is_element": false,
+      "interface": "src/conversations/messages/edit/lztapi_edit_conversation_message_interface.js",
+      "select": "src/conversations/messages/edit/lztapi_edit_conversation_message_select.js",
+      "code": [
+        {
+          "file": "src/conversations/messages/edit/lztapi_edit_conversation_message_code.js",
+          "name": "lztapi_edit_conversation_message_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_get_conversations",
+      "description": {
+        "en": "List conversations",
+        "ru": "Список диалогов"
+      },
+      "template": "-> {{Save}}",
+      "is_element": false,
+      "interface": "src/conversations/list/lztapi_get_conversations_interface.js",
+      "select": "src/conversations/list/lztapi_get_conversations_select.js",
+      "code": [
+        {
+          "file": "src/conversations/list/lztapi_get_conversations_code.js",
+          "name": "lztapi_get_conversations_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_get_conversation",
+      "description": {
+        "en": "Conversation details",
+        "ru": "Подробности диалога"
+      },
+      "template": "{{conversationId}} -> {{Save}}",
+      "is_element": false,
+      "interface": "src/conversations/get/lztapi_get_conversation_interface.js",
+      "select": "src/conversations/get/lztapi_get_conversation_select.js",
+      "code": [
+        {
+          "file": "src/conversations/get/lztapi_get_conversation_code.js",
+          "name": "lztapi_get_conversation_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_create_conversation",
+      "description": {
+        "en": "Create conversation",
+        "ru": "Создать диалог"
+      },
+      "template": "-> {{Save}}",
+      "is_element": false,
+      "interface": "src/conversations/create/lztapi_create_conversation_interface.js",
+      "select": "src/conversations/create/lztapi_create_conversation_select.js",
+      "code": [
+        {
+          "file": "src/conversations/create/lztapi_create_conversation_code.js",
+          "name": "lztapi_create_conversation_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_leave_conversation",
+      "description": {
+        "en": "Leave conversation",
+        "ru": "Покинуть диалог"
+      },
+      "template": "{{conversationId}} : {{delete_type}} -> {{Save}}",
+      "is_element": false,
+      "interface": "src/conversations/leave/lztapi_leave_conversation_interface.js",
+      "select": "src/conversations/leave/lztapi_leave_conversation_select.js",
+      "code": [
+        {
+          "file": "src/conversations/leave/lztapi_leave_conversation_code.js",
+          "name": "lztapi_leave_conversation_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_get_chats",
+      "description": {
+        "en": "List chatbox rooms",
+        "ru": "Список комнат чата"
+      },
+      "template": "{{room_id}} -> {{Save}}",
+      "is_element": false,
+      "interface": "src/chatbox/list/lztapi_get_chats_interface.js",
+      "select": "src/chatbox/list/lztapi_get_chats_select.js",
+      "code": [
+        {
+          "file": "src/chatbox/list/lztapi_get_chats_code.js",
+          "name": "lztapi_get_chats_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_get_ignored_users_chats",
+      "description": {
+        "en": "List ignored chat users",
+        "ru": "Список игнорируемых пользователей чата"
+      },
+      "template": "-> {{Save}}",
+      "is_element": false,
+      "interface": "src/chatbox/ignored/lztapi_get_ignored_users_chats_interface.js",
+      "select": "src/chatbox/ignored/lztapi_get_ignored_users_chats_select.js",
+      "code": [
+        {
+          "file": "src/chatbox/ignored/lztapi_get_ignored_users_chats_code.js",
+          "name": "lztapi_get_ignored_users_chats_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_ignore_chat_user",
+      "description": {
+        "en": "Ignore chat user",
+        "ru": "Игнорировать пользователя чата"
+      },
+      "template": "{{user_id}} -> {{Save}}",
+      "is_element": false,
+      "interface": "src/chatbox/ignore/lztapi_ignore_chat_user_interface.js",
+      "select": "src/chatbox/ignore/lztapi_ignore_chat_user_select.js",
+      "code": [
+        {
+          "file": "src/chatbox/ignore/lztapi_ignore_chat_user_code.js",
+          "name": "lztapi_ignore_chat_user_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_unignore_chat_user",
+      "description": {
+        "en": "Unignore chat user",
+        "ru": "Не игнорировать пользователя чата"
+      },
+      "template": "{{user_id}} -> {{Save}}",
+      "is_element": false,
+      "interface": "src/chatbox/unignore/lztapi_unignore_chat_user_interface.js",
+      "select": "src/chatbox/unignore/lztapi_unignore_chat_user_select.js",
+      "code": [
+        {
+          "file": "src/chatbox/unignore/lztapi_unignore_chat_user_code.js",
+          "name": "lztapi_unignore_chat_user_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_get_chat_messages",
+      "description": {
+        "en": "List chat messages",
+        "ru": "Список сообщений чата"
+      },
+      "template": "{{room_id}} -> {{Save}}",
+      "is_element": false,
+      "interface": "src/chatbox/messages/list/lztapi_get_chat_messages_interface.js",
+      "select": "src/chatbox/messages/list/lztapi_get_chat_messages_select.js",
+      "code": [
+        {
+          "file": "src/chatbox/messages/list/lztapi_get_chat_messages_code.js",
+          "name": "lztapi_get_chat_messages_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_create_chat_message",
+      "description": {
+        "en": "Create chat message",
+        "ru": "Создать сообщение чата"
+      },
+      "template": "({{room_id}}) {{message}} -> {{Save}}",
+      "is_element": false,
+      "interface": "src/chatbox/messages/create/lztapi_create_chat_message_interface.js",
+      "select": "src/chatbox/messages/create/lztapi_create_chat_message_select.js",
+      "code": [
+        {
+          "file": "src/chatbox/messages/create/lztapi_create_chat_message_code.js",
+          "name": "lztapi_create_chat_message_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_edit_chat_message",
+      "description": {
+        "en": "Edit chat message",
+        "ru": "Редактировать сообщение чата"
+      },
+      "template": "({{message_id}}) {{message}} -> {{Save}}",
+      "is_element": false,
+      "interface": "src/chatbox/messages/edit/lztapi_edit_chat_message_interface.js",
+      "select": "src/chatbox/messages/edit/lztapi_edit_chat_message_select.js",
+      "code": [
+        {
+          "file": "src/chatbox/messages/edit/lztapi_edit_chat_message_code.js",
+          "name": "lztapi_edit_chat_message_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_delete_chat_message",
+      "description": {
+        "en": "Delete chat message",
+        "ru": "Удалить сообщение чата"
+      },
+      "template": "{{message_id}} -> {{Save}}",
+      "is_element": false,
+      "interface": "src/chatbox/messages/delete/lztapi_delete_chat_message_interface.js",
+      "select": "src/chatbox/messages/delete/lztapi_delete_chat_message_select.js",
+      "code": [
+        {
+          "file": "src/chatbox/messages/delete/lztapi_delete_chat_message_code.js",
+          "name": "lztapi_delete_chat_message_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_report_chat_message",
+      "description": {
+        "en": "Report chat message",
+        "ru": "Пожаловаться на сообщение чата"
+      },
+      "template": "({{message_id}}) {{message}} -> {{Save}}",
+      "is_element": false,
+      "interface": "src/chatbox/messages/report/lztapi_report_chat_message_interface.js",
+      "select": "src/chatbox/messages/report/lztapi_report_chat_message_select.js",
+      "code": [
+        {
+          "file": "src/chatbox/messages/report/lztapi_report_chat_message_code.js",
+          "name": "lztapi_report_chat_message_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_get_notifications",
+      "description": {
+        "en": "List notifications",
+        "ru": "Список уведомлений"
+      },
+      "template": "-> {{Save}}",
+      "is_element": false,
+      "interface": "src/notifications/list/lztapi_get_notifications_interface.js",
+      "select": "src/notifications/list/lztapi_get_notifications_select.js",
+      "code": [
+        {
+          "file": "src/notifications/list/lztapi_get_notifications_code.js",
+          "name": "lztapi_get_notifications_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_get_notification",
+      "description": {
+        "en": "Notification details",
+        "ru": "Подробности уведомления"
+      },
+      "template": "{{notificationId}} -> {{Save}}",
+      "is_element": false,
+      "interface": "src/notifications/get/lztapi_get_notification_interface.js",
+      "select": "src/notifications/get/lztapi_get_notification_select.js",
+      "code": [
+        {
+          "file": "src/notifications/get/lztapi_get_notification_code.js",
+          "name": "lztapi_get_notification_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_mark_notification_read",
+      "description": {
+        "en": "Mark the notification(s) as read",
+        "ru": "Отметить прочитанным уведомление(-я)"
+      },
+      "template": "-> {{Save}}",
+      "is_element": false,
+      "interface": "src/notifications/read/lztapi_mark_notification_read_interface.js",
+      "select": "src/notifications/read/lztapi_mark_notification_read_select.js",
+      "code": [
+        {
+          "file": "src/notifications/read/lztapi_mark_notification_read_code.js",
+          "name": "lztapi_mark_notification_read_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_get_popular_tags",
+      "description": {
+        "en": "List popular tags",
+        "ru": "Список популярных тегов"
+      },
+      "template": "-> {{Save}}",
+      "is_element": false,
+      "interface": "src/tags/popular/lztapi_get_popular_tags_interface.js",
+      "select": "src/tags/popular/lztapi_get_popular_tags_select.js",
+      "code": [
+        {
+          "file": "src/tags/popular/lztapi_get_popular_tags_code.js",
+          "name": "lztapi_get_popular_tags_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_get_tags",
+      "description": {
+        "en": "List tags",
+        "ru": "Список тегов"
+      },
+      "template": "-> {{Save}}",
+      "is_element": false,
+      "interface": "src/tags/list/lztapi_get_tags_interface.js",
+      "select": "src/tags/list/lztapi_get_tags_select.js",
+      "code": [
+        {
+          "file": "src/tags/list/lztapi_get_tags_code.js",
+          "name": "lztapi_get_tags_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_get_tagged_content",
+      "description": {
+        "en": "List tagged contents",
+        "ru": "Список содержимого с тегами"
+      },
+      "template": "{{tagId}} -> {{Save}}",
+      "is_element": false,
+      "interface": "src/tags/tagged/lztapi_get_tagged_content_interface.js",
+      "select": "src/tags/tagged/lztapi_get_tagged_content_select.js",
+      "code": [
+        {
+          "file": "src/tags/tagged/lztapi_get_tagged_content_code.js",
+          "name": "lztapi_get_tagged_content_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_get_filtered_content",
+      "description": {
+        "en": "List tags with filters",
+        "ru": "Список тегов с фильтрами"
+      },
+      "template": "{{tag}} -> {{Save}}",
+      "is_element": false,
+      "interface": "src/tags/find/lztapi_get_filtered_content_interface.js",
+      "select": "src/tags/find/lztapi_get_filtered_content_select.js",
+      "code": [
+        {
+          "file": "src/tags/find/lztapi_get_filtered_content_code.js",
+          "name": "lztapi_get_filtered_content_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_search",
+      "description": {
+        "en": "Search all",
+        "ru": "Поиск всего"
+      },
+      "template": "-> {{Save}}",
+      "is_element": false,
+      "interface": "src/search/all/lztapi_search_interface.js",
+      "select": "src/search/all/lztapi_search_select.js",
+      "code": [
+        {
+          "file": "src/search/all/lztapi_search_code.js",
+          "name": "lztapi_search_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_search_thread",
+      "description": {
+        "en": "Search for threads",
+        "ru": "Поиск тем"
+      },
+      "template": "-> {{Save}}",
+      "is_element": false,
+      "interface": "src/search/threads/lztapi_search_thread_interface.js",
+      "select": "src/search/threads/lztapi_search_thread_select.js",
+      "code": [
+        {
+          "file": "src/search/threads/lztapi_search_thread_code.js",
+          "name": "lztapi_search_thread_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_search_post",
+      "description": {
+        "en": "Search for posts",
+        "ru": "Поиск сообщений"
+      },
+      "template": "-> {{Save}}",
+      "is_element": false,
+      "interface": "src/search/posts/lztapi_search_post_interface.js",
+      "select": "src/search/posts/lztapi_search_post_select.js",
+      "code": [
+        {
+          "file": "src/search/posts/lztapi_search_post_code.js",
+          "name": "lztapi_search_post_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_search_profile_posts",
+      "description": {
+        "en": "Search for profile posts",
+        "ru": "Поиск сообщений профиля"
+      },
+      "template": "-> {{Save}}",
+      "is_element": false,
+      "interface": "src/search/profile-posts/lztapi_search_profile_posts_interface.js",
+      "select": "src/search/profile-posts/lztapi_search_profile_posts_select.js",
+      "code": [
+        {
+          "file": "src/search/profile-posts/lztapi_search_profile_posts_code.js",
+          "name": "lztapi_search_profile_posts_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_search_tagged",
+      "description": {
+        "en": "Search by tags",
+        "ru": "Поиск по тегам"
+      },
+      "template": "-> {{Save}}",
+      "is_element": false,
+      "interface": "src/search/tagged/lztapi_search_tagged_interface.js",
+      "select": "src/search/tagged/lztapi_search_tagged_select.js",
+      "code": [
+        {
+          "file": "src/search/tagged/lztapi_search_tagged_code.js",
+          "name": "lztapi_search_tagged_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_get_navigation",
+      "description": {
+        "en": "List navigation elements",
+        "ru": "Список элементов навигации"
+      },
+      "template": "-> {{Save}}",
+      "is_element": false,
+      "interface": "src/navigation/get/lztapi_get_navigation_interface.js",
+      "select": "src/navigation/get/lztapi_get_navigation_select.js",
+      "code": [
+        {
+          "file": "src/navigation/get/lztapi_get_navigation_code.js",
+          "name": "lztapi_get_navigation_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_batch_record",
+      "description": {
+        "en": "Record batch requests",
+        "ru": "Записать пакетные запросы"
+      },
+      "template": "-> {{Save}}",
+      "is_element": false,
+      "interface": "src/batch/record/lztapi_batch_record_interface.js",
+      "select": "src/batch/record/lztapi_batch_record_select.js",
+      "code": [
+        {
+          "file": "src/batch/record/lztapi_batch_record_code.js",
+          "name": "lztapi_batch_record_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_batch_stop",
+      "description": {
+        "en": "Stop batch requests",
+        "ru": "Остановить пакетные запросы"
+      },
+      "template": "-> {{Save}}",
+      "is_element": false,
+      "interface": "src/batch/stop/lztapi_batch_stop_interface.js",
+      "select": "src/batch/stop/lztapi_batch_stop_select.js",
+      "code": [
+        {
+          "file": "src/batch/stop/lztapi_batch_stop_code.js",
+          "name": "lztapi_batch_stop_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_batch_execute",
+      "description": {
+        "en": "Execute batch requests",
+        "ru": "Выполнить пакетные запросы"
+      },
+      "template": "-> {{Save}}",
+      "is_element": false,
+      "interface": "src/batch/execute/lztapi_batch_execute_interface.js",
+      "select": "src/batch/execute/lztapi_batch_execute_select.js",
+      "code": [
+        {
+          "file": "src/batch/execute/lztapi_batch_execute_code.js",
+          "name": "lztapi_batch_execute_code"
+        }
+      ]
+    }
+  ],
+  "localize": {
+    "Proxy Settings": {
+      "ru": "Настройки прокси"
+    },
+    "Use a proxy": {
+      "ru": "Использовать прокси"
+    },
+    "By default, the LOLZ API works without a proxy, this action installs a proxy": {
+      "ru": "По умолчанию LOLZ API работает без прокси, это действие устанавливает прокси"
+    },
+    "Reassigning errors": {
+      "ru": "Переназначение ошибок"
+    },
+    "It is recommended to leave the default settings": {
+      "ru": "Рекомендуется оставить настройки по умолчанию"
+    },
+    "Error codes that calls <code>Fail</code> action.": {
+      "ru": "Коды ошибок, вызывающие действие <code>Fail</code>."
+    },
+    "Multiple error codes.": {
+      "ru": "Множество кодов ошибок."
+    },
+    "Dont restart thread.": {
+      "ru": "Не перезапускать поток."
+    },
+    "Script End": {
+      "ru": "Прервать Скрипт"
+    },
+    "Error codes that calls <code>Script End</code> action.": {
+      "ru": "Коды ошибок, вызывающие действие <code>Прервать Скрипт</code>."
+    },
+    "Error codes to ignore.": {
+      "ru": "Коды ошибок, которые нужно игнорировать."
+    },
+    "Token": {
+      "ru": "Токен"
+    },
+    "All fields of this group are optional": {
+      "ru": "Все поля этой группы необязательны"
+    },
+    "Must be separated by <code>,</code>.": {
+      "ru": "Должны быть разделены <code>,</code>."
+    },
+    "Requests delivery": {
+      "ru": "Доставка запросов"
+    },
+    "It is recommended to leave the default settings, or increase them if you have a slow Internet connection": {
+      "ru": "Рекомендуется оставить настройки по умолчанию или увеличить их, если у вас медленное интернет-соединение"
+    },
+    "Timeout": {
+      "ru": "Таймаут"
+    },
+    "Maximum waiting time per request.": {
+      "ru": "Максимальное время ожидания одного запроса."
+    },
+    "Wait 1 second.": {
+      "ru": "Ждать 1 секунду."
+    },
+    "Wait 5 seconds.": {
+      "ru": "Ждать 5 секунд."
+    },
+    "Wait 10 seconds.": {
+      "ru": "Ждать 10 секунд."
+    },
+    "Interval": {
+      "ru": "Интервал"
+    },
+    "Interval for sending requests.": {
+      "ru": "Интервал отправки запросов."
+    },
+    "Send request every second.": {
+      "ru": "Отправить запрос каждую секунду."
+    },
+    "Send request every 5 seconds.": {
+      "ru": "Отправить запрос каждые 5 секунд."
+    },
+    "Send request every 10 seconds.": {
+      "ru": "Отправить запрос каждые 10 секунд."
+    },
+    "Time threshold": {
+      "ru": "Временной порог"
+    },
+    "Maximum execution time.": {
+      "ru": "Максимальное время выполнения."
+    },
+    "Perform an action no more than 1 second.": {
+      "ru": "Выполнять действие не более 1 секунды."
+    },
+    "Perform an action no more than 5 seconds.": {
+      "ru": "Выполнять действие не более 5 секунд."
+    },
+    "Perform an action no more than 10 seconds.": {
+      "ru": "Выполнять действие не более 10 секунд."
+    },
+    "Ordering of categories.": {
+      "ru": "Порядок расположения категорий."
+    },
+    "Ordering of threads.": {
+      "ru": "Порядок расположения тем."
+    },
+    "List of all categories in the system.": {
+      "ru": "Список всех категорий в системе."
+    },
+    "ID of the parent forum. If there is, filter out the categories that are direct children of this forum.": {
+      "ru": "Идентификатор раздела. Если существует, отфильтруйте категории, которые являются прямыми дочерними по отношению к этому разделу."
+    },
+    "ID of the parent category. If it exists, filter out the categories that are direct children of that category": {
+      "ru": "Идентификатор категории. Если существует, отфильтруйте категории, которые являются прямыми дочерними по отношению к этой категории."
+    },
+    "Detail information of a category.": {
+      "ru": "Подробная информация о категории."
+    },
+    "BaseUrl": {
+      "ru": "Базовый URL"
+    },
+    "Id of parent category. If exists, filter forums that are direct children of that category.": {
+      "ru": "Идентификатор категории. Если существует, отфильтруйте разделы, которые являются прямыми дочерними для этой категории."
+    },
+    "Id of parent forum. If exists, filter forums that are direct children of that forum.": {
+      "ru": "Идентификатор раздела. Если существует, отфильтруйте разделы, которые являются прямыми дочерними по отношению к этому разделу."
+    },
+    "Ordering of forums.": {
+      "ru": "Порядок расположения разделов."
+    },
+    "List of all forums in the system.": {
+      "ru": "Список всех разделов в системе."
+    },
+    "Detail information of a forum.": {
+      "ru": "Подробная информация о разделе."
+    },
+    "List of a forum's followers. For privacy reason, only the current user will be included in the list (if the user follows the specified forum).": {
+      "ru": "Список подписчиков раздела. По соображениям конфиденциальности в список будет включен только текущий пользователь (если он подписан на указанный раздел)."
+    },
+    "Whether to receive notification for post (<code>enabled</code>) or just thread (<code>disabled</code>)": {
+      "ru": "Отправлять уведомления, если новые сообщения (<code>enabled</code>) или просто новые темы (<code>disabled</code>)"
+    },
+    "Whether to receive notification as alert": {
+      "ru": "Отправлять уведомления через оповещения"
+    },
+    "Whether to receive notification as email": {
+      "ru": "Отправлять уведомления через электронную почту"
+    },
+    "Follow a forum.": {
+      "ru": "Подписаться на раздел."
+    },
+    "Unfollow a forum.": {
+      "ru": "Отписаться от раздела."
+    },
+    "Return only the count of forum as forums_total": {
+      "ru": "Возвращать только количество разделов в виде forums_total"
+    },
+    "List of followed forums by current user.": {
+      "ru": "Список разделов, на которые подписан текущий пользователь."
+    },
+    "Id of parent page. If exists, filter pages that are direct children of that page.": {
+      "ru": "Идентификатор страницы. Если существует, отфильтрует страницы, которые являются прямыми дочерними по отношению к этой странице."
+    },
+    "Ordering of pages.": {
+      "ru": "Порядок расположения страниц."
+    },
+    "List of all pages in the system.": {
+      "ru": "Список всех страниц в системе."
+    },
+    "Detail information of a page.": {
+      "ru": "Подробная информация о странице."
+    },
+    "Id of parent element. If exists, filter elements that are direct children of that element.": {
+      "ru": "Идентификатор элемента. если существует, отфильтрует элементы, которые являются прямыми дочерними по отношению к этому элементу."
+    },
+    "List of navigation elements within the system.": {
+      "ru": "Список навигационных элементов в системе."
+    },
+    "Id of the containing forum.": {
+      "ru": "Идентификатор содержащего раздела."
+    },
+    "Filter to get only threads created by the specified user.": {
+      "ru": "Фильтр для получения тем созданных указанным пользователем."
+    },
+    "Filter to get only threads with the specified prefix.": {
+      "ru": "Фильтр для получения тем с указанным префиксом."
+    },
+    "Filter to get only threads with the specified tag.": {
+      "ru": "Фильтр для получения тем с указанным тегом."
+    },
+    "Page number of threads.": {
+      "ru": "Номер страницы тем."
+    },
+    "Number of threads in a page.": {
+      "ru": "Количество тем в странице."
+    },
+    "List of threads in a forum (with pagination).": {
+      "ru": "Список тем в разделе (с разбивкой по страницам)."
+    },
+    "Id of the target forum.": {
+      "ru": "Идентификатор раздела."
+    },
+    "Thread title.": {
+      "ru": "Заголовок темы."
+    },
+    "Thread english title.": {
+      "ru": "Заголовок темы на английском."
+    },
+    "Can be skipped if <code>title_en</code> set.": {
+      "ru": "Может быть пропущен, если задан <code>title_en</code>."
+    },
+    "Can be skipped if <code>title</code> set.": {
+      "ru": "Может быть пропущен, если задан <code>title</code>."
+    },
+    "Prefix ids.": {
+      "ru": "Идентификаторы префикса."
+    },
+    "Thread tags.": {
+      "ru": "Теги."
+    },
+    "Content of the new thread.": {
+      "ru": "Содержание новой темы."
+    },
+    "Create a new thread.": {
+      "ru": "Создать новую тему."
+    },
+    "Id of the target thread.": {
+      "ru": "Идентификатор темы."
+    },
+    "Detail information of a thread.": {
+      "ru": "Подробная информация о теме."
+    },
+    "Reason of the thread removal.": {
+      "ru": "Причина удаления темы."
+    },
+    "Delete a thread.": {
+      "ru": "Удалить тему."
+    },
+    "List of a thread's followers. For privacy reason, only the current user will be included in the list.": {
+      "ru": "Список подписчиков темы. По соображениям конфиденциальности в список будет включен только текущий пользователь"
+    },
+    "Follow a thread.": {
+      "ru": "Подписаться на тему."
+    },
+    "Unfollow a thread.": {
+      "ru": "Отписаться от темы."
+    },
+    "Return only the count of threads as threads_total": {
+      "ru": "Возвращать только количество тем в виде threads_total"
+    },
+    "List of followed threads by current user.": {
+      "ru": "Список тем, на которые подписан текущий пользователь."
+    },
+    "List of navigation elements to reach the specified thread.": {
+      "ru": "Список элементов навигации для перехода к указанной теме."
+    },
+    "Detail information of a poll.": {
+      "ru": "Подробная информация о голосовании."
+    },
+    "The id of the response to vote for. Can be skipped if <code>response_ids</code> set.": {
+      "ru": "Идентификатор ответа, за который нужно проголосовать. Может быть пропущен, если задан <code>response_ids</code>."
+    },
+    "Vote on a thread poll.": {
+      "ru": "Проголосовать в голосовании."
+    },
+    "Maximum number of result threads. The limit may get decreased if the value is too large (depending on the system configuration).": {
+      "ru": "Максимальное количество тем на одной страницу. Ограничение может быть уменьшено, если значение слишком велико (в зависимости от конфигурации системы)."
+    },
+    "List of unread threads (must be logged in).": {
+      "ru": "Список непрочитанных тем (необходимо войти)."
+    },
+    "Maximum number of days to search for threads.": {
+      "ru": "Максимальное количество дней для поиска тем."
+    },
+    "Id of the container forum to search for threads. Child forums of the specified forum will be included in the search.": {
+      "ru": "Идентификатор раздела для поиска тем. Дочерние разделы указанного раздела будут включены в поиск."
+    },
+    "List of recent threads.": {
+      "ru": "Список последних тем."
+    },
+    "Bump a thread.": {
+      "ru": "Поднять тему."
+    },
+    "Id of a post, posts that are in the same page with the specified post will be returned. <code>thread_id</code> may be skipped.": {
+      "ru": "Идентификатор сообщения, будут возвращены сообщения, которые находятся на одной странице с указанным сообщением. <code>thread_id</code> может быть пропущен."
+    },
+    "Page number of posts.": {
+      "ru": "Номер страницы сообщений."
+    },
+    "Number of posts in a page. Default value depends on the system configuration.": {
+      "ru": "Количество сообщений в странице. По умолчанию значение определяется настройками системы."
+    },
+    "Ordering of posts.": {
+      "ru": "Порядок расположения сообщений."
+    },
+    "List of posts in a thread (with pagination).": {
+      "ru": "Список сообщений в теме (с разбивкой по страницам)."
+    },
+    "Content of the new post.": {
+      "ru": "Содержание нового сообщения."
+    },
+    "Id of the quote post. It's possible to skip <code>thread_id</code> if this parameter is provided. An extra check is performed if both parameters exist and does not match.": {
+      "ru": "Идентификатор сообщения для её цитирования. Можно пропустить <code>thread_id</code>, если указан этот параметр. Дополнительная проверка выполняется, если оба параметра существуют и не совпадают"
+    },
+    "Create a new post.": {
+      "ru": "Создать новое сообщение."
+    },
+    "Detail information of a post.": {
+      "ru": "Подробная информация о сообщении."
+    },
+    "Reason of the post removal.": {
+      "ru": "Причина удаления сообщения."
+    },
+    "Delete a post.": {
+      "ru": "Удалить сообщение."
+    },
+    "Edit a post.": {
+      "ru": "Редактировать сообщение."
+    },
+    "Page number of users.": {
+      "ru": "Номер страницы с пользователями."
+    },
+    "Number of users in a page. Default value depends on the system configuration.": {
+      "ru": "Количество пользователей в странице. По умолчанию значение определяется настройками системы."
+    },
+    "List of users who liked a post.": {
+      "ru": "Список пользователей, которым понравилось сообщение."
+    },
+    "Like a post.": {
+      "ru": "Нравится сообщение."
+    },
+    "Unlike a post.": {
+      "ru": "Не нравится сообщение."
+    },
+    "Report a profile post.": {
+      "ru": "Пожаловаться на сообщение в профиле."
+    },
+    "Reason of the report.": {
+      "ru": "Причина жалобы."
+    },
+    "Report a post.": {
+      "ru": "Пожаловаться на сообщение."
+    },
+    "The time in milliseconds (e.g. 1652177794083) before last comment date.": {
+      "ru": "Время в миллисекундах (например, 1652177794083) до даты последнего комментария."
+    },
+    "List of post comments in a thread.": {
+      "ru": "Список комментариев к сообщениям в теме."
+    },
+    "List of comments of a profile post.": {
+      "ru": "Список комментариев к сообщению профиля."
+    },
+    "Content of the new post comment.": {
+      "ru": "Содержание нового комментария к сообщению."
+    },
+    "Create a new post comment.": {
+      "ru": "Создать новый комментарий к сообщению."
+    },
+    "Create a new profile post comment.": {
+      "ru": "Создать новый комментарий к сообщению в профиле."
+    },
+    "List of popular tags (no pagination).": {
+      "ru": "Список популярных тегов (без разбивки по страницам)."
+    },
+    "List of tags.": {
+      "ru": "Список тегов."
+    },
+    "Number of tagged contents in a page.": {
+      "ru": "Количество тегов в странице."
+    },
+    "Page number of tagged contents.": {
+      "ru": "Номер страницы тегов."
+    },
+    "List of tagged contents.": {
+      "ru": "Список содержимого с тегами."
+    },
+    "Tag to filter. Tags start with the query will be returned.": {
+      "ru": "Тег для фильтрации. Будут возвращены теги, начинающиеся с запроса."
+    },
+    "Filtered list of tags.": {
+      "ru": "Отфильтрованный список тегов."
+    },
+    "Number of users in a page.": {
+      "ru": "Количество пользователей на странице."
+    },
+    "List of users (with pagination).": {
+      "ru": "Список пользователей (с разбивкой по страницам)."
+    },
+    "List of user fields.": {
+      "ru": "Список пользовательских полей."
+    },
+    "Username to filter. Usernames start with the query will be returned.": {
+      "ru": "Имя пользователя для фильтрации. Будут возвращены имена пользователей, начинающиеся с запроса."
+    },
+    "Custom fields to filter.": {
+      "ru": "Пользовательские поля для фильтрации."
+    },
+    "Detail information of a user.": {
+      "ru": "Подробная информация о пользователе."
+    },
+    "User ID.": {
+      "ru": "Идентификатор пользователя."
+    },
+    "Base64 data of the avatar.": {
+      "ru": "Данные в формате Base64 для аватара."
+    },
+    "Base64 data of the background. Background image must be 1920x1080 pixels.": {
+      "ru": "Данные в формате Base64 для фона. Фоновое изображение должно иметь размер 1920x1080 пикселей."
+    },
+    "Upload avatar for a user.": {
+      "ru": "Загрузить аватар пользователя."
+    },
+    "Delete avatar for a user.": {
+      "ru": "Удалить аватар пользователя."
+    },
+    "Ordering of followers.": {
+      "ru": "Порядок расположения подписчиков."
+    },
+    "Number of followers in a page.": {
+      "ru": "Количество подписчиков в странице."
+    },
+    "Page number of followers.": {
+      "ru": "Номер страницы подписчиков."
+    },
+    "List of a user's followers.": {
+      "ru": "Список подписчиков пользователя."
+    },
+    "Follow a user.": {
+      "ru": "Подписаться на пользователя."
+    },
+    "Unfollow a user.": {
+      "ru": "Отписаться от пользователя."
+    },
+    "Ordering of users.": {
+      "ru": "Порядок расположения пользователей."
+    },
+    "List of users whom are followed by a user.": {
+      "ru": "Список пользователей, на которых подписан пользователь."
+    },
+    "List of ignored users of current user.": {
+      "ru": "Список игнорируемых пользователей текущего пользователя."
+    },
+    "Ignore a user.": {
+      "ru": "Игнорировать пользователя."
+    },
+    "Stop ignoring a user.": {
+      "ru": "Перестать игнорировать пользователя."
+    },
+    "Number of profile posts in a page.": {
+      "ru": "Количество сообщений профиля в странице."
+    },
+    "List of contents created by user (with pagination).": {
+      "ru": "Список содержимого, созданного пользователем (с разбивкой по страницам)."
+    },
+    "Content of the new profile post.": {
+      "ru": "Содержание нового сообщения профиля"
+    },
+    "Create a new profile post on a user timeline.": {
+      "ru": "Создайте новое сообщение в профиле на временной шкале пользователя."
+    },
+    "Detail information of a profile post.": {
+      "ru": "Подробная информация о сообщении профиля."
+    },
+    "New content of the profile post.": {
+      "ru": "Новое содержание сообщения профиля."
+    },
+    "Edit a profile post.": {
+      "ru": "Редактировать сообщение профиля."
+    },
+    "Reason of the profile post removal.": {
+      "ru": "Причина удаления сообщения профиля."
+    },
+    "Delete a profile post.": {
+      "ru": "Удалить сообщение профиля"
+    },
+    "List of users who liked a profile post.": {
+      "ru": "Список пользователей, которым понравилось сообщение в профиле."
+    },
+    "Like a profile post.": {
+      "ru": "Нравится сообщение профиля."
+    },
+    "Unlike a profile post.": {
+      "ru": "Не нравится сообщение профиля."
+    },
+    "Date to get older comments. Please note that this entry point does not support the page parameter but it still does support limit.": {
+      "ru": "Укажите дату, чтобы получить более старые комментарии. Пожалуйста, обратите внимание, что эта точка входа не поддерживает параметр страницы, но она по-прежнему поддерживает ограничение."
+    },
+    "Content of the new profile post comment.": {
+      "ru": "Содержание нового комментария к сообщению профиля."
+    },
+    "Detail information of a profile post comment.": {
+      "ru": "Подробная информация о комментарии к сообщению профиля."
+    },
+    "Number of conversations in a page.": {
+      "ru": "Количество диалогов в странице."
+    },
+    "Page number of conversations.": {
+      "ru": "Номер страницы диалогов."
+    },
+    "List of conversations (with pagination).": {
+      "ru": "Список диалогов (с разбивкой по страницам)."
+    },
+    "Detail information of a conversation.": {
+      "ru": "Подробная информация о диалоге."
+    },
+    "Leave the conversation.": {
+      "ru": "Покинуть диалог."
+    },
+    "Date to get newer messages.": {
+      "ru": "Дата для получения новых сообщений."
+    },
+    "Date to get older messages.": {
+      "ru": "Дата для получения более старых сообщений."
+    },
+    "Number of messages in a page.": {
+      "ru": "Количество сообщений в странице."
+    },
+    "Ordering of messages.": {
+      "ru": "Порядок расположения сообщений."
+    },
+    "Page number of messages.": {
+      "ru": "Номер страницы сообщений."
+    },
+    "List of messages in a conversation (with pagination).": {
+      "ru": "Список сообщений в диалоге (с разбивкой по страницам)."
+    },
+    "Content of the new message.": {
+      "ru": "Содержание нового сообщения."
+    },
+    "Create a new conversation message.": {
+      "ru": "Создать новое сообщение в диалоге."
+    },
+    "Detail information of a message.": {
+      "ru": "Подробная информация о сообщении в диалоге."
+    },
+    "New content of the message.": {
+      "ru": "Новое содержание сообщения."
+    },
+    "Edit a message.": {
+      "ru": "Редактировать сообщение в диалоге."
+    },
+    "List of notifications (both read and unread).": {
+      "ru": "Список уведомлений (как прочитанных, так и непрочитанных)."
+    },
+    "Get associated content of notification. The response depends on the content type.": {
+      "ru": "Получить содержимое уведомления. Ответ зависит от типа контента."
+    },
+    "If <code>notification_id</code> is omitted, it's mark all existing notifications as read.": {
+      "ru": "Если <code>notification_id</code> не указан, то все существующие уведомления будут помечены как прочитанные."
+    },
+    "Mark single notification or all existing notifications read.": {
+      "ru": "Отметьте одно уведомление или все существующие уведомления прочитанными."
+    },
+    "Search query. Can be skipped if <code>user_id</code> is set.": {
+      "ru": "Поисковый запрос. Может быть пропущен, если задан <code>user_id</code>."
+    },
+    "Tag to search for tagged contents.": {
+      "ru": "Тег для поиска содержимого с тегами."
+    },
+    "Id of the creator to search for contents.": {
+      "ru": "Идентификатор создателя для поиска содержимого."
+    },
+    "Id of the container forum to search for contents. Child forums of the specified forum will be included in the search.": {
+      "ru": "Идентификатор раздела для поиска содержимого. Дочерние разделы указанного раздела будут включены в поиск."
+    },
+    "Number of results in a page.": {
+      "ru": "Количество результатов в странице."
+    },
+    "Page number of results.": {
+      "ru": "Номер страницы результатов."
+    },
+    "Search for all supported contents.": {
+      "ru": "Поиск по всему поддерживаемому содержимому."
+    },
+    "Number of post data to be returned.": {
+      "ru": "Количество возвращаемых данных о сообщении."
+    },
+    "Search for posts.": {
+      "ru": "Поиск сообщений."
+    },
+    "Search for threads.": {
+      "ru": "Поиск тем."
+    },
+    "Search for tagged contents.": {
+      "ru": "Поиск содержимого по тегам."
+    },
+    "Edit a user.": {
+      "ru": "Редактировать пользователя."
+    },
+    "You can find the API access token on the /account/api page.": {
+      "ru": "Токен доступа к API можно найти на странице /account/api."
+    },
+    "Bypass status code 429 by sleep": {
+      "ru": "Обход кода состояния 429 с помощью сна"
+    },
+    "Id of parent category. If exists, filter categories that are direct children of that category.": {
+      "ru": "Идентификатор родительской категории. Если существует, фильтрует категории, которые являются прямыми дочерними категориями этой категории."
+    },
+    "Id of parent forum. If exists, filter categories that are direct children of that forum.": {
+      "ru": "Идентификатор родительского форума. Если существует, отфильтровать категории, которые являются прямыми детьми этого форума."
+    },
+    "Id of category.": {
+      "ru": "Идентификатор категории."
+    },
+    "Id of forum.": {
+      "ru": "Идентификатор раздела."
+    },
+    "Id of thread.": {
+      "ru": "Идентификатор темы."
+    },
+    "Id of recipient.": {
+      "ru": "Идентификатор получателя."
+    },
+    "Id of needed conversation.": {
+      "ru": "Идентификатор диалога."
+    },
+    "Id of post.": {
+      "ru": "Идентификатор сообщения."
+    },
+    "Id of profile post.": {
+      "ru": "Идентификатор сообщения профиля."
+    },
+    "Id of message.": {
+      "ru": "Идентификатор сообщения."
+    },
+    "Id of new primary group. (Require admincp scope)": {
+      "ru": "Идентификатор новой основной группы. (Требуются права admincp)"
+    },
+    "Id of group you want to display.": {
+      "ru": "Идентификатор группы, которую вы хотите отобразить."
+    },
+    "Id of conversation.": {
+      "ru": "Идентификатор диалога."
+    },
+    "Id of notification.": {
+      "ru": "Идентификатор уведомления."
+    },
+    "Id of page.": {
+      "ru": "Идентификатор страницы."
+    },
+    "Id of the containing thread.": {
+      "ru": "Идентификатор темы."
+    },
+    "Id of profile post comment.": {
+      "ru": "Идентификатор комментария сообщения."
+    },
+    "Id of tag.": {
+      "ru": "Идентификатор тега."
+    },
+    "Id of user.": {
+      "ru": "Идентификатор пользователя."
+    },
+    "Specify multiple prefix IDs.": {
+      "ru": "Укажите несколько идентификаторов префикса."
+    },
+    "Specify multiple tags.": {
+      "ru": "Укажите несколько тегов."
+    },
+    "Specify multiple prizes.": {
+      "ru": "Укажите несколько призов."
+    },
+    "Specify multiple secondary groups ids.": {
+      "ru": "Укажите несколько идентификаторов вторичных групп."
+    },
+    "Specify multiple fields.": {
+      "ru": "Укажите несколько полей."
+    },
+    "Specify multiple response IDs.": {
+      "ru": "Укажите несколько идентификаторов ответа."
+    },
+    "Minimal contest amount. (Only for 766 forumId)": {
+      "ru": "Минимальная сумма розыгрыша. (Только для идентификатора раздела 766)"
+    },
+    "All threads": {
+      "ru": "Все темы"
+    },
+    "Only sticky threads": {
+      "ru": "Только закрепленные темы"
+    },
+    "Non-sticky threads": {
+      "ru": "Только незакрепленные темы"
+    },
+    "Hide contacts": {
+      "ru": "Скрывать контакты в теме"
+    },
+    "Allow ask hidden content": {
+      "ru": "Разрешить просить \"Личный\" (если есть \"хайд\" в теме)"
+    },
+    "Allow to reply only users with chosen or higher group.": {
+      "ru": "Разрешите отвечать только пользователям с выбранной или более высокой группой."
+    },
+    "Allow commenting if user can't post in thread": {
+      "ru": "Разрешить комментировать сообщения, если нет прав писать сообщения"
+    },
+    "Don't alert followers about thread creation": {
+      "ru": "Не оповещать подписчиков о создании темы"
+    },
+    "Watch thread state": {
+      "ru": "Подписаться на тему..."
+    },
+    "Receive forum notifications of new posts in this thread.": {
+      "ru": "и получать уведомления о новых сообщениях"
+    },
+    "Receive email notifications of new posts in this thread.": {
+      "ru": "и получать уведомления на электронную почту"
+    },
+    "This function is not tested and in case of errors please contact the module creator!": {
+      "ru": "Эта функция не протестирована, и в случае возникновения ошибок, пожалуйста, свяжитесь с создателем модуля!"
+    },
+    "Content of the new contest.": {
+      "ru": "Содержание нового розыгрыша."
+    },
+    "Money": {
+      "ru": "Деньги"
+    },
+    "Upgrades": {
+      "ru": "Привилегии"
+    },
+    "Prize": {
+      "ru": "Приз"
+    },
+    "Conditions for participation": {
+      "ru": "Условия для участия"
+    },
+    "Sympathies for this week.": {
+      "ru": "Количество симпатий за эту неделю."
+    },
+    "Sympathies for all time.": {
+      "ru": "Количество симпатий за все время."
+    },
+    "Giveaway duration value. The maximum duration is 3 days.": {
+      "ru": "Длительность розыгрыша (максимум 3 дня)."
+    },
+    "Giveaway duration type. The maximum duration is 3 days.": {
+      "ru": "Тип продолжительности розыгрыша (максимум 3 дня)."
+    },
+    "Winner count (prize count).": {
+      "ru": "Количество победителей (призов)."
+    },
+    "How much money will each winner receive.": {
+      "ru": "Сколько денег получит каждый победитель?"
+    },
+    "Enable the distribution of money prizes by places": {
+      "ru": "Включить распределение по местам"
+    },
+    "How much money will receive each place.": {
+      "ru": "Сколько денег получит каждое место."
+    },
+    "Which upgrade will each winner receive.": {
+      "ru": "Какую привилегию получит каждый победитель?"
+    },
+    "Secret answer of your account.": {
+      "ru": "Ответьте на секретный вопрос."
+    },
+    "To whom the complaint is filed. Specify a nickname or a link to the profile.": {
+      "ru": "На кого подается жалоба. Укажите никнейм или ссылку на профиль."
+    },
+    "Did you buy account on the market?": {
+      "ru": "Вы купили аккаунт на Маркете?"
+    },
+    "Indicate the amount by which the responder deceived you.": {
+      "ru": "Укажите сумму, на которую вас обманул ответчик."
+    },
+    "The transaction took place through a guarantor or there was a transfer to the market with a hold?": {
+      "ru": "Сделка происходила через гаранта или \"безопасную сделку\"?"
+    },
+    "You should describe what's happened.<br><ul><li>describe the situation in a nutshell. If you wish, you can describe the situation in more detail using the \"Spoiler\" function</li><li>attach screenshots of correspondence. You must upload to the site Imgur - for convenience, use Ctrl + V when uploading screenshots to the album</li><li>other evidence</li><li>notify the respondent about the complaint you created, familiarize him with hidden content</li></ul>Describe the situation in as much detail as possible.": {
+      "ru": "Опишите, что произошло.<br><ul><li>опишите ситуацию в двух словах. При желании вы можете описать ситуацию более подробно с помощью функции \"Спойлер\"</li><li>приложите скриншоты переписки. Загружать нужно на сайт Imgur - для удобства используйте Ctrl + V при загрузке скриншотов в альбом</li><li>другие доказательства</li><li>уведомите ответчика о созданной вами жалобе, ознакомьте его со скрытым содержимым</li></ul>Опишите ситуацию как можно подробнее."
+    },
+    "Item id.": {
+      "ru": "Укажите идентификатор аккаунта на Маркете, ее можно взять, зайдя на страницу \"Мои покупки\"."
+    },
+    "Contacts and wallets of the responder. Specify the known data about the responder (Skype, Vkontakte, Qiwi, WebMoney, etc.), if any.": {
+      "ru": "Укажите известные данные об ответчике (Telegram, VK, QIWI и др.) , если такие имеются."
+    },
+    "Currency of Arbitrage.": {
+      "ru": "Валюта арбитража."
+    },
+    "Pay arbitrage claim now or later. (Only for <code>transfer_type = not_safe</code>)": {
+      "ru": "Оплатить арбитражное требование сейчас или позже. (Только для <code>transfer_type = not_safe</code>)"
+    },
+    "Funds transfer recipient. Upload a receipt for the transfer of funds, use the \"View receipt\" button in your wallet. Must be uploaded to Imgur. Write \"no\" if you have not paid.": {
+      "ru": "Загрузите квитанцию перевода средств, используйте кнопку \"Посмотреть квитанцию\" в кошельке. Необходимо загрузить на сайт imgur.com. Напишите \"нет\", если вы не производили оплату."
+    },
+    "Screenshot showing the respondent's Telegram login. If the correspondence was conducted in Telegram, upload a screenshot that will display the respondent's Telegram login against the background of your dialogue. The screenshot must be uploaded to Imgur. If the correspondence was conducted elsewhere, write \"no\".": {
+      "ru": "Если переписка велась в Telegram, загрузите скриншот, на котором будет отображен логин Telegram ответчика на фоне вашего диалога. Скриншот необходимо загрузить на сайт imgur.com. Если переписка велась в другом месте, напишите \"нет\"."
+    },
+    "Discussion state: Open": {
+      "ru": "Статус темы: Открыто"
+    },
+    "Forum id.": {
+      "ru": "Идентификатор раздела."
+    },
+    "Apply thread prefix": {
+      "ru": "Применить префикс темы"
+    },
+    "Send a notification to users who are followed to target node": {
+      "ru": "Отправка уведомления пользователям, которые следят за разделом"
+    },
+    "Move a thread to another forum.": {
+      "ru": "Переместить тему в другой раздел."
+    },
+    "List of ids of responses (if the poll allows multiple choices).": {
+      "ru": "Список идентификаторов ответов (если опрос допускает множественный выбор)."
+    },
+    "Number of thread data to be returned. Default value is 20.": {
+      "ru": "Количество возвращаемых данных о теме. Значение по умолчанию - 20."
+    },
+    "Comment id to get older comments.": {
+      "ru": "Идентификатор комментария, чтобы получить старые комментарии."
+    },
+    "Content of the post.": {
+      "ru": "Содержание сообщения."
+    },
+    "User id.": {
+      "ru": "Идентификатор пользователя."
+    },
+    "List of profile posts (with pagination).": {
+      "ru": "Список сообщений профиля (с разбивкой по страницам)."
+    },
+    "Page number of contents.": {
+      "ru": "Номер страницы содержания."
+    },
+    "Number of contents in a page.": {
+      "ru": "Количество содержимого в странице."
+    },
+    "The starting point of the selection by width.": {
+      "ru": "Начальная точка выбора по ширине."
+    },
+    "The starting point of the selection by height.": {
+      "ru": "Начальная точка выбора по высоте."
+    },
+    "Selection size. Minimum value - 16.": {
+      "ru": "Размер выбора. Минимальное значение - 16."
+    },
+    "Selection size. Minimum value - 100.": {
+      "ru": "Размер выбора. Минимальное значение - 100."
+    },
+    "Crop avatar for a user.": {
+      "ru": "Обрезать аватар пользователя."
+    },
+    "Upload background for a user.": {
+      "ru": "Загрузить фон пользователя."
+    },
+    "Crop background for a user.": {
+      "ru": "Обрезать фон пользователя."
+    },
+    "Delete background for a user.": {
+      "ru": "Удалить фон пользователя."
+    },
+    "List of users filtered by username, email or custom fields.": {
+      "ru": "Список пользователей, отфильтрованных по имени пользователя, электронной почте или пользовательским полям."
+    },
+    "Email to filter. Requires admincp scope.": {
+      "ru": "Электронная почта для фильтрации. Требуются права admincp."
+    },
+    "User location field.": {
+      "ru": "Поле местоположения пользователя."
+    },
+    "User occupation field.": {
+      "ru": "Поле род занятий пользователя."
+    },
+    "User homepage field.": {
+      "ru": "Поле сайт пользователя."
+    },
+    "User interests field.": {
+      "ru": "Поле интересы пользователя."
+    },
+    "User thread link for \"innovator\" trophy.": {
+      "ru": "Поле Трофей \"Инноватор\" пользователя."
+    },
+    "User thread link for \"innovator 2.0\" trophy.": {
+      "ru": "Поле Трофей \"Инноватор 2.0\" пользователя."
+    },
+    "User thread link for \"innovator 3.0\" trophy.": {
+      "ru": "Поле Трофей \"Инноватор 3.0\" пользователя."
+    },
+    "User scam url field.": {
+      "ru": "Поле скам пользователя."
+    },
+    "User maecenas value field.": {
+      "ru": "Поле меценатство пользователя."
+    },
+    "User telegram field.": {
+      "ru": "Поле telegram пользователя.."
+    },
+    "User vk field.": {
+      "ru": "Поле vk пользователя."
+    },
+    "User steam field.": {
+      "ru": "Поле steam пользователя."
+    },
+    "User jabber field.": {
+      "ru": "Поле jabber пользователя."
+    },
+    "Your discord.": {
+      "ru": "Поле discord пользователя."
+    },
+    "User lztDeposit field.": {
+      "ru": "Поле страховой депозит пользователя."
+    },
+    "User ban_reason field.": {
+      "ru": "Поле причина блокировки пользователя."
+    },
+    "New custom title of the user.": {
+      "ru": "Новый статус пользователя."
+    },
+    "List ids of new secondary groups. (Require admincp scope)": {
+      "ru": "Список идентификаторов новых вторичных групп. (Требуются права admincp)"
+    },
+    "Your date of birth (day).": {
+      "ru": "Дата рождения (день)."
+    },
+    "Your date of birth (month).": {
+      "ru": "Дата рождения (месяц)."
+    },
+    "Your date of birth (year).": {
+      "ru": "Дата рождения (год)."
+    },
+    "Return only the user count as users_total": {
+      "ru": "Возвращать только количество пользователей в виде users_total"
+    },
+    "Message. Required if <code>is_group = disabled</code>": {
+      "ru": "Сообщение. Требуется, если <code>is_group = disabled</code>."
+    },
+    "Is group. Set <code>disabled</code> if personal conversation, or set <code>enabled</code> if group": {
+      "ru": "Группа (беседа). Установите <code>disabled</code>, если личный диалог, или установите <code>enabled</code>, если группа (беседа)"
+    },
+    "List of recipients username's. Max recipients count is 10 (Separated by comma).": {
+      "ru": "Список имен пользователей получателей. Максимальное количество получателей - 10 (через запятую)."
+    },
+    "Specify multiple username's.": {
+      "ru": "Укажите несколько имен пользователей"
+    },
+    "The title of new conversation.": {
+      "ru": "Название новой группы."
+    },
+    "Open invite": {
+      "ru": "Разрешить участникам подключать к переписке других пользователей"
+    },
+    "Is conversation locked": {
+      "ru": "Диалог закрыт"
+    },
+    "Allow edit messages": {
+      "ru": "Разрешить редактирование своих сообщений"
+    },
+    "Create a new conversation.": {
+      "ru": "Создать новый диалог."
+    },
+    "Deletion type.": {
+      "ru": "Обработка новых ответов."
+    },
+    "Accept future messages.<br/>": {
+      "ru": "Принимать последующие сообщения.<br/>"
+    },
+    "Ignore future messages.<br/>": {
+      "ru": "Игнорировать последующие сообщения.<br/>"
+    },
+    "Should this conversation receive further responses in the future, this conversation will be restored to your inbox.": {
+      "ru": "Если появятся новые ответы, то переписка будет восстановлена у Вас во входящих."
+    },
+    "You will not be notified of any future responses and the conversation will remain deleted.": {
+      "ru": "Вы не будете получать уведомления о новых ответах, а переписка будет оставаться удалённой."
+    },
+    "Page number of tags list.": {
+      "ru": "Номер страницы тегов."
+    },
+    "Number of thread data to be returned.": {
+      "ru": "Количество возвращаемых данных о теме."
+    },
+    "Search for profile posts.": {
+      "ru": "Поиск сообщений профиля."
+    },
+    "List tags to search for tagged contents.": {
+      "ru": "Список тегов для поиска содержимого с тегами."
+    },
+    "Create a new contest.": {
+      "ru": "Создать новый розыгрыш."
+    },
+    "Create a Arbitrage.": {
+      "ru": "Создать новый арбитраж."
+    },
+    "Edit a thread.": {
+      "ru": "Редактировать тему"
+    },
+    "Recording of batch requests. The maximum number of jobs in a batch is 10.": {
+      "ru": "Запись пакетных запросов. Максимальное количество заданий в партии - 10."
+    },
+    "Stop recording batch requests and retrieve the list.": {
+      "ru": "Остановить запись пакетных запросов и получить список."
+    },
+    "Execute multiple API requests at once. Maximum batch jobs is 10.": {
+      "ru": "Выполнение нескольких API-запросов одновременно. Максимальное количество заданий в партии - 10."
+    },
+    "Batch jobs.": {
+      "ru": "Пакетные задания."
+    },
+    "Only staff members and curators can reply in thread.": {
+      "ru": "Только Команда Форума и Кураторы."
+    },
+    "Everyone can reply in thread.": {
+      "ru": "Все."
+    },
+    "Local and higher can reply in thread.": {
+      "ru": "Местный и выше."
+    },
+    "Resident or higher can reply in thread.": {
+      "ru": "Постоялец и выше"
+    },
+    "Expert or higher can reply in thread.": {
+      "ru": "Эксперт и выше"
+    },
+    "Guru and higher can reply in thread.": {
+      "ru": "Гуру и выше."
+    },
+    "Artificial Intelligence and higher can reply in thread.": {
+      "ru": "Искусственный интеллект и выше."
+    },
+    "Room id.": {
+      "ru": "Идентификатор комнаты."
+    },
+    "Content of the chat message.": {
+      "ru": "Содержание сообщения чата."
+    },
+    "Create chat message.": {
+      "ru": "Создать сообщение чата."
+    },
+    "Message id.": {
+      "ru": "Идентификатор сообщения чата."
+    },
+    "Delete chat message.": {
+      "ru": "Удалить сообщение чата."
+    },
+    "New content of the chat message.": {
+      "ru": "Новое содержание сообщения чата."
+    },
+    "Edit chat message.": {
+      "ru": "Редактировать сообщение чата."
+    },
+    "Message id to get older chat messages.": {
+      "ru": "Идентификатор сообщения для получения более старых сообщений чата."
+    },
+    "List chat messages.": {
+      "ru": "Список сообщений чата."
+    },
+    "List chatbox rooms.": {
+      "ru": "Список комнат чата."
+    },
+    "List ignored chat users.": {
+      "ru": "Список игнорируемых пользователей чата."
+    },
+    "Ignore chat user.": {
+      "ru": "Игнорировать пользователя чата."
+    },
+    "Report reason.": {
+      "ru": "Причина жалобы."
+    },
+    "Report chat message.": {
+      "ru": "Пожаловаться на сообщение чата."
+    },
+    "Chat": {
+      "ru": "Общий чат"
+    },
+    "Market chat": {
+      "ru": "Маркет чат"
+    },
+    "Newbie chat": {
+      "ru": "Чат для новичков"
+    },
+    "Marketplace": {
+      "ru": "Чат услуг"
+    }
+  },
+  "browser": [],
+  "depends": [],
+  "embeddeddata": [],
+  "engine": [
+    "engine.js",
+    "internal/tools.js",
+    "internal/errors.js",
+    "internal/request.js"
+  ],
+  "languages": [],
+  "modules": [],
+  "is_autogenerated": true
 }

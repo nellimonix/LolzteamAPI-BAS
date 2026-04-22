@@ -26,7 +26,7 @@ _LZTAPI = {
 		_LZTAPI.use_proxy = Boolean(ctxt.use_proxy)
 		_LZTAPI.proxy = ctxt.proxy
 		_LZTAPI.proxy_type = ctxt.proxy_type
-		
+
 		if (ctxt.failErrors) {
 			_LZTAPI.tools.setErrors({
 				err: ctxt.failErrors,
@@ -611,7 +611,7 @@ _LZTAPI = {
 				'reply_group',
 				'comment_ignore_group'
 			])
-			
+
 			params['discussion_open'] = ctxt.discussion_open
 
 			var timeout = Number(ctxt.timeout) || 5000

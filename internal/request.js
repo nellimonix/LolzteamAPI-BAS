@@ -54,13 +54,13 @@ _LZTAPI.request = {
 
 			_if(_iterator() % 2 === 0, function () {
 				_call_function(_LZTAPI.tools.sleep, { time: interval })!
-					_next('function')
+				_next('function')
 			})!
 
-				_LZTAPI.tools.log(
-					'● Осталось времени: ' + timeLeft,
-					'● Time left: ' + timeLeft
-				)
+			_LZTAPI.tools.log(
+				'● Осталось времени: ' + timeLeft,
+				'● Time left: ' + timeLeft
+			)
 
 			_call_function(_LZTAPI.request.send, {
 				url: url,
@@ -130,7 +130,7 @@ _LZTAPI.request = {
 
 		if (_LZTAPI.use_proxy) {
 			var proxy = proxy_parse(_LZTAPI.proxy);
-			if (_LZTAPI.proxy_type !== "auto"){
+			if (_LZTAPI.proxy_type !== "auto") {
 				proxy["IsHttp"] = _LZTAPI.proxy_type === "http";
 			}
 
@@ -145,56 +145,56 @@ _LZTAPI.request = {
 				_call_function(_LZTAPI.tools.sleep, { time: interval })!
 			})!
 
-				_call(function () {
-					_on_fail(function () {
-						VAR_LAST_ERROR = _result()
-						VAR_ERROR_ID = ScriptWorker.GetCurrentAction()
-						VAR_WAS_ERROR = false
-						_break(1, true)
-					})
+			_call(function () {
+				_on_fail(function () {
+					VAR_LAST_ERROR = _result()
+					VAR_ERROR_ID = ScriptWorker.GetCurrentAction()
+					VAR_WAS_ERROR = false
+					_break(1, true)
+				})
 
-					CYCLES.Current().RemoveLabel('function')
+				CYCLES.Current().RemoveLabel('function')
 
-					var requestTimeout =
-						timeLeft < timeout
-							? timeLeft
-							: timeout < 60000
-								? timeout
-								: 60000
+				var requestTimeout =
+					timeLeft < timeout
+						? timeLeft
+						: timeout < 60000
+							? timeout
+							: 60000
 
-					_LZTAPI.tools.log('↑ Запрос: ' + url, '↑ Request: ' + url)
-					_LZTAPI.tools.log(
-						'● Время ожидания ответа: ' + requestTimeout,
-						'● Response timeout: ' + requestTimeout
-					)
+				_LZTAPI.tools.log('↑ Запрос: ' + url, '↑ Request: ' + url)
+				_LZTAPI.tools.log(
+					'● Время ожидания ответа: ' + requestTimeout,
+					'● Response timeout: ' + requestTimeout
+				)
 
-					responseTime = Date.now()
-					general_timeout_next(requestTimeout)
-					if (method === 'GET' || method === 'DELETE') {
-						http_client_get2(url, {
+				responseTime = Date.now()
+				general_timeout_next(requestTimeout)
+				if (method === 'GET' || method === 'DELETE') {
+					http_client_get2(url, {
+						method: method,
+						headers: headers
+					})!
+				} else if (method === 'POST' || method === 'PUT') {
+					if (files) {
+						http_client_post(url, files, {
+							'content-type': 'multipart',
+							encoding: 'UTF-8',
 							method: method,
 							headers: headers
 						})!
-					} else if (method === 'POST' || method === 'PUT') {
-						if (files) {
-							http_client_post(url, files, {
-								'content-type': 'multipart',
-								encoding: 'UTF-8',
-								method: method,
-								headers: headers
-							})!
-						} else {
-							http_client_post(url, dataJ ? ['data', dataJ] : null, {
-								'content-type': 'application/json',
-								encoding: 'UTF-8',
-								method: method,
-								headers: headers
-							})!
-						}
+					} else {
+						http_client_post(url, dataJ ? ['data', dataJ] : null, {
+							'content-type': 'application/json',
+							encoding: 'UTF-8',
+							method: method,
+							headers: headers
+						})!
 					}
+				}
 
-					_LZTAPI._auto_delay_time = Date.now() + 500
-				}, null)!
+				_LZTAPI._auto_delay_time = Date.now() + 500
+			}, null)!
 
 			if (http_client_was_error() || VAR_WAS_ERROR) {
 				_LZTAPI.tools.errorsHandler(
@@ -258,22 +258,22 @@ _LZTAPI.request = {
 			if (object.hasOwnProperty(prop)) {
 				var value = object[prop];
 				if (Array.isArray(value)) {
-                // Если значение — массив, добавляем каждый элемент с тем же ключом
-                value.forEach(function (item) {
-                    _ctxt.push(
-                        encodeURIComponent(prop) +
-                        '=' +
-                        encodeURIComponent(item).replace(/%20/g, '+') // Изменяем пробелы
-                    );
-                });
-            } else {
-                // Если значение — не массив, добавляем его как обычно
-                _ctxt.push(
-                    encodeURIComponent(prop) +
-                    '=' +
-                    encodeURIComponent(value).replace(/%20/g, '+') // Изменяем пробелы
-                );
-            }
+					// Если значение — массив, добавляем каждый элемент с тем же ключом
+					value.forEach(function (item) {
+						_ctxt.push(
+							encodeURIComponent(prop) +
+							'=' +
+							encodeURIComponent(item).replace(/%20/g, '+') // Изменяем пробелы
+						);
+					});
+				} else {
+					// Если значение — не массив, добавляем его как обычно
+					_ctxt.push(
+						encodeURIComponent(prop) +
+						'=' +
+						encodeURIComponent(value).replace(/%20/g, '+') // Изменяем пробелы
+					);
+				}
 			}
 		return _ctxt.join('&')
 	}

@@ -32,7 +32,7 @@ _LZTAPI.tools = {
 		_ctxt = null
 		try {
 			_ctxt = JSON.parse(string)
-		} catch (e) {}
+		} catch (e) { }
 		return _ctxt
 	},
 	reduceString: function (string) {
@@ -65,15 +65,15 @@ _LZTAPI.tools = {
 	},
 	setErrors: function (ctxt) {
 		if (!ctxt.err) return
-		;(_LZTAPI.tools.typeValid(ctxt.err, 'array')
-			? ctxt.err
-			: ctxt.err.split(',')
-		).forEach(function (el) {
-			_LZTAPI.errors[el] = _LZTAPI.errors[el] || {}
-			_LZTAPI.errors[el].action = ctxt.errType
-			_LZTAPI.errors[el].stop = Boolean(ctxt.stop)
-			_LZTAPI.errors[el].instantly = Boolean(ctxt.instantly)
-		})
+			; (_LZTAPI.tools.typeValid(ctxt.err, 'array')
+				? ctxt.err
+				: ctxt.err.split(',')
+			).forEach(function (el) {
+				_LZTAPI.errors[el] = _LZTAPI.errors[el] || {}
+				_LZTAPI.errors[el].action = ctxt.errType
+				_LZTAPI.errors[el].stop = Boolean(ctxt.stop)
+				_LZTAPI.errors[el].instantly = Boolean(ctxt.instantly)
+			})
 	},
 	log: function (ruText, enText) {
 		if (_LZTAPI.debug) {
@@ -142,7 +142,7 @@ _LZTAPI.tools = {
 	_CheckScopes: function (scopes) {
 		var permissionsArray = _LZTAPI._scopes
 		var missingPermissions = []
-		scopes.every(function(permission) {
+		scopes.every(function (permission) {
 			if (permissionsArray.indexOf(permission) === -1) {
 				missingPermissions.push(permission)
 			}
