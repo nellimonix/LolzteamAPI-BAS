@@ -10,8 +10,8 @@
 		}
 	}) %>
     <%= _.template($('#input_constructor').html())({
-        id: "message",
-        description: tr("message"),
+        id: "reason",
+        description: tr("reason"),
         default_selector: "string",
         disable_int: true,
         value_string: "",

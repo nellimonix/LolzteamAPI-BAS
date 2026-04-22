@@ -1,7 +1,9 @@
 _call_function(_LZTAPI.__Profile_posts.__Profile_posts_comments.list, {
-  profilePostId: (<%= profilePostId %>),
-  before: (<%= before %>),
-  limit: (<%= limit %>),
+  profile_post_id:  (<%= profile_post_id %>),
+  comment_id:  (<%= comment_id %>),
+  page_of_comment_id:  (<%= page_of_comment_id %>),
+  before:  (<%= before %>),
+  limit:  (<%= limit %>),
   timeout:  (<%= timeout %>) * 1000,
   interval: (<%= interval %>) * 1000,
   maxTime: (<%= maxTime %>) * 1000

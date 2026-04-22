@@ -3,7 +3,7 @@ _call_function(_LZTAPI.__Threads.move, {
   node_id:  (<%= node_id %>),
   title:  (<%= title %>),
   title_en:  (<%= title_en %>),
-  prefix_ids:  (<%= prefix_ids %>),
+  prefix_id:  (<%= prefix_id %>),
   apply_thread_prefix:  (<%= apply_thread_prefix %>),
   send_alert:  (<%= send_alert %>),
   timeout:  (<%= timeout %>) * 1000,

@@ -45,8 +45,8 @@
 			}
 		}) %>
 		<%= _.template($('#input_constructor').html())({
-			id: "prefix_ids",
-			description: tr("prefix_ids"),
+			id: "prefix_id",
+			description: tr("prefix_id"),
 			default_selector: "string",
 			disable_int: true,
 			value_string: "",

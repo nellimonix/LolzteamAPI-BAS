@@ -20,7 +20,7 @@
 			checked: false
 		}) %>
         <%= _.template($('#checkbox').html())({
-			id: "alert_",
+			id: "alert",
 			title: tr("Whether to receive notification as alert"),
 			checked: false
 		}) %>

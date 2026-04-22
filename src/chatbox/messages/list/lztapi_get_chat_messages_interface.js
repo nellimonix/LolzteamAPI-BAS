@@ -26,8 +26,8 @@
 		description: tr("All fields of this group are optional")
 	}) %>
 		<%= _.template($('#input_constructor').html())({
-			id: "before_message",
-			description: tr("before_message"),
+			id: "before_message_id",
+			description: tr("before_message_id"),
 			default_selector: "int",
 			disable_string: true,
 			value_number: "",

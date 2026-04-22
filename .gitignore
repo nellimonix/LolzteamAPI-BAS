@@ -1,3 +1,4 @@
 forum.json
 generated/
 schema_compact.txt
+__pycache__/

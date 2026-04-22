@@ -6,7 +6,7 @@ if (threadId['original'].length == 0) {
 
 var title = GetInputConstructorValue('title', loader)
 var title_en = GetInputConstructorValue('title_en', loader)
-var prefix_ids = GetInputConstructorValue('prefix_ids', loader)
+var prefix_id = GetInputConstructorValue('prefix_id', loader)
 var tags = GetInputConstructorValue('tags', loader)
 
 var discussion_open = $("#discussion_open").is(':checked');
@@ -42,7 +42,7 @@ try {
 			threadId: threadId['updated'],
 			title: title['updated'],
 			title_en: title_en['updated'],
-			prefix_ids: prefix_ids['updated'],
+			prefix_id: prefix_id['updated'],
 			tags: tags['updated'],
             discussion_open: discussion_open,
 			hide_contacts: hide_contacts,

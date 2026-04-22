@@ -660,13 +660,13 @@ _LZTAPI = {
 				"watch_thread_state",
 				"watch_thread",
 				"watch_thread_email",
-				"prefix_ids"
+				"prefix_id"
 			]
 
 			list_ctxt.forEach(function (key) {
 				if (ctxt[key]) {
-					if (key === 'prefix_ids') {
-						ctxt['prefix_id[]'] = ctxt.prefix_ids.split(',')
+					if (key === 'prefix_id') {
+						ctxt['prefix_id[]'] = ctxt.prefix_id.split(',')
 					} else {
 						ctxt[key] = 1
 					}
@@ -713,8 +713,8 @@ _LZTAPI = {
 		edit: function () {
 			var ctxt = _arguments()
 
-			if (ctxt.prefix_ids) {
-				ctxt['prefix_id[]'] = ctxt.prefix_ids.split(',')
+			if (ctxt.prefix_id) {
+				ctxt['prefix_id[]'] = ctxt.prefix_id.split(',')
 			}
 
 			var params = _LZTAPI.tools.cleanObject(ctxt, [
@@ -802,13 +802,13 @@ _LZTAPI = {
 			// Сюда так же была добавлена строка, в которой мы указываем список через запятую
 			var list_ctxt = [
 				"apply_thread_prefix",
-				"prefix_ids"
+				"prefix_id"
 			]
 
 			list_ctxt.forEach(function (key) {
 				if (ctxt[key]) {
-					if (key === 'prefix_ids') {
-						ctxt['prefix_id[]'] = ctxt.prefix_ids.split(',')
+					if (key === 'prefix_id') {
+						ctxt['prefix_id[]'] = ctxt.prefix_id.split(',')
 					} else {
 						ctxt[key] = 1
 					}
@@ -3096,13 +3096,15 @@ _LZTAPI = {
 			var ctxt = _arguments()
 
 
+			var params = _LZTAPI.tools.cleanObject(ctxt, [
+				'delete_type', 'conversation_id'
+			])
+
 			var timeout = Number(ctxt.timeout) || 5000
 			var interval = Number(ctxt.interval) || 3000
 			var maxTime = Number(ctxt.maxTime) || 60000
 
 			var path = '/conversations'
-
-			var dataJ = _LZTAPI.tools.cleanObject(ctxt, ['conversation_id', 'delete_type'])
 
 			_call_function(_LZTAPI.request.make, {
 				path: path,
@@ -3111,7 +3113,6 @@ _LZTAPI = {
 				interval: interval,
 				maxTime: maxTime,
 				method: 'DELETE',
-				dataJ: dataJ,
 				scopes: ['post', 'conversate']
 			})!
 
@@ -3313,7 +3314,7 @@ _LZTAPI = {
 
 				var params = _LZTAPI.tools.cleanObject(ctxt, [
 					'room_id',
-					'before_message'
+					'before_message_id'
 				])
 
 				var timeout = Number(ctxt.timeout) || 5000
@@ -3329,7 +3330,7 @@ _LZTAPI = {
 					interval: interval,
 					maxTime: maxTime,
 					method: 'GET',
-					scopes: ['read']
+					scopes: ['chatbox']
 				})!
 
 				_function_return(_result_function())
@@ -3341,13 +3342,13 @@ _LZTAPI = {
 					'room_id'
 				])
 
-				var dataJ = _LZTAPI.tools.cleanObject(ctxt, ['message'])
+				var dataJ = _LZTAPI.tools.cleanObject(ctxt, ['reason'])
 
 				var timeout = Number(ctxt.timeout) || 5000
 				var interval = Number(ctxt.interval) || 3000
 				var maxTime = Number(ctxt.maxTime) || 60000
 
-				var path = '/chatbox/message'
+				var path = '/chatbox/messages'
 
 				_call_function(_LZTAPI.request.make, {
 					path: path,
@@ -3357,7 +3358,7 @@ _LZTAPI = {
 					maxTime: maxTime,
 					method: 'POST',
 					dataJ: dataJ,
-					scopes: ['post']
+					scopes: ['chatbox']
 				})!
 
 				_function_return(_result_function())
@@ -3369,13 +3370,13 @@ _LZTAPI = {
 					'message_id'
 				])
 
-				var dataJ = _LZTAPI.tools.cleanObject(ctxt, ['message'])
+				var dataJ = _LZTAPI.tools.cleanObject(ctxt, ['reason'])
 
 				var timeout = Number(ctxt.timeout) || 5000
 				var interval = Number(ctxt.interval) || 3000
 				var maxTime = Number(ctxt.maxTime) || 60000
 
-				var path = '/chatbox/message'
+				var path = '/chatbox/messages'
 
 				_call_function(_LZTAPI.request.make, {
 					path: path,
@@ -3385,7 +3386,7 @@ _LZTAPI = {
 					maxTime: maxTime,
 					method: 'PUT',
 					dataJ: dataJ,
-					scopes: ['post']
+					scopes: ['chatbox']
 				})!
 
 				_function_return(_result_function())
@@ -3401,7 +3402,7 @@ _LZTAPI = {
 				var interval = Number(ctxt.interval) || 3000
 				var maxTime = Number(ctxt.maxTime) || 60000
 
-				var path = '/chatbox/message'
+				var path = '/chatbox/messages'
 
 				_call_function(_LZTAPI.request.make, {
 					path: path,
@@ -3410,7 +3411,7 @@ _LZTAPI = {
 					interval: interval,
 					maxTime: maxTime,
 					method: 'DELETE',
-					scopes: ['post']
+					scopes: ['chatbox']
 				})!
 
 				_function_return(_result_function())
@@ -3491,13 +3492,13 @@ _LZTAPI = {
 					'message_id'
 				])
 
-				var dataJ = _LZTAPI.tools.cleanObject(ctxt, ['message'])
+				var dataJ = _LZTAPI.tools.cleanObject(ctxt, ['reason'])
 
 				var timeout = Number(ctxt.timeout) || 5000
 				var interval = Number(ctxt.interval) || 3000
 				var maxTime = Number(ctxt.maxTime) || 60000
 
-				var path = '/chatbox/report'
+				var path = '/chatbox/messages/report'
 
 				_call_function(_LZTAPI.request.make, {
 					path: path,
@@ -3507,7 +3508,7 @@ _LZTAPI = {
 					maxTime: maxTime,
 					method: 'POST',
 					dataJ: dataJ,
-					scopes: ['post']
+					scopes: ['chatbox']
 				})!
 
 				_function_return(_result_function())
@@ -3533,7 +3534,7 @@ _LZTAPI = {
 				interval: interval,
 				maxTime: maxTime,
 				method: 'GET',
-				scopes: ['read']
+				scopes: ['chatbox']
 			})!
 
 			_function_return(_result_function())
@@ -3545,7 +3546,7 @@ _LZTAPI = {
 			var interval = Number(ctxt.interval) || 3000
 			var maxTime = Number(ctxt.maxTime) || 60000
 
-			var path = '/chatbox/ignored'
+			var path = '/chatbox/ignore'
 
 			_call_function(_LZTAPI.request.make, {
 				path: path,
@@ -3554,7 +3555,7 @@ _LZTAPI = {
 				interval: interval,
 				maxTime: maxTime,
 				method: 'GET',
-				scopes: ['read']
+				scopes: ['chatbox']
 			})!
 
 			_function_return(_result_function())
@@ -3580,7 +3581,7 @@ _LZTAPI = {
 				maxTime: maxTime,
 				method: 'POST',
 				dataJ: null,
-				scopes: ['post']
+				scopes: ['chatbox']
 			})!
 
 			_function_return(_result_function())
@@ -3605,7 +3606,7 @@ _LZTAPI = {
 				interval: interval,
 				maxTime: maxTime,
 				method: 'DELETE',
-				scopes: ['post']
+				scopes: ['chatbox']
 			})!
 
 			_function_return(_result_function())

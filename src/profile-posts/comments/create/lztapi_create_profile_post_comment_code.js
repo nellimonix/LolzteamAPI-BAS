@@ -1,5 +1,5 @@
 _call_function(_LZTAPI.__Profile_posts.__Profile_posts_comments.create, {
-  profilePostId:  (<%= profilePostId %>),
+  profile_post_id:  (<%= profile_post_id %>),
   comment_body:  (<%= comment_body %>),
   timeout:  (<%= timeout %>) * 1000,
   interval: (<%= interval %>) * 1000,

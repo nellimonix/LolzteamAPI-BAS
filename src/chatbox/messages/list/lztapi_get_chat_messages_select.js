@@ -4,7 +4,7 @@ if (room_id['original'].length == 0) {
 	return
 }
 
-var before_message = GetInputConstructorValue('before_message', loader)
+var before_message_id = GetInputConstructorValue('before_message_id', loader)
 
 var timeout = GetInputConstructorValue('timeout', loader)
 if (timeout['original'].length == 0) {
@@ -29,7 +29,7 @@ try {
 		loader.GetAdditionalData() +
 		_.template($('#lztapi_get_chat_messages_code').html())({
 			room_id: room_id['updated'],
-            before_message: before_message['updated'],
+            before_message_id: before_message_id['updated'],
 			timeout: timeout['updated'],
 			maxTime: maxTime['updated'],
 			interval: interval['updated'],

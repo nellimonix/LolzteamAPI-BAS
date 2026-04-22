@@ -11,7 +11,7 @@ if (node_id['original'].length == 0) {
 
 var title = GetInputConstructorValue('title', loader)
 var title_en = GetInputConstructorValue('title_en', loader)
-var prefix_ids = GetInputConstructorValue('prefix_ids', loader)
+var prefix_id = GetInputConstructorValue('prefix_id', loader)
 
 var apply_thread_prefix = $("#discussion_open").is(':checked');
 var send_alert = $("#hide_contacts").is(':checked');
@@ -42,7 +42,7 @@ try {
             node_id: node_id['updated'],
 			title: title['updated'],
 			title_en: title_en['updated'],
-			prefix_ids: prefix_ids['updated'],
+			prefix_id: prefix_id['updated'],
             apply_thread_prefix: apply_thread_prefix,
 			send_alert: send_alert,
 			timeout: timeout['updated'],

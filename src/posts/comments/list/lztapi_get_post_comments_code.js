@@ -1,5 +1,6 @@
 _call_function(_LZTAPI.__Posts.__Posts_comments.get, {
-  postId:  (<%= postId %>),
+  post_id:  (<%= post_id %>),
+  post_comment_id:  (<%= post_comment_id %>),
   before:  (<%= before %>),
   before_comment:  (<%= before_comment %>),
   timeout:  (<%= timeout %>) * 1000,

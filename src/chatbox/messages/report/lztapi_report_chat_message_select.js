@@ -4,9 +4,9 @@ if (message_id['original'].length == 0) {
 	return
 }
 
-var message = GetInputConstructorValue('message', loader)
-if (message['original'].length == 0) {
-	Invalid(tr('The parameter "') + tr('message') + tr('" is not specified'))
+var reason = GetInputConstructorValue('reason', loader)
+if (reason['original'].length == 0) {
+	Invalid(tr('The parameter "') + tr('reason') + tr('" is not specified'))
 	return
 }
 
@@ -33,7 +33,7 @@ try {
 		loader.GetAdditionalData() +
 		_.template($('#lztapi_report_chat_message_code').html())({
 			message_id: message_id['updated'],
-            message: message['updated'],
+            reason: reason['updated'],
 			timeout: timeout['updated'],
 			maxTime: maxTime['updated'],
 			interval: interval['updated'],

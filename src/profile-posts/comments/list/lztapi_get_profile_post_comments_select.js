@@ -1,6 +1,6 @@
-var profilePostId = GetInputConstructorValue('profilePostId', loader)
-if (profilePostId['original'].length == 0) {
-	Invalid(tr('The parameter "') + tr('profilePostId') + tr('" is not specified'))
+var profile_post_id = GetInputConstructorValue('profile_post_id', loader)
+if (profile_post_id['original'].length == 0) {
+	Invalid(tr('The parameter "') + tr('profile_post_id') + tr('" is not specified'))
 	return
 }
 var before = GetInputConstructorValue('before', loader)
@@ -28,7 +28,7 @@ try {
 	var code =
 		loader.GetAdditionalData() +
 		_.template($('#lztapi_get_profile_post_comments_code').html())({
-            profilePostId: profilePostId['updated'],
+            profile_post_id: profile_post_id['updated'],
 			before: before['updated'],
 			limit: limit['updated'],
 			timeout: timeout['updated'],

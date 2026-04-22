@@ -1,6 +1,7 @@
 _call_function(_LZTAPI.__Conversations.list, {
-  page: (<%= page %>),
-  limit: (<%= page %>),
+  folder:  (<%= folder %>),
+  page:  (<%= page %>),
+  limit:  (<%= limit %>),
   timeout:  (<%= timeout %>) * 1000,
   interval: (<%= interval %>) * 1000,
   maxTime: (<%= maxTime %>) * 1000

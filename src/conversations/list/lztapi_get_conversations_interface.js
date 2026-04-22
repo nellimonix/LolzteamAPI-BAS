@@ -1,4 +1,15 @@
 <div class="container-fluid">
+	<%= _.template($('#input_constructor').html())({
+		id: "folder",
+		description: tr("folder"),
+		default_selector: "string",
+		disable_int: true,
+		value_string: "",
+		variants: ["all","unread","groups","market","market_replacements","staff","giveaways","p2p"],
+		help: {
+			description: tr("Conversation folder to filter.")
+		}
+	}) %>
 	<%= _.template($('#block_start').html())({
 		id:"Options",
 		name: tr("Options"),

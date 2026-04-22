@@ -1,7 +1,7 @@
 <div class="container-fluid">
 	<%= _.template($('#input_constructor').html())({
-		id: "profilePostId",
-		description: tr("profilePostId"),
+		id: "profile_post_id",
+		description: tr("profile_post_id"),
 		default_selector: "int",
 		disable_string: true,
 		value_number: "",

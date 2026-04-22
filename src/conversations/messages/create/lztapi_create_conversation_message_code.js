@@ -1,5 +1,6 @@
 _call_function(_LZTAPI.__Conversations.__Conversations_messages.create, {
-  conversation_id:  (<%= conversation_id %>),
+  conversationId:  (<%= conversationId %>),
+  reply_message_id:  (<%= reply_message_id %>),
   message_body:  (<%= message_body %>),
   timeout:  (<%= timeout %>) * 1000,
   interval: (<%= interval %>) * 1000,

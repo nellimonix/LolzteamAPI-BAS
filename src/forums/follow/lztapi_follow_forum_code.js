@@ -1,7 +1,7 @@
 _call_function(_LZTAPI.__Forums.follow, {
   forumId: (<%= forumId %>),
   post: (<%= post %>),
-  alert: (<%= alert_ %>),
+  alert: (<%= alert %>),
   email: (<%= email %>),
   prefix_ids: (<%= prefix_ids %>),
   minimal_contest_amount: (<%= minimal_contest_amount %>),

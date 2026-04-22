@@ -2,7 +2,7 @@ _call_function(_LZTAPI.__Threads.edit, {
   threadId:  (<%= threadId %>),
   title:  (<%= title %>),
   title_en:  (<%= title_en %>),
-  prefix_ids:  (<%= prefix_ids %>),
+  prefix_id:  (<%= prefix_id %>),
   tags:  (<%= tags %>),
   discussion_open:  (<%= discussion_open %>),
   hide_contacts:  (<%= hide_contacts %>),

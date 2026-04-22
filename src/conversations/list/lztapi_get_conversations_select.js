@@ -1,3 +1,4 @@
+var folder = GetInputConstructorValue('folder', loader)
 var page = GetInputConstructorValue('page', loader)
 var limit = GetInputConstructorValue('limit', loader)
 
@@ -23,6 +24,7 @@ try {
 	var code =
 		loader.GetAdditionalData() +
 		_.template($('#lztapi_get_conversations_code').html())({
+			folder: folder['updated'],
 			page: page['updated'],
 			limit: limit['updated'],
 			timeout: timeout['updated'],

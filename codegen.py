@@ -1392,6 +1392,7 @@ def generate_action(action_name, ep, output_dir, subdir):
         'engine_path': engine_path,
         'engine_code': gen_engine_method(ep),
         'folder': folder,
+        'path_params': [snake_to_camel(p['name']) for p in ep['params'] if p.get('in') == 'path'],
     }
 
 
@@ -1400,10 +1401,18 @@ def gen_manifest_entry(info, subdir):
     rel = f"{subdir}/{folder}" if subdir else folder
     name = info['name']
 
+    # Build template: {{threadId}} -> {{Save}} or just -> {{Save}}
+    path_params = info.get('path_params', [])
+    if path_params:
+        prefix = ' '.join(f"{{{{{p}}}}}" for p in path_params)
+        template = f"{prefix} -> {{{{Save}}}}"
+    else:
+        template = "-> {{Save}}"
+
     return {
         "name": name,
         "description": {"en": info['tooltip_en'], "ru": info['tooltip_ru']},
-        "template": "-> {{Save}}",
+        "template": template,
         "is_element": False,
         "interface": f"{rel}/{name}_interface.js",
         "select": f"{rel}/{name}_select.js",
@@ -1451,7 +1460,10 @@ def main():
 
     # === REMOVED: есть в модуле, но нет в API схеме ===
     # Действия которые НЕ нужно проверять на удаление (системные, не из API)
-    system_actions = {'lztapi_settings', 'lztapi_batch_record', 'lztapi_batch_stop'}
+    system_actions = {
+        'lztapi_settings',
+        'lztapi_batch_record', 'lztapi_batch_stop', 'lztapi_batch_execute',
+    }
     removed_actions = []
     for action_name in sorted(existing):
         if action_name not in schema_action_names and action_name not in system_actions:
@@ -1460,6 +1472,8 @@ def main():
     # === CHANGED: параметры изменились ===
     changed_actions = []
     for action_name, ep in exist_eps:
+        if action_name in system_actions:
+            continue
         code_path = find_code_js(args.module_dir, action_name, manifest)
         if not code_path:
             continue

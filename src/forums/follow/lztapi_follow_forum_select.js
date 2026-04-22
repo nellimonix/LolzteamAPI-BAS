@@ -2,7 +2,7 @@ var prefix_ids = GetInputConstructorValue('prefix_ids', loader)
 var minimal_contest_amount = GetInputConstructorValue('minimal_contest_amount', loader)
 
 var post = $('#post').is(':checked')
-var alert_ = $('#alert_').is(':checked')
+var alert = $('#alert').is(':checked')
 var email = $('#email').is(':checked')
 
 var forumId = GetInputConstructorValue('forumId', loader)
@@ -37,7 +37,7 @@ try {
 			prefix_ids: prefix_ids['updated'],
 			minimal_contest_amount: minimal_contest_amount['updated'],
             post: post,
-			alert_: alert_,
+			alert: alert,
 			email: email,
 			timeout: timeout['updated'],
 			maxTime: maxTime['updated'],

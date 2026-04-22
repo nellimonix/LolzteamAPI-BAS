@@ -1,6 +1,6 @@
-var postId = GetInputConstructorValue('postId', loader)
-if (postId['original'].length == 0) {
-	Invalid(tr('The parameter "') + tr('postId') + tr('" is not specified'))
+var post_id = GetInputConstructorValue('post_id', loader)
+if (post_id['original'].length == 0) {
+	Invalid(tr('The parameter "') + tr('post_id') + tr('" is not specified'))
 	return
 }
 
@@ -29,7 +29,7 @@ try {
 	var code =
 		loader.GetAdditionalData() +
 		_.template($('#lztapi_get_post_comments_code').html())({
-			postId: postId['updated'],
+			post_id: post_id['updated'],
             before: before['updated'],
 			before_comment: before_comment['updated'],
 			timeout: timeout['updated'],
