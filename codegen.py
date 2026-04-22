@@ -142,6 +142,8 @@ FOLDER_MAP = {
     "lztapi_edit_post_comment": "posts/comments/edit",
     "lztapi_delete_post_comment": "posts/comments/delete",
     "lztapi_report_post_comment": "posts/comments/report",
+    "lztapi_get_post_report_reasons": "posts/report-reasons",
+    "lztapi_get_post_comment_report_reasons": "posts/comments/report-reasons",
     "lztapi_get_profile_posts": "profile-posts/list",
     "lztapi_get_profile_post": "profile-posts/get",
     "lztapi_create_profile_post": "profile-posts/create",
@@ -156,6 +158,11 @@ FOLDER_MAP = {
     "lztapi_get_profile_post_comments": "profile-posts/comments/list",
     "lztapi_get_profile_post_comment": "profile-posts/comments/get",
     "lztapi_create_profile_post_comment": "profile-posts/comments/create",
+    "lztapi_edit_profile_post_comment": "profile-posts/comments/edit",
+    "lztapi_delete_profile_post_comment": "profile-posts/comments/delete",
+    "lztapi_report_profile_post_comment": "profile-posts/comments/report",
+    "lztapi_get_profile_post_report_reasons": "profile-posts/report-reasons",
+    "lztapi_get_profile_post_comment_report_reasons": "profile-posts/comments/report-reasons",
     "lztapi_get_users": "users/list",
     "lztapi_get_user": "users/get",
     "lztapi_get_current_user": "users/current",
@@ -214,9 +221,36 @@ FOLDER_MAP = {
     "lztapi_edit_chat_message": "chatbox/messages/edit",
     "lztapi_delete_chat_message": "chatbox/messages/delete",
     "lztapi_report_chat_message": "chatbox/messages/report",
+    "lztapi_get_chat_report_reasons": "chatbox/messages/report-reasons",
+    "lztapi_get_chat_online": "chatbox/online",
+    "lztapi_get_chat_leaderboard": "chatbox/leaderboard",
     "lztapi_batch_record": "batch/record",
     "lztapi_batch_stop": "batch/stop",
     "lztapi_batch_execute": "batch/execute",
+
+    # --- Новые из обновлённой схемы ---
+    "lztapi_get_forum_followers": "forums/followers",
+    "lztapi_get_thread_navigation": "threads/navigation",
+    "lztapi_edit_conversation": "conversations/edit",
+    "lztapi_delete_conversation": "conversations/delete",
+    "lztapi_start_conversation": "conversations/start",
+    "lztapi_save_conversation": "conversations/save",
+    "lztapi_search_conversation": "conversations/search",
+    "lztapi_invite_conversation": "conversations/invite",
+    "lztapi_kick_conversation": "conversations/kick",
+    "lztapi_read_conversation": "conversations/read",
+    "lztapi_readall_conversations": "conversations/read-all",
+    "lztapi_star_conversation": "conversations/star",
+    "lztapi_unstar_conversation": "conversations/unstar",
+    "lztapi_enable_conversation_alerts": "conversations/alerts/enable",
+    "lztapi_disable_conversation_alerts": "conversations/alerts/disable",
+    "lztapi_delete_conversation_message": "conversations/messages/delete",
+    "lztapi_stick_conversation_message": "conversations/messages/stick",
+    "lztapi_unstick_conversation_message": "conversations/messages/unstick",
+    "lztapi_search_users": "search/users",
+    "lztapi_get_search_results": "search/results",
+    "lztapi_get_forms": "forms/list",
+    "lztapi_create_form": "forms/create",
 }
 
 
@@ -285,15 +319,20 @@ CUSTOM_OP_MAP = {
                               "Delete a post comment.", "Удалить комментарий"),
     "Posts.Comments.Report": ("lztapi_report_post_comment", "__Posts.__Posts_comments.report",
                               "Report a post comment.", "Пожаловаться на комментарий"),
-    "Posts.Comments.ReportReasons": None,
-    "Posts.ReportReasons": None,
+    "Posts.Comments.ReportReasons": ("lztapi_get_post_comment_report_reasons",
+                                     "__Posts.__Posts_comments.reportReasons",
+                                     "Get post comment report reasons.", "Причины жалобы на комментарий"),
+    "Posts.ReportReasons": ("lztapi_get_post_report_reasons", "__Posts.reportReasons",
+                            "Get post report reasons.", "Причины жалобы на пост"),
 
     # Profile posts
     "ProfilePosts.Stick": ("lztapi_stick_profile_post", "__Profile_posts.stick",
                            "Stick a profile post.", "Закрепить сообщение профиля"),
     "ProfilePosts.Unstick": ("lztapi_unstick_profile_post", "__Profile_posts.unstick",
                              "Unstick a profile post.", "Открепить сообщение профиля"),
-    "ProfilePosts.ReportReasons": None,
+    "ProfilePosts.ReportReasons": ("lztapi_get_profile_post_report_reasons",
+                                   "__Profile_posts.reportReasons",
+                                   "Get profile post report reasons.", "Причины жалобы на запись профиля"),
 
     # Profile post comments
     "ProfilePosts.Comments.List": ("lztapi_get_profile_post_comments",
@@ -305,6 +344,19 @@ CUSTOM_OP_MAP = {
     "ProfilePosts.Comments.Create": ("lztapi_create_profile_post_comment",
                                      "__Profile_posts.__Profile_posts_comments.create",
                                      "Create profile post comment.", "Создать комментарий"),
+    "ProfilePosts.Comments.Edit": ("lztapi_edit_profile_post_comment",
+                                   "__Profile_posts.__Profile_posts_comments.edit",
+                                   "Edit profile post comment.", "Редактировать комментарий профиля"),
+    "ProfilePosts.Comments.Delete": ("lztapi_delete_profile_post_comment",
+                                     "__Profile_posts.__Profile_posts_comments.delete_",
+                                     "Delete profile post comment.", "Удалить комментарий профиля"),
+    "ProfilePosts.Comments.Report": ("lztapi_report_profile_post_comment",
+                                     "__Profile_posts.__Profile_posts_comments.report",
+                                     "Report profile post comment.", "Пожаловаться на комментарий профиля"),
+    "ProfilePosts.Comments.ReportReasons": ("lztapi_get_profile_post_comment_report_reasons",
+                                            "__Profile_posts.__Profile_posts_comments.reportReasons",
+                                            "Get profile post comment report reasons.",
+                                            "Причины жалобы на комментарий профиля"),
 
     # Users special
     "Users.Current": ("lztapi_get_current_user", "__Users.getCurrent",
@@ -399,6 +451,128 @@ CUSTOM_OP_MAP = {
                  "List tagged contents.", "Содержимое по тегу"),
     "Tags.Find": ("lztapi_get_filtered_content", "__Tags.find",
                   "Filtered tags.", "Поиск тегов"),
+
+    # --- Новые operationId из обновлённой схемы ---
+
+    # Navigation (новый operationId)
+    "Navigation.List": ("lztapi_get_navigation", "navigation.list",
+                        "List navigation elements.", "Элементы навигации"),
+
+    # Posts — likes / comments (новые operationId)
+    "Posts.Likes": ("lztapi_get_post_likes", "__Posts.likes",
+                    "List of users who liked a post.", "Лайки поста"),
+    "Posts.Comments.Edit": ("lztapi_edit_post_comment", "__Posts.__Posts_comments.edit",
+                            "Edit a post comment.", "Редактировать комментарий"),
+    "Posts.Comments.Delete": ("lztapi_delete_post_comment", "__Posts.__Posts_comments.delete_",
+                              "Delete a post comment.", "Удалить комментарий"),
+    "Posts.Comments.Report": ("lztapi_report_post_comment", "__Posts.__Posts_comments.report",
+                              "Report a post comment.", "Пожаловаться на комментарий"),
+
+    # Profile posts — likes / stick (новые)
+    "ProfilePosts.Likes": ("lztapi_get_profile_post_likes", "__Profile_posts.likes",
+                           "List of users who liked a profile post.", "Лайки записи профиля"),
+    "ProfilePosts.Stick": ("lztapi_stick_profile_post", "__Profile_posts.stick",
+                           "Stick a profile post.", "Закрепить запись профиля"),
+    "ProfilePosts.Unstick": ("lztapi_unstick_profile_post", "__Profile_posts.unstick",
+                             "Unstick a profile post.", "Открепить запись профиля"),
+
+    # Users — avatar/background (схема поменяла operationId)
+    "Users.Avatar.Upload": ("lztapi_upload_avatar", "__Users.__Avatar.upload",
+                            "Upload user avatar.", "Загрузить аватар"),
+    "Users.Avatar.Delete": ("lztapi_delete_avatar", "__Users.__Avatar.delete_",
+                            "Delete user avatar.", "Удалить аватар"),
+    "Users.Avatar.Crop": ("lztapi_crop_avatar", "__Users.__Avatar.crop",
+                          "Crop user avatar.", "Обрезать аватар"),
+    "Users.Background.Upload": ("lztapi_upload_background", "__Users.__Background.upload",
+                                "Upload user background.", "Загрузить фон"),
+    "Users.Background.Delete": ("lztapi_delete_background", "__Users.__Background.delete_",
+                                "Delete user background.", "Удалить фон"),
+    "Users.Background.Crop": ("lztapi_crop_background", "__Users.__Background.crop",
+                              "Crop user background.", "Обрезать фон"),
+
+    # Threads — navigation
+    "Threads.Navigation": ("lztapi_get_thread_navigation", "__Threads.navigation",
+                           "Get thread navigation.", "Навигация темы"),
+
+    # Conversations — новые действия
+    "Conversations.Update": ("lztapi_edit_conversation", "__Conversations.edit",
+                             "Edit conversation settings.", "Изменить настройки диалога"),
+    "Conversations.Delete": ("lztapi_delete_conversation", "__Conversations.delete_",
+                             "Delete a conversation.", "Удалить диалог"),
+    "Conversations.Start": ("lztapi_start_conversation", "__Conversations.start",
+                            "Start a conversation with user.", "Начать диалог"),
+    "Conversations.Save": ("lztapi_save_conversation", "__Conversations.save",
+                           "Save a conversation by link.", "Сохранить диалог по ссылке"),
+    "Conversations.Search": ("lztapi_search_conversation", "__Conversations.search",
+                             "Search in conversations.", "Поиск в диалогах"),
+    "Conversations.Invite": ("lztapi_invite_conversation", "__Conversations.invite",
+                             "Invite users to conversation.", "Пригласить в диалог"),
+    "Conversations.Kick": ("lztapi_kick_conversation", "__Conversations.kick",
+                           "Kick user from conversation.", "Исключить из диалога"),
+    "Conversations.Read": ("lztapi_read_conversation", "__Conversations.read",
+                           "Mark conversation as read.", "Отметить прочитанным"),
+    "Conversations.ReadAll": ("lztapi_readall_conversations", "__Conversations.readAll",
+                              "Mark all conversations read.", "Прочитать все диалоги"),
+    "Conversations.Star": ("lztapi_star_conversation", "__Conversations.star",
+                           "Star a conversation.", "Добавить в избранное"),
+    "Conversations.Unstar": ("lztapi_unstar_conversation", "__Conversations.unstar",
+                             "Unstar a conversation.", "Убрать из избранного"),
+    "Conversations.Alerts.Enable": ("lztapi_enable_conversation_alerts", "__Conversations.alerts.enable",
+                                    "Enable conversation alerts.", "Включить уведомления"),
+    "Conversations.Alerts.Disable": ("lztapi_disable_conversation_alerts", "__Conversations.alerts.disable",
+                                     "Disable conversation alerts.", "Выключить уведомления"),
+    "Conversations.Messages.Delete": ("lztapi_delete_conversation_message", "__Conversations.__Conversations_messages.delete_",
+                                      "Delete conversation message.", "Удалить сообщение"),
+    "Conversations.Messages.Stick": ("lztapi_stick_conversation_message", "__Conversations.__Conversations_messages.stick",
+                                     "Stick conversation message.", "Закрепить сообщение"),
+    "Conversations.Messages.Unstick": ("lztapi_unstick_conversation_message", "__Conversations.__Conversations_messages.unstick",
+                                       "Unstick conversation message.", "Открепить сообщение"),
+
+    # Search — новые
+    "Search.Users": ("lztapi_search_users", "__Search.users",
+                     "Search for users.", "Поиск пользователей"),
+    "Search.Results": ("lztapi_get_search_results", "__Search.results",
+                       "Get search results.", "Результаты поиска"),
+
+    # Chatbox — operationId полностью поменялись
+    "Chatbox.Index": ("lztapi_get_chats", "__Chatbox.list",
+                      "List chatbox rooms.", "Список комнат чата"),
+    "Chatbox.GetMessages": ("lztapi_get_chat_messages", "__Chatbox.__Chatbox_messages.get",
+                            "List chat messages.", "Сообщения чата"),
+    "Chatbox.PostMessage": ("lztapi_create_chat_message", "__Chatbox.__Chatbox_messages.create",
+                            "Create chat message.", "Написать в чат"),
+    "Chatbox.EditMessage": ("lztapi_edit_chat_message", "__Chatbox.__Chatbox_messages.edit",
+                            "Edit chat message.", "Редактировать сообщение чата"),
+    "Chatbox.DeleteMessage": ("lztapi_delete_chat_message", "__Chatbox.__Chatbox_messages.delete_",
+                              "Delete chat message.", "Удалить сообщение чата"),
+    "Chatbox.Online": ("lztapi_get_chat_online", "__Chatbox.online",
+                       "Get online users in chat.", "Онлайн пользователи чата"),
+    "Chatbox.ReportReasons": ("lztapi_get_chat_report_reasons", "__Chatbox.reportReasons",
+                              "Get chat report reasons.", "Причины жалобы в чате"),
+    "Chatbox.Report": ("lztapi_report_chat_message", "__Chatbox.__Chatbox_messages.report",
+                       "Report chat message.", "Пожаловаться на сообщение чата"),
+    "Chatbox.GetLeaderboard": ("lztapi_get_chat_leaderboard", "__Chatbox.leaderboard",
+                               "Get chat leaderboard.", "Лидерборд чата"),
+    "Chatbox.GetIgnore": ("lztapi_get_ignored_users_chats", "__Chatbox.ignored",
+                          "List ignored chat users.", "Игнор-лист чата"),
+    "Chatbox.PostIgnore": ("lztapi_ignore_chat_user", "__Chatbox.ignore",
+                           "Ignore chat user.", "Игнорировать в чате"),
+    "Chatbox.DeleteIgnore": ("lztapi_unignore_chat_user", "__Chatbox.unignore",
+                             "Unignore chat user.", "Убрать из игнора чата"),
+
+    # Batch
+    "Batch.Execute": ("lztapi_batch_execute", "__Batch.execute",
+                      "Execute batch request.", "Выполнить пакетный запрос"),
+
+    # Forms
+    "Forms.List": ("lztapi_get_forms", "__Forms.list",
+                   "List forms.", "Список форм"),
+    "Forms.Create": ("lztapi_create_form", "__Forms.create",
+                     "Create a form.", "Создать форму"),
+
+    # Forums — followers
+    "Forums.Followers": ("lztapi_get_forum_followers", "__Forums.followers",
+                         "List forum followers.", "Подписчики раздела"),
 }
 
 
@@ -616,6 +790,11 @@ def _render_param_widget(p):
     ptype = get_param_type(p)
     schema = p.get('schema', {})
     enum_vals = schema.get('enum', [])
+    # Fallback: если нет enum, берём examples как варианты
+    if not enum_vals:
+        examples = schema.get('examples', [])
+        if examples and all(isinstance(e, (str, int)) for e in examples):
+            enum_vals = examples
 
     # === Checkbox для boolean ===
     if ptype == 'boolean':
@@ -1043,6 +1222,57 @@ def parse_endpoints(schema):
     return endpoints
 
 
+def parse_code_js_params(filepath):
+    """Извлекает имена параметров из _code.js (ищет <%= paramName %>)."""
+    skip = {'variable', 'timeout', 'interval', 'maxTime'}
+    try:
+        with open(filepath, 'r', encoding='utf-8') as f:
+            content = f.read()
+        params = set(re.findall(r'<%=\s*(\w+)\s*%>', content))
+        return params - skip
+    except FileNotFoundError:
+        return set()
+
+
+def find_code_js(module_dir, action_name, manifest):
+    """Находит путь к _code.js для действия из manifest."""
+    for a in manifest.get('actions', []):
+        if a['name'] == action_name:
+            for code_entry in a.get('code', []):
+                code_path = os.path.join(module_dir, code_entry['file'])
+                if os.path.exists(code_path):
+                    return code_path
+    # Fallback — поиск в корне и src/
+    for root, _, files in os.walk(module_dir):
+        fname = f"{action_name}_code.js"
+        if fname in files:
+            return os.path.join(root, fname)
+    return None
+
+
+def get_schema_param_names(ep):
+    """Получает имена QUERY и BODY параметров для сравнения.
+    Path-параметры исключаются — они структурные, всегда присутствуют."""
+    names = set()
+    for p in ep['params']:
+        if p['name'] not in SKIP_PARAMS and p.get('in') != 'path':
+            names.add(p['name'])
+    for p in ep['body_params']:
+        if p['name'] not in SKIP_PARAMS:
+            names.add(p['name'])
+    return names
+
+
+def get_path_param_names(ep):
+    """Возвращает все формы path-параметров (snake + camel) для исключения."""
+    names = set()
+    for p in ep['params']:
+        if p.get('in') == 'path':
+            names.add(p['name'])
+            names.add(snake_to_camel(p['name']))
+    return names
+
+
 def get_existing_actions(module_dir):
     for name in ['manifest.json', 'test_manifest.json']:
         path = os.path.join(module_dir, name)
@@ -1142,33 +1372,87 @@ def main():
     existing, manifest = get_existing_actions(args.module_dir)
     print(f"[*] Existing actions: {len(existing)}")
 
+    # === Классификация эндпоинтов ===
     new_eps, exist_eps, skipped = [], [], []
+    schema_action_names = set()
+
     for ep in endpoints:
         action = operation_id_to_action_name(ep['operation_id'], ep['method'])
         if action is None:
             skipped.append(ep['operation_id'])
         elif action in existing:
             exist_eps.append((action, ep))
+            schema_action_names.add(action)
         else:
             new_eps.append((action, ep))
 
+    # === REMOVED: есть в модуле, но нет в API схеме ===
+    # Действия которые НЕ нужно проверять на удаление (системные, не из API)
+    system_actions = {'lztapi_settings', 'lztapi_batch_record', 'lztapi_batch_stop'}
+    removed_actions = []
+    for action_name in sorted(existing):
+        if action_name not in schema_action_names and action_name not in system_actions:
+            removed_actions.append(action_name)
+
+    # === CHANGED: параметры изменились ===
+    changed_actions = []
+    for action_name, ep in exist_eps:
+        code_path = find_code_js(args.module_dir, action_name, manifest)
+        if not code_path:
+            continue
+        current_params = parse_code_js_params(code_path)
+        schema_params = get_schema_param_names(ep)
+        path_params = get_path_param_names(ep)
+
+        # Исключаем path-параметры из _code.js (они структурные)
+        current_params = current_params - path_params
+
+        added_params = schema_params - current_params
+        removed_params = current_params - schema_params
+
+        if added_params or removed_params:
+            changed_actions.append({
+                'name': action_name,
+                'endpoint': ep,
+                'added': sorted(added_params),
+                'removed': sorted(removed_params),
+            })
+
+    # === Вывод результатов ===
     print(f"\n{'='*60}")
     print(f"  NEW:      {len(new_eps)}")
-    print(f"  EXISTING: {len(exist_eps)}")
+    print(f"  REMOVED:  {len(removed_actions)}")
+    print(f"  CHANGED:  {len(changed_actions)}")
+    print(f"  EXISTING: {len(exist_eps) - len(changed_actions)} (без изменений)")
     print(f"  SKIPPED:  {len(skipped)}")
     print(f"{'='*60}")
 
     if new_eps:
-        print("\n  New endpoints:")
+        print("\n  [+] New endpoints:")
         for name, ep in new_eps:
-            print(f"    + {name}  ({ep['method']} {ep['path']})")
+            print(f"      + {name}  ({ep['method']} {ep['path']})")
+
+    if removed_actions:
+        print("\n  [-] Removed (exist in module but NOT in API schema):")
+        for name in removed_actions:
+            print(f"      - {name}")
+
+    if changed_actions:
+        print("\n  [~] Changed parameters:")
+        for ch in changed_actions:
+            ep = ch['endpoint']
+            print(f"      ~ {ch['name']}  ({ep['method']} {ep['path']})")
+            if ch['added']:
+                print(f"        + params added:   {', '.join(ch['added'])}")
+            if ch['removed']:
+                print(f"        - params removed: {', '.join(ch['removed'])}")
 
     if skipped:
-        print(f"\n  Skipped: {', '.join(skipped)}")
+        print(f"\n  Skipped operationIds: {', '.join(skipped)}")
 
     if args.mode == 'diff':
         os.makedirs(args.output_dir, exist_ok=True)
-        _save_changelog(new_eps, args.output_dir)
+        _save_changelog(new_eps, removed_actions, changed_actions, args.output_dir)
         return
 
     if not new_eps:
@@ -1216,7 +1500,7 @@ def main():
         with open(os.path.join(args.output_dir, 'new_translations.json'), 'w', encoding='utf-8') as f:
             json.dump(translations, f, indent=2, ensure_ascii=False)
 
-    _save_changelog(new_eps, args.output_dir)
+    _save_changelog(new_eps, removed_actions, changed_actions, args.output_dir)
 
     print(f"\n{'='*60}")
     print(f"  Generated: {len(results)} actions")
@@ -1227,20 +1511,54 @@ def main():
     print(f"  2. Fill [TODO] translations in new_translations.json")
     print(f"  3. Merge new_manifest_actions.json → manifest.json")
     print(f"  4. Merge new_engine_methods.js → engine.js")
-    print(f"  5. Test in BAS")
+    if removed_actions:
+        print(f"  5. Remove {len(removed_actions)} deprecated action(s) from manifest + engine + files")
+    if changed_actions:
+        step = 6 if removed_actions else 5
+        print(f"  {step}. Update {len(changed_actions)} changed action(s) — see CHANGELOG.txt")
+    print(f"  !. Test in BAS")
 
 
-def _save_changelog(new_eps, output_dir):
+def _save_changelog(new_eps, removed_actions, changed_actions, output_dir):
     with open(os.path.join(output_dir, 'CHANGELOG.txt'), 'w', encoding='utf-8') as f:
         f.write(f"# LOLZTEAM API Module Changelog\n")
         f.write(f"# Generated: {datetime.now().isoformat()}\n")
-        f.write(f"# New: {len(new_eps)}\n\n")
-        for name, ep in new_eps:
-            params = ', '.join(p['name'] for p in ep['params'] + ep['body_params'])
-            f.write(f"+ {name}\n")
-            f.write(f"  {ep['method']} {ep['path']}\n")
-            f.write(f"  operationId: {ep['operation_id']}\n")
-            f.write(f"  params: {params}\n\n")
+        f.write(f"# New: {len(new_eps)}  Removed: {len(removed_actions)}  Changed: {len(changed_actions)}\n")
+
+        if new_eps:
+            f.write(f"\n{'='*50}\n")
+            f.write(f"  NEW ENDPOINTS ({len(new_eps)})\n")
+            f.write(f"{'='*50}\n\n")
+            for name, ep in new_eps:
+                params = ', '.join(p['name'] for p in ep['params'] + ep['body_params'])
+                f.write(f"+ {name}\n")
+                f.write(f"  {ep['method']} {ep['path']}\n")
+                f.write(f"  operationId: {ep['operation_id']}\n")
+                f.write(f"  params: {params}\n\n")
+
+        if removed_actions:
+            f.write(f"\n{'='*50}\n")
+            f.write(f"  REMOVED ({len(removed_actions)})\n")
+            f.write(f"  Exist in module but NOT in API schema.\n")
+            f.write(f"  Review and delete if no longer needed.\n")
+            f.write(f"{'='*50}\n\n")
+            for name in removed_actions:
+                f.write(f"- {name}\n")
+
+        if changed_actions:
+            f.write(f"\n{'='*50}\n")
+            f.write(f"  CHANGED PARAMETERS ({len(changed_actions)})\n")
+            f.write(f"  Params differ between module and API schema.\n")
+            f.write(f"{'='*50}\n\n")
+            for ch in changed_actions:
+                ep = ch['endpoint']
+                f.write(f"~ {ch['name']}\n")
+                f.write(f"  {ep['method']} {ep['path']}\n")
+                if ch['added']:
+                    f.write(f"  + NEW params:     {', '.join(ch['added'])}\n")
+                if ch['removed']:
+                    f.write(f"  - MISSING params: {', '.join(ch['removed'])}\n")
+                f.write(f"\n")
 
 
 if __name__ == '__main__':

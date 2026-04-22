@@ -86,6 +86,23 @@
       ]
     },
     {
+      "name": "lztapi_get_forums_grouped",
+      "description": {
+        "en": "Returns grouped forums.",
+        "ru": "Группированные разделы"
+      },
+      "template": "-> {{Save}}",
+      "is_element": false,
+      "interface": "src/forums/grouped/lztapi_get_forums_grouped_interface.js",
+      "select": "src/forums/grouped/lztapi_get_forums_grouped_select.js",
+      "code": [
+        {
+          "file": "src/forums/grouped/lztapi_get_forums_grouped_code.js",
+          "name": "lztapi_get_forums_grouped_code"
+        }
+      ]
+    },
+    {
       "name": "lztapi_get_forum",
       "description": {
         "en": "Forum details",
@@ -103,19 +120,19 @@
       ]
     },
     {
-      "name": "lztapi_get_followers",
+      "name": "lztapi_get_forum_followers",
       "description": {
-        "en": "List subscribers forum",
-        "ru": "Список подписчиков раздела"
+        "en": "List forum followers.",
+        "ru": "Подписчики раздела"
       },
-      "template": "{{forumId}} -> {{Save}}",
+      "template": "-> {{Save}}",
       "is_element": false,
-      "interface": "src/forums/followers/lztapi_get_followers_interface.js",
-      "select": "src/forums/followers/lztapi_get_followers_select.js",
+      "interface": "src/forums/followers/lztapi_get_forum_followers_interface.js",
+      "select": "src/forums/followers/lztapi_get_forum_followers_select.js",
       "code": [
         {
-          "file": "src/forums/followers/lztapi_get_followers_code.js",
-          "name": "lztapi_get_followers_code"
+          "file": "src/forums/followers/lztapi_get_forum_followers_code.js",
+          "name": "lztapi_get_forum_followers_code"
         }
       ]
     },
@@ -167,6 +184,74 @@
         {
           "file": "src/forums/unfollow/lztapi_unfollow_forum_code.js",
           "name": "lztapi_unfollow_forum_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_get_feed_options",
+      "description": {
+        "en": "Get feed options.",
+        "ru": "Настройки ленты"
+      },
+      "template": "-> {{Save}}",
+      "is_element": false,
+      "interface": "src/forums/feed/get/lztapi_get_feed_options_interface.js",
+      "select": "src/forums/feed/get/lztapi_get_feed_options_select.js",
+      "code": [
+        {
+          "file": "src/forums/feed/get/lztapi_get_feed_options_code.js",
+          "name": "lztapi_get_feed_options_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_edit_feed_options",
+      "description": {
+        "en": "Edit feed options.",
+        "ru": "Изменить настройки ленты"
+      },
+      "template": "-> {{Save}}",
+      "is_element": false,
+      "interface": "src/forums/feed/edit/lztapi_edit_feed_options_interface.js",
+      "select": "src/forums/feed/edit/lztapi_edit_feed_options_select.js",
+      "code": [
+        {
+          "file": "src/forums/feed/edit/lztapi_edit_feed_options_code.js",
+          "name": "lztapi_edit_feed_options_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_get_link_forums",
+      "description": {
+        "en": "List link forums.",
+        "ru": "Список ссылок"
+      },
+      "template": "-> {{Save}}",
+      "is_element": false,
+      "interface": "src/link-forums/list/lztapi_get_link_forums_interface.js",
+      "select": "src/link-forums/list/lztapi_get_link_forums_select.js",
+      "code": [
+        {
+          "file": "src/link-forums/list/lztapi_get_link_forums_code.js",
+          "name": "lztapi_get_link_forums_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_get_link_forum",
+      "description": {
+        "en": "Link forum details.",
+        "ru": "Подробности ссылки"
+      },
+      "template": "-> {{Save}}",
+      "is_element": false,
+      "interface": "src/link-forums/get/lztapi_get_link_forum_interface.js",
+      "select": "src/link-forums/get/lztapi_get_link_forum_select.js",
+      "code": [
+        {
+          "file": "src/link-forums/get/lztapi_get_link_forum_code.js",
+          "name": "lztapi_get_link_forum_code"
         }
       ]
     },
@@ -273,6 +358,23 @@
       ]
     },
     {
+      "name": "lztapi_finish_contest",
+      "description": {
+        "en": "Finish a contest.",
+        "ru": "Завершить розыгрыш"
+      },
+      "template": "-> {{Save}}",
+      "is_element": false,
+      "interface": "src/threads/finish-contest/lztapi_finish_contest_interface.js",
+      "select": "src/threads/finish-contest/lztapi_finish_contest_select.js",
+      "code": [
+        {
+          "file": "src/threads/finish-contest/lztapi_finish_contest_code.js",
+          "name": "lztapi_finish_contest_code"
+        }
+      ]
+    },
+    {
       "name": "lztapi_create_arbitrage",
       "description": {
         "en": "Create Arbitrage",
@@ -358,6 +460,23 @@
       ]
     },
     {
+      "name": "lztapi_hide_thread",
+      "description": {
+        "en": "Hide a thread from feed.",
+        "ru": "Скрыть тему из ленты"
+      },
+      "template": "-> {{Save}}",
+      "is_element": false,
+      "interface": "src/threads/hide/lztapi_hide_thread_interface.js",
+      "select": "src/threads/hide/lztapi_hide_thread_select.js",
+      "code": [
+        {
+          "file": "src/threads/hide/lztapi_hide_thread_code.js",
+          "name": "lztapi_hide_thread_code"
+        }
+      ]
+    },
+    {
       "name": "lztapi_get_thread_followers",
       "description": {
         "en": "List thread's followers",
@@ -426,19 +545,19 @@
       ]
     },
     {
-      "name": "lztapi_get_navigation_elements",
+      "name": "lztapi_get_thread_navigation",
       "description": {
-        "en": "Navigation list to the thread",
-        "ru": "Список навигации для перехода к теме"
+        "en": "Get thread navigation.",
+        "ru": "Навигация темы"
       },
-      "template": "{{threadId}} -> {{Save}}",
+      "template": "-> {{Save}}",
       "is_element": false,
-      "interface": "src/navigation/elements/lztapi_get_navigation_elements_interface.js",
-      "select": "src/navigation/elements/lztapi_get_navigation_elements_select.js",
+      "interface": "src/threads/navigation/lztapi_get_thread_navigation_interface.js",
+      "select": "src/threads/navigation/lztapi_get_thread_navigation_select.js",
       "code": [
         {
-          "file": "src/navigation/elements/lztapi_get_navigation_elements_code.js",
-          "name": "lztapi_get_navigation_elements_code"
+          "file": "src/threads/navigation/lztapi_get_thread_navigation_code.js",
+          "name": "lztapi_get_thread_navigation_code"
         }
       ]
     },
@@ -511,6 +630,74 @@
       ]
     },
     {
+      "name": "lztapi_bookmark_thread",
+      "description": {
+        "en": "Bookmark a thread.",
+        "ru": "Добавить тему в закладки"
+      },
+      "template": "-> {{Save}}",
+      "is_element": false,
+      "interface": "src/threads/star/lztapi_bookmark_thread_interface.js",
+      "select": "src/threads/star/lztapi_bookmark_thread_select.js",
+      "code": [
+        {
+          "file": "src/threads/star/lztapi_bookmark_thread_code.js",
+          "name": "lztapi_bookmark_thread_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_unbookmark_thread",
+      "description": {
+        "en": "Unbookmark a thread.",
+        "ru": "Убрать тему из закладок"
+      },
+      "template": "-> {{Save}}",
+      "is_element": false,
+      "interface": "src/threads/unstar/lztapi_unbookmark_thread_interface.js",
+      "select": "src/threads/unstar/lztapi_unbookmark_thread_select.js",
+      "code": [
+        {
+          "file": "src/threads/unstar/lztapi_unbookmark_thread_code.js",
+          "name": "lztapi_unbookmark_thread_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_get_forms",
+      "description": {
+        "en": "List forms.",
+        "ru": "Список форм"
+      },
+      "template": "-> {{Save}}",
+      "is_element": false,
+      "interface": "src/forms/list/lztapi_get_forms_interface.js",
+      "select": "src/forms/list/lztapi_get_forms_select.js",
+      "code": [
+        {
+          "file": "src/forms/list/lztapi_get_forms_code.js",
+          "name": "lztapi_get_forms_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_create_form",
+      "description": {
+        "en": "Create a form.",
+        "ru": "Создать форму"
+      },
+      "template": "-> {{Save}}",
+      "is_element": false,
+      "interface": "src/forms/create/lztapi_create_form_interface.js",
+      "select": "src/forms/create/lztapi_create_form_select.js",
+      "code": [
+        {
+          "file": "src/forms/create/lztapi_create_form_code.js",
+          "name": "lztapi_create_form_code"
+        }
+      ]
+    },
+    {
       "name": "lztapi_get_post_comments",
       "description": {
         "en": "Comment list",
@@ -541,6 +728,74 @@
         {
           "file": "src/posts/comments/create/lztapi_create_post_comment_code.js",
           "name": "lztapi_create_post_comment_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_edit_post_comment",
+      "description": {
+        "en": "Edit a post comment.",
+        "ru": "Редактировать комментарий"
+      },
+      "template": "-> {{Save}}",
+      "is_element": false,
+      "interface": "src/posts/comments/edit/lztapi_edit_post_comment_interface.js",
+      "select": "src/posts/comments/edit/lztapi_edit_post_comment_select.js",
+      "code": [
+        {
+          "file": "src/posts/comments/edit/lztapi_edit_post_comment_code.js",
+          "name": "lztapi_edit_post_comment_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_delete_post_comment",
+      "description": {
+        "en": "Delete a post comment.",
+        "ru": "Удалить комментарий"
+      },
+      "template": "-> {{Save}}",
+      "is_element": false,
+      "interface": "src/posts/comments/delete/lztapi_delete_post_comment_interface.js",
+      "select": "src/posts/comments/delete/lztapi_delete_post_comment_select.js",
+      "code": [
+        {
+          "file": "src/posts/comments/delete/lztapi_delete_post_comment_code.js",
+          "name": "lztapi_delete_post_comment_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_get_post_comment_report_reasons",
+      "description": {
+        "en": "Get post comment report reasons.",
+        "ru": "Причины жалобы на комментарий"
+      },
+      "template": "-> {{Save}}",
+      "is_element": false,
+      "interface": "src/posts/comments/report-reasons/lztapi_get_post_comment_report_reasons_interface.js",
+      "select": "src/posts/comments/report-reasons/lztapi_get_post_comment_report_reasons_select.js",
+      "code": [
+        {
+          "file": "src/posts/comments/report-reasons/lztapi_get_post_comment_report_reasons_code.js",
+          "name": "lztapi_get_post_comment_report_reasons_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_report_post_comment",
+      "description": {
+        "en": "Report a post comment.",
+        "ru": "Пожаловаться на комментарий"
+      },
+      "template": "-> {{Save}}",
+      "is_element": false,
+      "interface": "src/posts/comments/report/lztapi_report_post_comment_interface.js",
+      "select": "src/posts/comments/report/lztapi_report_post_comment_select.js",
+      "code": [
+        {
+          "file": "src/posts/comments/report/lztapi_report_post_comment_code.js",
+          "name": "lztapi_report_post_comment_code"
         }
       ]
     },
@@ -681,6 +936,23 @@
       ]
     },
     {
+      "name": "lztapi_get_post_report_reasons",
+      "description": {
+        "en": "Get post report reasons.",
+        "ru": "Причины жалобы на пост"
+      },
+      "template": "-> {{Save}}",
+      "is_element": false,
+      "interface": "src/posts/report-reasons/lztapi_get_post_report_reasons_interface.js",
+      "select": "src/posts/report-reasons/lztapi_get_post_report_reasons_select.js",
+      "code": [
+        {
+          "file": "src/posts/report-reasons/lztapi_get_post_report_reasons_code.js",
+          "name": "lztapi_get_post_report_reasons_code"
+        }
+      ]
+    },
+    {
       "name": "lztapi_report_post",
       "description": {
         "en": "Report Post",
@@ -745,6 +1017,57 @@
         {
           "file": "src/profile-posts/comments/create/lztapi_create_profile_post_comment_code.js",
           "name": "lztapi_create_profile_post_comment_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_edit_profile_post_comment",
+      "description": {
+        "en": "Edit profile post comment.",
+        "ru": "Редактировать комментарий профиля"
+      },
+      "template": "-> {{Save}}",
+      "is_element": false,
+      "interface": "src/profile-posts/comments/edit/lztapi_edit_profile_post_comment_interface.js",
+      "select": "src/profile-posts/comments/edit/lztapi_edit_profile_post_comment_select.js",
+      "code": [
+        {
+          "file": "src/profile-posts/comments/edit/lztapi_edit_profile_post_comment_code.js",
+          "name": "lztapi_edit_profile_post_comment_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_delete_profile_post_comment",
+      "description": {
+        "en": "Delete profile post comment.",
+        "ru": "Удалить комментарий профиля"
+      },
+      "template": "-> {{Save}}",
+      "is_element": false,
+      "interface": "src/profile-posts/comments/delete/lztapi_delete_profile_post_comment_interface.js",
+      "select": "src/profile-posts/comments/delete/lztapi_delete_profile_post_comment_select.js",
+      "code": [
+        {
+          "file": "src/profile-posts/comments/delete/lztapi_delete_profile_post_comment_code.js",
+          "name": "lztapi_delete_profile_post_comment_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_report_profile_post_comment",
+      "description": {
+        "en": "Report profile post comment.",
+        "ru": "Пожаловаться на комментарий профиля"
+      },
+      "template": "-> {{Save}}",
+      "is_element": false,
+      "interface": "src/profile-posts/comments/report/lztapi_report_profile_post_comment_interface.js",
+      "select": "src/profile-posts/comments/report/lztapi_report_profile_post_comment_select.js",
+      "code": [
+        {
+          "file": "src/profile-posts/comments/report/lztapi_report_profile_post_comment_code.js",
+          "name": "lztapi_report_profile_post_comment_code"
         }
       ]
     },
@@ -885,6 +1208,23 @@
       ]
     },
     {
+      "name": "lztapi_get_profile_post_report_reasons",
+      "description": {
+        "en": "Get profile post report reasons.",
+        "ru": "Причины жалобы на запись профиля"
+      },
+      "template": "-> {{Save}}",
+      "is_element": false,
+      "interface": "src/profile-posts/report-reasons/lztapi_get_profile_post_report_reasons_interface.js",
+      "select": "src/profile-posts/report-reasons/lztapi_get_profile_post_report_reasons_select.js",
+      "code": [
+        {
+          "file": "src/profile-posts/report-reasons/lztapi_get_profile_post_report_reasons_code.js",
+          "name": "lztapi_get_profile_post_report_reasons_code"
+        }
+      ]
+    },
+    {
       "name": "lztapi_report_profile_post",
       "description": {
         "en": "Report Profile Post",
@@ -898,6 +1238,40 @@
         {
           "file": "src/profile-posts/report/lztapi_report_profile_post_code.js",
           "name": "lztapi_report_profile_post_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_stick_profile_post",
+      "description": {
+        "en": "Stick a profile post.",
+        "ru": "Закрепить запись профиля"
+      },
+      "template": "-> {{Save}}",
+      "is_element": false,
+      "interface": "src/profile-posts/stick/lztapi_stick_profile_post_interface.js",
+      "select": "src/profile-posts/stick/lztapi_stick_profile_post_select.js",
+      "code": [
+        {
+          "file": "src/profile-posts/stick/lztapi_stick_profile_post_code.js",
+          "name": "lztapi_stick_profile_post_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_unstick_profile_post",
+      "description": {
+        "en": "Unstick a profile post.",
+        "ru": "Открепить запись профиля"
+      },
+      "template": "-> {{Save}}",
+      "is_element": false,
+      "interface": "src/profile-posts/unstick/lztapi_unstick_profile_post_interface.js",
+      "select": "src/profile-posts/unstick/lztapi_unstick_profile_post_select.js",
+      "code": [
+        {
+          "file": "src/profile-posts/unstick/lztapi_unstick_profile_post_code.js",
+          "name": "lztapi_unstick_profile_post_code"
         }
       ]
     },
@@ -1004,6 +1378,74 @@
       ]
     },
     {
+      "name": "lztapi_get_secret_answer_types",
+      "description": {
+        "en": "Get secret answer types.",
+        "ru": "Типы секретных вопросов"
+      },
+      "template": "-> {{Save}}",
+      "is_element": false,
+      "interface": "src/users/sa/types/lztapi_get_secret_answer_types_interface.js",
+      "select": "src/users/sa/types/lztapi_get_secret_answer_types_select.js",
+      "code": [
+        {
+          "file": "src/users/sa/types/lztapi_get_secret_answer_types_code.js",
+          "name": "lztapi_get_secret_answer_types_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_reset_secret_answer",
+      "description": {
+        "en": "Reset secret answer.",
+        "ru": "Сбросить секретный ответ"
+      },
+      "template": "-> {{Save}}",
+      "is_element": false,
+      "interface": "src/users/sa/reset/lztapi_reset_secret_answer_interface.js",
+      "select": "src/users/sa/reset/lztapi_reset_secret_answer_select.js",
+      "code": [
+        {
+          "file": "src/users/sa/reset/lztapi_reset_secret_answer_code.js",
+          "name": "lztapi_reset_secret_answer_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_cancel_sa_reset",
+      "description": {
+        "en": "Cancel SA reset.",
+        "ru": "Отменить сброс"
+      },
+      "template": "-> {{Save}}",
+      "is_element": false,
+      "interface": "src/users/sa/cancel-reset/lztapi_cancel_sa_reset_interface.js",
+      "select": "src/users/sa/cancel-reset/lztapi_cancel_sa_reset_select.js",
+      "code": [
+        {
+          "file": "src/users/sa/cancel-reset/lztapi_cancel_sa_reset_code.js",
+          "name": "lztapi_cancel_sa_reset_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_get_current_user",
+      "description": {
+        "en": "Current user details.",
+        "ru": "Текущий пользователь"
+      },
+      "template": "-> {{Save}}",
+      "is_element": false,
+      "interface": "src/users/current/lztapi_get_current_user_interface.js",
+      "select": "src/users/current/lztapi_get_current_user_select.js",
+      "code": [
+        {
+          "file": "src/users/current/lztapi_get_current_user_code.js",
+          "name": "lztapi_get_current_user_code"
+        }
+      ]
+    },
+    {
       "name": "lztapi_get_users",
       "description": {
         "en": "Users list",
@@ -1034,6 +1476,23 @@
         {
           "file": "src/users/fields/lztapi_get_user_fields_code.js",
           "name": "lztapi_get_user_fields_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_get_user_claims",
+      "description": {
+        "en": "Get user claims.",
+        "ru": "Арбитражи пользователя"
+      },
+      "template": "-> {{Save}}",
+      "is_element": false,
+      "interface": "src/users/claims/lztapi_get_user_claims_interface.js",
+      "select": "src/users/claims/lztapi_get_user_claims_select.js",
+      "code": [
+        {
+          "file": "src/users/claims/lztapi_get_user_claims_code.js",
+          "name": "lztapi_get_user_claims_code"
         }
       ]
     },
@@ -1191,6 +1650,23 @@
       ]
     },
     {
+      "name": "lztapi_edit_ignore_user",
+      "description": {
+        "en": "Edit ignoring options.",
+        "ru": "Настройки игнора"
+      },
+      "template": "-> {{Save}}",
+      "is_element": false,
+      "interface": "src/users/ignore-edit/lztapi_edit_ignore_user_interface.js",
+      "select": "src/users/ignore-edit/lztapi_edit_ignore_user_select.js",
+      "code": [
+        {
+          "file": "src/users/ignore-edit/lztapi_edit_ignore_user_code.js",
+          "name": "lztapi_edit_ignore_user_code"
+        }
+      ]
+    },
+    {
       "name": "lztapi_unignore_user",
       "description": {
         "en": "Unignore User",
@@ -1221,6 +1697,40 @@
         {
           "file": "src/users/timeline/lztapi_get_contents_code.js",
           "name": "lztapi_get_contents_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_get_user_trophies",
+      "description": {
+        "en": "Get user trophies.",
+        "ru": "Трофеи пользователя"
+      },
+      "template": "-> {{Save}}",
+      "is_element": false,
+      "interface": "src/users/trophies/lztapi_get_user_trophies_interface.js",
+      "select": "src/users/trophies/lztapi_get_user_trophies_select.js",
+      "code": [
+        {
+          "file": "src/users/trophies/lztapi_get_user_trophies_code.js",
+          "name": "lztapi_get_user_trophies_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_get_user_likes",
+      "description": {
+        "en": "Get user likes.",
+        "ru": "Лайки пользователя"
+      },
+      "template": "-> {{Save}}",
+      "is_element": false,
+      "interface": "src/users/likes/lztapi_get_user_likes_interface.js",
+      "select": "src/users/likes/lztapi_get_user_likes_select.js",
+      "code": [
+        {
+          "file": "src/users/likes/lztapi_get_user_likes_code.js",
+          "name": "lztapi_get_user_likes_code"
         }
       ]
     },
@@ -1293,6 +1803,57 @@
       ]
     },
     {
+      "name": "lztapi_delete_conversation_message",
+      "description": {
+        "en": "Delete conversation message.",
+        "ru": "Удалить сообщение"
+      },
+      "template": "-> {{Save}}",
+      "is_element": false,
+      "interface": "src/conversations/messages/delete/lztapi_delete_conversation_message_interface.js",
+      "select": "src/conversations/messages/delete/lztapi_delete_conversation_message_select.js",
+      "code": [
+        {
+          "file": "src/conversations/messages/delete/lztapi_delete_conversation_message_code.js",
+          "name": "lztapi_delete_conversation_message_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_stick_conversation_message",
+      "description": {
+        "en": "Stick conversation message.",
+        "ru": "Закрепить сообщение"
+      },
+      "template": "-> {{Save}}",
+      "is_element": false,
+      "interface": "src/conversations/messages/stick/lztapi_stick_conversation_message_interface.js",
+      "select": "src/conversations/messages/stick/lztapi_stick_conversation_message_select.js",
+      "code": [
+        {
+          "file": "src/conversations/messages/stick/lztapi_stick_conversation_message_code.js",
+          "name": "lztapi_stick_conversation_message_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_unstick_conversation_message",
+      "description": {
+        "en": "Unstick conversation message.",
+        "ru": "Открепить сообщение"
+      },
+      "template": "-> {{Save}}",
+      "is_element": false,
+      "interface": "src/conversations/messages/unstick/lztapi_unstick_conversation_message_interface.js",
+      "select": "src/conversations/messages/unstick/lztapi_unstick_conversation_message_select.js",
+      "code": [
+        {
+          "file": "src/conversations/messages/unstick/lztapi_unstick_conversation_message_code.js",
+          "name": "lztapi_unstick_conversation_message_code"
+        }
+      ]
+    },
+    {
       "name": "lztapi_get_conversations",
       "description": {
         "en": "List conversations",
@@ -1344,19 +1905,223 @@
       ]
     },
     {
-      "name": "lztapi_leave_conversation",
+      "name": "lztapi_start_conversation",
       "description": {
-        "en": "Leave conversation",
-        "ru": "Покинуть диалог"
+        "en": "Start a conversation with user.",
+        "ru": "Начать диалог"
       },
-      "template": "{{conversationId}} : {{delete_type}} -> {{Save}}",
+      "template": "-> {{Save}}",
       "is_element": false,
-      "interface": "src/conversations/leave/lztapi_leave_conversation_interface.js",
-      "select": "src/conversations/leave/lztapi_leave_conversation_select.js",
+      "interface": "src/conversations/start/lztapi_start_conversation_interface.js",
+      "select": "src/conversations/start/lztapi_start_conversation_select.js",
       "code": [
         {
-          "file": "src/conversations/leave/lztapi_leave_conversation_code.js",
-          "name": "lztapi_leave_conversation_code"
+          "file": "src/conversations/start/lztapi_start_conversation_code.js",
+          "name": "lztapi_start_conversation_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_edit_conversation",
+      "description": {
+        "en": "Edit conversation settings.",
+        "ru": "Изменить настройки диалога"
+      },
+      "template": "-> {{Save}}",
+      "is_element": false,
+      "interface": "src/conversations/edit/lztapi_edit_conversation_interface.js",
+      "select": "src/conversations/edit/lztapi_edit_conversation_select.js",
+      "code": [
+        {
+          "file": "src/conversations/edit/lztapi_edit_conversation_code.js",
+          "name": "lztapi_edit_conversation_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_delete_conversation",
+      "description": {
+        "en": "Delete a conversation.",
+        "ru": "Удалить диалог"
+      },
+      "template": "-> {{Save}}",
+      "is_element": false,
+      "interface": "src/conversations/delete/lztapi_delete_conversation_interface.js",
+      "select": "src/conversations/delete/lztapi_delete_conversation_select.js",
+      "code": [
+        {
+          "file": "src/conversations/delete/lztapi_delete_conversation_code.js",
+          "name": "lztapi_delete_conversation_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_save_conversation",
+      "description": {
+        "en": "Save a conversation by link.",
+        "ru": "Сохранить диалог по ссылке"
+      },
+      "template": "-> {{Save}}",
+      "is_element": false,
+      "interface": "src/conversations/save/lztapi_save_conversation_interface.js",
+      "select": "src/conversations/save/lztapi_save_conversation_select.js",
+      "code": [
+        {
+          "file": "src/conversations/save/lztapi_save_conversation_code.js",
+          "name": "lztapi_save_conversation_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_search_conversation",
+      "description": {
+        "en": "Search in conversations.",
+        "ru": "Поиск в диалогах"
+      },
+      "template": "-> {{Save}}",
+      "is_element": false,
+      "interface": "src/conversations/search/lztapi_search_conversation_interface.js",
+      "select": "src/conversations/search/lztapi_search_conversation_select.js",
+      "code": [
+        {
+          "file": "src/conversations/search/lztapi_search_conversation_code.js",
+          "name": "lztapi_search_conversation_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_invite_conversation",
+      "description": {
+        "en": "Invite users to conversation.",
+        "ru": "Пригласить в диалог"
+      },
+      "template": "-> {{Save}}",
+      "is_element": false,
+      "interface": "src/conversations/invite/lztapi_invite_conversation_interface.js",
+      "select": "src/conversations/invite/lztapi_invite_conversation_select.js",
+      "code": [
+        {
+          "file": "src/conversations/invite/lztapi_invite_conversation_code.js",
+          "name": "lztapi_invite_conversation_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_kick_conversation",
+      "description": {
+        "en": "Kick user from conversation.",
+        "ru": "Исключить из диалога"
+      },
+      "template": "-> {{Save}}",
+      "is_element": false,
+      "interface": "src/conversations/kick/lztapi_kick_conversation_interface.js",
+      "select": "src/conversations/kick/lztapi_kick_conversation_select.js",
+      "code": [
+        {
+          "file": "src/conversations/kick/lztapi_kick_conversation_code.js",
+          "name": "lztapi_kick_conversation_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_read_conversation",
+      "description": {
+        "en": "Mark conversation as read.",
+        "ru": "Отметить прочитанным"
+      },
+      "template": "-> {{Save}}",
+      "is_element": false,
+      "interface": "src/conversations/read/lztapi_read_conversation_interface.js",
+      "select": "src/conversations/read/lztapi_read_conversation_select.js",
+      "code": [
+        {
+          "file": "src/conversations/read/lztapi_read_conversation_code.js",
+          "name": "lztapi_read_conversation_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_readall_conversations",
+      "description": {
+        "en": "Mark all conversations read.",
+        "ru": "Прочитать все диалоги"
+      },
+      "template": "-> {{Save}}",
+      "is_element": false,
+      "interface": "src/conversations/read-all/lztapi_readall_conversations_interface.js",
+      "select": "src/conversations/read-all/lztapi_readall_conversations_select.js",
+      "code": [
+        {
+          "file": "src/conversations/read-all/lztapi_readall_conversations_code.js",
+          "name": "lztapi_readall_conversations_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_star_conversation",
+      "description": {
+        "en": "Star a conversation.",
+        "ru": "Добавить в избранное"
+      },
+      "template": "-> {{Save}}",
+      "is_element": false,
+      "interface": "src/conversations/star/lztapi_star_conversation_interface.js",
+      "select": "src/conversations/star/lztapi_star_conversation_select.js",
+      "code": [
+        {
+          "file": "src/conversations/star/lztapi_star_conversation_code.js",
+          "name": "lztapi_star_conversation_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_unstar_conversation",
+      "description": {
+        "en": "Unstar a conversation.",
+        "ru": "Убрать из избранного"
+      },
+      "template": "-> {{Save}}",
+      "is_element": false,
+      "interface": "src/conversations/unstar/lztapi_unstar_conversation_interface.js",
+      "select": "src/conversations/unstar/lztapi_unstar_conversation_select.js",
+      "code": [
+        {
+          "file": "src/conversations/unstar/lztapi_unstar_conversation_code.js",
+          "name": "lztapi_unstar_conversation_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_enable_conversation_alerts",
+      "description": {
+        "en": "Enable conversation alerts.",
+        "ru": "Включить уведомления"
+      },
+      "template": "-> {{Save}}",
+      "is_element": false,
+      "interface": "src/conversations/alerts/enable/lztapi_enable_conversation_alerts_interface.js",
+      "select": "src/conversations/alerts/enable/lztapi_enable_conversation_alerts_select.js",
+      "code": [
+        {
+          "file": "src/conversations/alerts/enable/lztapi_enable_conversation_alerts_code.js",
+          "name": "lztapi_enable_conversation_alerts_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_disable_conversation_alerts",
+      "description": {
+        "en": "Disable conversation alerts.",
+        "ru": "Выключить уведомления"
+      },
+      "template": "-> {{Save}}",
+      "is_element": false,
+      "interface": "src/conversations/alerts/disable/lztapi_disable_conversation_alerts_interface.js",
+      "select": "src/conversations/alerts/disable/lztapi_disable_conversation_alerts_select.js",
+      "code": [
+        {
+          "file": "src/conversations/alerts/disable/lztapi_disable_conversation_alerts_code.js",
+          "name": "lztapi_disable_conversation_alerts_code"
         }
       ]
     },
@@ -1374,6 +2139,40 @@
         {
           "file": "src/chatbox/list/lztapi_get_chats_code.js",
           "name": "lztapi_get_chats_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_get_chat_online",
+      "description": {
+        "en": "Get online users in chat.",
+        "ru": "Онлайн пользователи чата"
+      },
+      "template": "-> {{Save}}",
+      "is_element": false,
+      "interface": "src/chatbox/online/lztapi_get_chat_online_interface.js",
+      "select": "src/chatbox/online/lztapi_get_chat_online_select.js",
+      "code": [
+        {
+          "file": "src/chatbox/online/lztapi_get_chat_online_code.js",
+          "name": "lztapi_get_chat_online_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_get_chat_leaderboard",
+      "description": {
+        "en": "Get chat leaderboard.",
+        "ru": "Лидерборд чата"
+      },
+      "template": "-> {{Save}}",
+      "is_element": false,
+      "interface": "src/chatbox/leaderboard/lztapi_get_chat_leaderboard_interface.js",
+      "select": "src/chatbox/leaderboard/lztapi_get_chat_leaderboard_select.js",
+      "code": [
+        {
+          "file": "src/chatbox/leaderboard/lztapi_get_chat_leaderboard_code.js",
+          "name": "lztapi_get_chat_leaderboard_code"
         }
       ]
     },
@@ -1493,6 +2292,23 @@
         {
           "file": "src/chatbox/messages/delete/lztapi_delete_chat_message_code.js",
           "name": "lztapi_delete_chat_message_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_get_chat_report_reasons",
+      "description": {
+        "en": "Get chat report reasons.",
+        "ru": "Причины жалобы в чате"
+      },
+      "template": "-> {{Save}}",
+      "is_element": false,
+      "interface": "src/chatbox/messages/report-reasons/lztapi_get_chat_report_reasons_interface.js",
+      "select": "src/chatbox/messages/report-reasons/lztapi_get_chat_report_reasons_select.js",
+      "code": [
+        {
+          "file": "src/chatbox/messages/report-reasons/lztapi_get_chat_report_reasons_code.js",
+          "name": "lztapi_get_chat_report_reasons_code"
         }
       ]
     },
@@ -1714,6 +2530,40 @@
         {
           "file": "src/search/tagged/lztapi_search_tagged_code.js",
           "name": "lztapi_search_tagged_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_search_users",
+      "description": {
+        "en": "Search for users.",
+        "ru": "Поиск пользователей"
+      },
+      "template": "-> {{Save}}",
+      "is_element": false,
+      "interface": "src/search/users/lztapi_search_users_interface.js",
+      "select": "src/search/users/lztapi_search_users_select.js",
+      "code": [
+        {
+          "file": "src/search/users/lztapi_search_users_code.js",
+          "name": "lztapi_search_users_code"
+        }
+      ]
+    },
+    {
+      "name": "lztapi_get_search_results",
+      "description": {
+        "en": "Get search results.",
+        "ru": "Результаты поиска"
+      },
+      "template": "-> {{Save}}",
+      "is_element": false,
+      "interface": "src/search/results/lztapi_get_search_results_interface.js",
+      "select": "src/search/results/lztapi_get_search_results_select.js",
+      "code": [
+        {
+          "file": "src/search/results/lztapi_get_search_results_code.js",
+          "name": "lztapi_get_search_results_code"
         }
       ]
     },

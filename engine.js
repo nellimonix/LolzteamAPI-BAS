@@ -221,6 +221,7 @@ _LZTAPI = {
 		followers: function () {
 			var ctxt = _arguments()
 
+
 			var timeout = Number(ctxt.timeout) || 5000
 			var interval = Number(ctxt.interval) || 3000
 			var maxTime = Number(ctxt.maxTime) || 60000
@@ -255,6 +256,121 @@ _LZTAPI = {
 			_call_function(_LZTAPI.request.make, {
 				path: path,
 				params: params,
+				timeout: timeout,
+				interval: interval,
+				maxTime: maxTime,
+				method: 'GET',
+				scopes: ['read']
+			})!
+
+			_function_return(_result_function())
+		},
+		grouped: function () {
+			var ctxt = _arguments()
+
+
+			var timeout = Number(ctxt.timeout) || 5000
+			var interval = Number(ctxt.interval) || 3000
+			var maxTime = Number(ctxt.maxTime) || 60000
+
+			var path = '/forums/grouped'
+
+			_call_function(_LZTAPI.request.make, {
+				path: path,
+				params: null,
+				timeout: timeout,
+				interval: interval,
+				maxTime: maxTime,
+				method: 'GET',
+				scopes: ['read']
+			})!
+
+			_function_return(_result_function())
+		},
+		getFeedOptions: function () {
+			var ctxt = _arguments()
+
+
+			var timeout = Number(ctxt.timeout) || 5000
+			var interval = Number(ctxt.interval) || 3000
+			var maxTime = Number(ctxt.maxTime) || 60000
+
+			var path = '/forums/feed/options'
+
+			_call_function(_LZTAPI.request.make, {
+				path: path,
+				params: null,
+				timeout: timeout,
+				interval: interval,
+				maxTime: maxTime,
+				method: 'GET',
+				scopes: ['read']
+			})!
+
+			_function_return(_result_function())
+		},
+		editFeedOptions: function () {
+			var ctxt = _arguments()
+
+
+			var timeout = Number(ctxt.timeout) || 5000
+			var interval = Number(ctxt.interval) || 3000
+			var maxTime = Number(ctxt.maxTime) || 60000
+
+			var path = '/forums/feed/options'
+
+			var dataJ = _LZTAPI.tools.cleanObject(ctxt, ['node_ids', 'keywords'])
+
+			_call_function(_LZTAPI.request.make, {
+				path: path,
+				params: null,
+				timeout: timeout,
+				interval: interval,
+				maxTime: maxTime,
+				method: 'PUT',
+				dataJ: dataJ,
+				scopes: ['post']
+			})!
+
+			_function_return(_result_function())
+		}
+	},
+	__LinkForums: {
+		list: function () {
+			var ctxt = _arguments()
+
+
+			var timeout = Number(ctxt.timeout) || 5000
+			var interval = Number(ctxt.interval) || 3000
+			var maxTime = Number(ctxt.maxTime) || 60000
+
+			var path = '/link-forums'
+
+			_call_function(_LZTAPI.request.make, {
+				path: path,
+				params: null,
+				timeout: timeout,
+				interval: interval,
+				maxTime: maxTime,
+				method: 'GET',
+				scopes: ['read']
+			})!
+
+			_function_return(_result_function())
+		},
+		get: function () {
+			var ctxt = _arguments()
+
+
+			var timeout = Number(ctxt.timeout) || 5000
+			var interval = Number(ctxt.interval) || 3000
+			var maxTime = Number(ctxt.maxTime) || 60000
+
+			var path = '/link-forums/' + ctxt.linkId
+
+			_call_function(_LZTAPI.request.make, {
+				path: path,
+				params: null,
 				timeout: timeout,
 				interval: interval,
 				maxTime: maxTime,
@@ -822,27 +938,6 @@ _LZTAPI = {
 
 			_function_return(_result_function())
 		},
-		navigation: function () {
-			var ctxt = _arguments()
-
-			var timeout = Number(ctxt.timeout) || 5000
-			var interval = Number(ctxt.interval) || 3000
-			var maxTime = Number(ctxt.maxTime) || 60000
-
-			var path = '/threads/' + ctxt.threadId + '/navigation'
-
-			_call_function(_LZTAPI.request.make, {
-				path: path,
-				params: null,
-				timeout: timeout,
-				interval: interval,
-				maxTime: maxTime,
-				method: 'GET',
-				scopes: ['read']
-			})!
-
-			_function_return(_result_function())
-		},
 		votes: function () {
 			var ctxt = _arguments()
 
@@ -955,6 +1050,119 @@ _LZTAPI = {
 			})!
 
 			_function_return(_result_function())
+		},
+		star: function () {
+			var ctxt = _arguments()
+
+
+			var timeout = Number(ctxt.timeout) || 5000
+			var interval = Number(ctxt.interval) || 3000
+			var maxTime = Number(ctxt.maxTime) || 60000
+
+			var path = '/threads/' + ctxt.threadId + '/star'
+
+			_call_function(_LZTAPI.request.make, {
+				path: path,
+				params: null,
+				timeout: timeout,
+				interval: interval,
+				maxTime: maxTime,
+				method: 'POST',
+				dataJ: null,
+				scopes: ['post']
+			})!
+
+			_function_return(_result_function())
+		},
+		unstar: function () {
+			var ctxt = _arguments()
+
+
+			var timeout = Number(ctxt.timeout) || 5000
+			var interval = Number(ctxt.interval) || 3000
+			var maxTime = Number(ctxt.maxTime) || 60000
+
+			var path = '/threads/' + ctxt.threadId + '/star'
+
+			_call_function(_LZTAPI.request.make, {
+				path: path,
+				params: null,
+				timeout: timeout,
+				interval: interval,
+				maxTime: maxTime,
+				method: 'DELETE',
+				scopes: ['post']
+			})!
+
+			_function_return(_result_function())
+		},
+		hide: function () {
+			var ctxt = _arguments()
+
+
+			var timeout = Number(ctxt.timeout) || 5000
+			var interval = Number(ctxt.interval) || 3000
+			var maxTime = Number(ctxt.maxTime) || 60000
+
+			var path = '/threads/' + ctxt.threadId + '/hide'
+
+			_call_function(_LZTAPI.request.make, {
+				path: path,
+				params: null,
+				timeout: timeout,
+				interval: interval,
+				maxTime: maxTime,
+				method: 'POST',
+				dataJ: null,
+				scopes: ['post']
+			})!
+
+			_function_return(_result_function())
+		},
+		finishContest: function () {
+			var ctxt = _arguments()
+
+
+			var timeout = Number(ctxt.timeout) || 5000
+			var interval = Number(ctxt.interval) || 3000
+			var maxTime = Number(ctxt.maxTime) || 60000
+
+			var path = '/contests/' + ctxt.threadId + '/finish'
+
+			_call_function(_LZTAPI.request.make, {
+				path: path,
+				params: null,
+				timeout: timeout,
+				interval: interval,
+				maxTime: maxTime,
+				method: 'POST',
+				dataJ: null,
+				scopes: ['post']
+			})!
+
+			_function_return(_result_function())
+		},
+		navigation: function () {
+			var ctxt = _arguments()
+
+
+			var timeout = Number(ctxt.timeout) || 5000
+			var interval = Number(ctxt.interval) || 3000
+			var maxTime = Number(ctxt.maxTime) || 60000
+
+			var path = '/threads/' + ctxt.threadId + '/navigation'
+
+			_call_function(_LZTAPI.request.make, {
+				path: path,
+				params: null,
+				timeout: timeout,
+				interval: interval,
+				maxTime: maxTime,
+				method: 'GET',
+				scopes: ['read']
+			})!
+
+			_function_return(_result_function())
 		}
 	},
 	__Posts: {
@@ -995,6 +1203,100 @@ _LZTAPI = {
 				var maxTime = Number(ctxt.maxTime) || 60000
 
 				var path = '/posts/' + ctxt.postId + '/comments'
+
+				_call_function(_LZTAPI.request.make, {
+					path: path,
+					params: null,
+					timeout: timeout,
+					interval: interval,
+					maxTime: maxTime,
+					method: 'POST',
+					dataJ: dataJ,
+					scopes: ['post']
+				})!
+
+				_function_return(_result_function())
+			},
+			edit: function () {
+				var ctxt = _arguments()
+
+
+				var timeout = Number(ctxt.timeout) || 5000
+				var interval = Number(ctxt.interval) || 3000
+				var maxTime = Number(ctxt.maxTime) || 60000
+
+				var path = '/posts/comments'
+
+				var dataJ = _LZTAPI.tools.cleanObject(ctxt, ['post_comment_id', 'comment_body'])
+
+				_call_function(_LZTAPI.request.make, {
+					path: path,
+					params: null,
+					timeout: timeout,
+					interval: interval,
+					maxTime: maxTime,
+					method: 'PUT',
+					dataJ: dataJ,
+					scopes: ['post']
+				})!
+
+				_function_return(_result_function())
+			},
+			detele_: function () {
+				var ctxt = _arguments()
+
+
+				var timeout = Number(ctxt.timeout) || 5000
+				var interval = Number(ctxt.interval) || 3000
+				var maxTime = Number(ctxt.maxTime) || 60000
+
+				var path = '/posts/comments'
+
+				_call_function(_LZTAPI.request.make, {
+					path: path,
+					params: null,
+					timeout: timeout,
+					interval: interval,
+					maxTime: maxTime,
+					method: 'DELETE',
+					scopes: ['post']
+				})!
+
+				_function_return(_result_function())
+			},
+			reportReasons: function () {
+				var ctxt = _arguments()
+
+
+				var timeout = Number(ctxt.timeout) || 5000
+				var interval = Number(ctxt.interval) || 3000
+				var maxTime = Number(ctxt.maxTime) || 60000
+
+				var path = '/posts/comments/report'
+
+				_call_function(_LZTAPI.request.make, {
+					path: path,
+					params: null,
+					timeout: timeout,
+					interval: interval,
+					maxTime: maxTime,
+					method: 'GET',
+					scopes: ['post']
+				})!
+
+				_function_return(_result_function())
+			},
+			report: function () {
+				var ctxt = _arguments()
+
+
+				var timeout = Number(ctxt.timeout) || 5000
+				var interval = Number(ctxt.interval) || 3000
+				var maxTime = Number(ctxt.maxTime) || 60000
+
+				var path = '/posts/comments/report'
+
+				var dataJ = _LZTAPI.tools.cleanObject(ctxt, ['post_comment_id', 'message'])
 
 				_call_function(_LZTAPI.request.make, {
 					path: path,
@@ -1207,6 +1509,28 @@ _LZTAPI = {
 
 			_function_return(_result_function())
 		},
+		reportReasons: function () {
+			var ctxt = _arguments()
+
+
+			var timeout = Number(ctxt.timeout) || 5000
+			var interval = Number(ctxt.interval) || 3000
+			var maxTime = Number(ctxt.maxTime) || 60000
+
+			var path = '/posts/' + ctxt.postId + '/report'
+
+			_call_function(_LZTAPI.request.make, {
+				path: path,
+				params: null,
+				timeout: timeout,
+				interval: interval,
+				maxTime: maxTime,
+				method: 'GET',
+				scopes: ['post']
+			})!
+
+			_function_return(_result_function())
+		},
 		report: function () {
 			var ctxt = _arguments()
 
@@ -1293,6 +1617,78 @@ _LZTAPI = {
 				var maxTime = Number(ctxt.maxTime) || 60000
 
 				var path = '/profile-posts/' + ctxt.profilePostId + '/comments'
+
+				_call_function(_LZTAPI.request.make, {
+					path: path,
+					params: null,
+					timeout: timeout,
+					interval: interval,
+					maxTime: maxTime,
+					method: 'POST',
+					dataJ: dataJ,
+					scopes: ['post']
+				})!
+
+				_function_return(_result_function())
+			},
+			edit: function () {
+				var ctxt = _arguments()
+
+
+				var timeout = Number(ctxt.timeout) || 5000
+				var interval = Number(ctxt.interval) || 3000
+				var maxTime = Number(ctxt.maxTime) || 60000
+
+				var path = '/profile-posts/comments'
+
+				var dataJ = _LZTAPI.tools.cleanObject(ctxt, ['comment_id', 'comment_body'])
+
+				_call_function(_LZTAPI.request.make, {
+					path: path,
+					params: null,
+					timeout: timeout,
+					interval: interval,
+					maxTime: maxTime,
+					method: 'PUT',
+					dataJ: dataJ,
+					scopes: ['post']
+				})!
+
+				_function_return(_result_function())
+			},
+			detele_: function () {
+				var ctxt = _arguments()
+
+
+				var timeout = Number(ctxt.timeout) || 5000
+				var interval = Number(ctxt.interval) || 3000
+				var maxTime = Number(ctxt.maxTime) || 60000
+
+				var path = '/profile-posts/comments'
+
+				_call_function(_LZTAPI.request.make, {
+					path: path,
+					params: null,
+					timeout: timeout,
+					interval: interval,
+					maxTime: maxTime,
+					method: 'DELETE',
+					scopes: ['post']
+				})!
+
+				_function_return(_result_function())
+			},
+			report: function () {
+				var ctxt = _arguments()
+
+
+				var timeout = Number(ctxt.timeout) || 5000
+				var interval = Number(ctxt.interval) || 3000
+				var maxTime = Number(ctxt.maxTime) || 60000
+
+				var path = '/profile-posts/comments/' + ctxt.commentId + '/report'
+
+				var dataJ = _LZTAPI.tools.cleanObject(ctxt, ['message'])
 
 				_call_function(_LZTAPI.request.make, {
 					path: path,
@@ -1496,6 +1892,28 @@ _LZTAPI = {
 
 			_function_return(_result_function())
 		},
+		reportReasons: function () {
+			var ctxt = _arguments()
+
+
+			var timeout = Number(ctxt.timeout) || 5000
+			var interval = Number(ctxt.interval) || 3000
+			var maxTime = Number(ctxt.maxTime) || 60000
+
+			var path = '/profile-posts/' + ctxt.profilePostId + '/report'
+
+			_call_function(_LZTAPI.request.make, {
+				path: path,
+				params: null,
+				timeout: timeout,
+				interval: interval,
+				maxTime: maxTime,
+				method: 'GET',
+				scopes: ['read']
+			})!
+
+			_function_return(_result_function())
+		},
 		report: function () {
 			var ctxt = _arguments()
 
@@ -1517,6 +1935,51 @@ _LZTAPI = {
 				maxTime: maxTime,
 				method: 'POST',
 				dataJ: null,
+				scopes: ['post']
+			})!
+
+			_function_return(_result_function())
+		},
+		stick: function () {
+			var ctxt = _arguments()
+
+
+			var timeout = Number(ctxt.timeout) || 5000
+			var interval = Number(ctxt.interval) || 3000
+			var maxTime = Number(ctxt.maxTime) || 60000
+
+			var path = '/profile-posts/' + ctxt.profilePostId + '/stick'
+
+			_call_function(_LZTAPI.request.make, {
+				path: path,
+				params: null,
+				timeout: timeout,
+				interval: interval,
+				maxTime: maxTime,
+				method: 'POST',
+				dataJ: null,
+				scopes: ['post']
+			})!
+
+			_function_return(_result_function())
+		},
+		unstick: function () {
+			var ctxt = _arguments()
+
+
+			var timeout = Number(ctxt.timeout) || 5000
+			var interval = Number(ctxt.interval) || 3000
+			var maxTime = Number(ctxt.maxTime) || 60000
+
+			var path = '/profile-posts/' + ctxt.profilePostId + '/stick'
+
+			_call_function(_LZTAPI.request.make, {
+				path: path,
+				params: null,
+				timeout: timeout,
+				interval: interval,
+				maxTime: maxTime,
+				method: 'DELETE',
 				scopes: ['post']
 			})!
 
@@ -1692,6 +2155,95 @@ _LZTAPI = {
 				_function_return(_result_function())
 			}
 		},
+		secretAnswerTypes: function () {
+			var ctxt = _arguments()
+
+
+			var timeout = Number(ctxt.timeout) || 5000
+			var interval = Number(ctxt.interval) || 3000
+			var maxTime = Number(ctxt.maxTime) || 60000
+
+			var path = '/users/secret-answer/types'
+
+			_call_function(_LZTAPI.request.make, {
+				path: path,
+				params: null,
+				timeout: timeout,
+				interval: interval,
+				maxTime: maxTime,
+				method: 'GET',
+				scopes: ['read']
+			})!
+
+			_function_return(_result_function())
+		},
+		resetSecretAnswer: function () {
+			var ctxt = _arguments()
+
+
+			var timeout = Number(ctxt.timeout) || 5000
+			var interval = Number(ctxt.interval) || 3000
+			var maxTime = Number(ctxt.maxTime) || 60000
+
+			var path = '/account/secret-answer/reset'
+
+			_call_function(_LZTAPI.request.make, {
+				path: path,
+				params: null,
+				timeout: timeout,
+				interval: interval,
+				maxTime: maxTime,
+				method: 'POST',
+				dataJ: null,
+				scopes: ['post']
+			})!
+
+			_function_return(_result_function())
+		},
+		cancelSAReset: function () {
+			var ctxt = _arguments()
+
+
+			var timeout = Number(ctxt.timeout) || 5000
+			var interval = Number(ctxt.interval) || 3000
+			var maxTime = Number(ctxt.maxTime) || 60000
+
+			var path = '/account/secret-answer/reset'
+
+			_call_function(_LZTAPI.request.make, {
+				path: path,
+				params: null,
+				timeout: timeout,
+				interval: interval,
+				maxTime: maxTime,
+				method: 'DELETE',
+				scopes: ['post']
+			})!
+
+			_function_return(_result_function())
+		},
+		getCurrent: function () {
+			var ctxt = _arguments()
+
+
+			var timeout = Number(ctxt.timeout) || 5000
+			var interval = Number(ctxt.interval) || 3000
+			var maxTime = Number(ctxt.maxTime) || 60000
+
+			var path = '/users/me'
+
+			_call_function(_LZTAPI.request.make, {
+				path: path,
+				params: null,
+				timeout: timeout,
+				interval: interval,
+				maxTime: maxTime,
+				method: 'GET',
+				scopes: ['read']
+			})!
+
+			_function_return(_result_function())
+		},
 		list: function () {
 			var ctxt = _arguments()
 
@@ -1730,6 +2282,29 @@ _LZTAPI = {
 			_call_function(_LZTAPI.request.make, {
 				path: path,
 				params: null,
+				timeout: timeout,
+				interval: interval,
+				maxTime: maxTime,
+				method: 'GET',
+				scopes: ['read']
+			})!
+
+			_function_return(_result_function())
+		},
+		claims: function () {
+			var ctxt = _arguments()
+
+			var params = _LZTAPI.tools.cleanObject(ctxt, ['type', 'claim_state'])
+
+			var timeout = Number(ctxt.timeout) || 5000
+			var interval = Number(ctxt.interval) || 3000
+			var maxTime = Number(ctxt.maxTime) || 60000
+
+			var path = '/users/' + ctxt.userId + '/claims'
+
+			_call_function(_LZTAPI.request.make, {
+				path: path,
+				params: params,
 				timeout: timeout,
 				interval: interval,
 				maxTime: maxTime,
@@ -2067,6 +2642,30 @@ _LZTAPI = {
 
 			_function_return(_result_function())
 		},
+		ignoreEdit: function () {
+			var ctxt = _arguments()
+
+			var params = _LZTAPI.tools.cleanObject(ctxt, ['ignore_conversations', 'ignore_content', 'restrict_view_profile'])
+
+			var timeout = Number(ctxt.timeout) || 5000
+			var interval = Number(ctxt.interval) || 3000
+			var maxTime = Number(ctxt.maxTime) || 60000
+
+			var path = '/users/' + ctxt.userId + '/ignore'
+
+			_call_function(_LZTAPI.request.make, {
+				path: path,
+				params: params,
+				timeout: timeout,
+				interval: interval,
+				maxTime: maxTime,
+				method: 'PUT',
+				dataJ: null,
+				scopes: ['post']
+			})!
+
+			_function_return(_result_function())
+		},
 		timeline: function () {
 			var ctxt = _arguments()
 
@@ -2080,6 +2679,51 @@ _LZTAPI = {
 			var maxTime = Number(ctxt.maxTime) || 60000
 
 			var path = '/users/' + ctxt.userId + '/timeline'
+
+			_call_function(_LZTAPI.request.make, {
+				path: path,
+				params: params,
+				timeout: timeout,
+				interval: interval,
+				maxTime: maxTime,
+				method: 'GET',
+				scopes: ['read']
+			})!
+
+			_function_return(_result_function())
+		},
+		trophies: function () {
+			var ctxt = _arguments()
+
+
+			var timeout = Number(ctxt.timeout) || 5000
+			var interval = Number(ctxt.interval) || 3000
+			var maxTime = Number(ctxt.maxTime) || 60000
+
+			var path = '/users/' + ctxt.userId + '/trophies'
+
+			_call_function(_LZTAPI.request.make, {
+				path: path,
+				params: null,
+				timeout: timeout,
+				interval: interval,
+				maxTime: maxTime,
+				method: 'GET',
+				scopes: ['read']
+			})!
+
+			_function_return(_result_function())
+		},
+		likes: function () {
+			var ctxt = _arguments()
+
+			var params = _LZTAPI.tools.cleanObject(ctxt, ['node_id', 'like_type', 'type', 'page', 'content_type', 'search_user_id', 'stats'])
+
+			var timeout = Number(ctxt.timeout) || 5000
+			var interval = Number(ctxt.interval) || 3000
+			var maxTime = Number(ctxt.maxTime) || 60000
+
+			var path = '/users/' + ctxt.userId + '/likes'
 
 			_call_function(_LZTAPI.request.make, {
 				path: path,
@@ -2198,7 +2842,74 @@ _LZTAPI = {
 				})!
 
 				_function_return(_result_function())
-			}
+			},
+			delete_: function () {
+				var ctxt = _arguments()
+
+
+				var timeout = Number(ctxt.timeout) || 5000
+				var interval = Number(ctxt.interval) || 3000
+				var maxTime = Number(ctxt.maxTime) || 60000
+
+				var path = '/conversations/' + ctxt.conversationId + '/messages/' + ctxt.messageId
+
+				_call_function(_LZTAPI.request.make, {
+					path: path,
+					params: null,
+					timeout: timeout,
+					interval: interval,
+					maxTime: maxTime,
+					method: 'DELETE',
+					scopes: ['conversate']
+				})!
+
+				_function_return(_result_function())
+			},
+			stick: function () {
+				var ctxt = _arguments()
+
+
+				var timeout = Number(ctxt.timeout) || 5000
+				var interval = Number(ctxt.interval) || 3000
+				var maxTime = Number(ctxt.maxTime) || 60000
+
+				var path = '/conversations/' + ctxt.conversationId + '/messages/' + ctxt.messageId + '/stick'
+
+				_call_function(_LZTAPI.request.make, {
+					path: path,
+					params: null,
+					timeout: timeout,
+					interval: interval,
+					maxTime: maxTime,
+					method: 'POST',
+					dataJ: null,
+					scopes: ['post', 'conversate']
+				})!
+
+				_function_return(_result_function())
+			},
+			unstick: function () {
+				var ctxt = _arguments()
+
+
+				var timeout = Number(ctxt.timeout) || 5000
+				var interval = Number(ctxt.interval) || 3000
+				var maxTime = Number(ctxt.maxTime) || 60000
+
+				var path = '/conversations/' + ctxt.conversationId + '/messages/' + ctxt.messageId + '/stick'
+
+				_call_function(_LZTAPI.request.make, {
+					path: path,
+					params: null,
+					timeout: timeout,
+					interval: interval,
+					maxTime: maxTime,
+					method: 'DELETE',
+					scopes: ['post', 'conversate']
+				})!
+
+				_function_return(_result_function())
+			},
 		},
 		list: function () {
 			var ctxt = _arguments()
@@ -2281,26 +2992,315 @@ _LZTAPI = {
 
 			_function_return(_result_function())
 		},
-		leave: function () {
+		start: function () {
 			var ctxt = _arguments()
 
+
+			var timeout = Number(ctxt.timeout) || 5000
+			var interval = Number(ctxt.interval) || 3000
+			var maxTime = Number(ctxt.maxTime) || 60000
+
+			var path = '/conversations/start'
+
+			var dataJ = _LZTAPI.tools.cleanObject(ctxt, ['user_id'])
+
+			_call_function(_LZTAPI.request.make, {
+				path: path,
+				params: null,
+				timeout: timeout,
+				interval: interval,
+				maxTime: maxTime,
+				method: 'POST',
+				dataJ: dataJ,
+				scopes: ['conversate']
+			})!
+
+			_function_return(_result_function())
+		},
+		edit: function () {
+			var ctxt = _arguments()
+
+
+			var timeout = Number(ctxt.timeout) || 5000
+			var interval = Number(ctxt.interval) || 3000
+			var maxTime = Number(ctxt.maxTime) || 60000
+
+			var path = '/conversations'
+
+			var dataJ = _LZTAPI.tools.cleanObject(ctxt, ['conversation_id', 'title', 'open_invite', 'history_open', 'allow_edit_messages', 'allow_sticky_messages', 'allow_delete_own_messages'])
+
+			_call_function(_LZTAPI.request.make, {
+				path: path,
+				params: null,
+				timeout: timeout,
+				interval: interval,
+				maxTime: maxTime,
+				method: 'PUT',
+				dataJ: dataJ,
+				scopes: ['conversate']
+			})!
+
+			_function_return(_result_function())
+		},
+		invite: function () {
+			var ctxt = _arguments()
+
+
+			var timeout = Number(ctxt.timeout) || 5000
+			var interval = Number(ctxt.interval) || 3000
+			var maxTime = Number(ctxt.maxTime) || 60000
+
+			var path = '/conversations/' + ctxt.conversationId + '/invite'
+
+			var dataJ = _LZTAPI.tools.cleanObject(ctxt, ['recipients'])
+
+			_call_function(_LZTAPI.request.make, {
+				path: path,
+				params: null,
+				timeout: timeout,
+				interval: interval,
+				maxTime: maxTime,
+				method: 'POST',
+				dataJ: dataJ,
+				scopes: ['conversate']
+			})!
+
+			_function_return(_result_function())
+		},
+		kick: function () {
+			var ctxt = _arguments()
+
+
+			var timeout = Number(ctxt.timeout) || 5000
+			var interval = Number(ctxt.interval) || 3000
+			var maxTime = Number(ctxt.maxTime) || 60000
+
+			var path = '/conversations/' + ctxt.conversationId + '/kick'
+
+			var dataJ = _LZTAPI.tools.cleanObject(ctxt, ['user_id'])
+
+			_call_function(_LZTAPI.request.make, {
+				path: path,
+				params: null,
+				timeout: timeout,
+				interval: interval,
+				maxTime: maxTime,
+				method: 'POST',
+				dataJ: dataJ,
+				scopes: ['conversate']
+			})!
+
+			_function_return(_result_function())
+		},
+		delete_: function () {
+			var ctxt = _arguments()
+
+
 			var params = _LZTAPI.tools.cleanObject(ctxt, [
-				'delete_type'
+				'delete_type', 'conversation_id'
 			])
 
 			var timeout = Number(ctxt.timeout) || 5000
 			var interval = Number(ctxt.interval) || 3000
 			var maxTime = Number(ctxt.maxTime) || 60000
 
-			var path = '/conversations/' + ctxt.conversationId
+			var path = '/conversations'
 
 			_call_function(_LZTAPI.request.make, {
 				path: path,
-				params: params,
+				params: null,
 				timeout: timeout,
 				interval: interval,
 				maxTime: maxTime,
 				method: 'DELETE',
+				scopes: ['post', 'conversate']
+			})!
+
+			_function_return(_result_function())
+		},
+		read: function () {
+			var ctxt = _arguments()
+
+
+			var timeout = Number(ctxt.timeout) || 5000
+			var interval = Number(ctxt.interval) || 3000
+			var maxTime = Number(ctxt.maxTime) || 60000
+
+			var path = '/conversations/' + ctxt.conversationId + '/read'
+
+			_call_function(_LZTAPI.request.make, {
+				path: path,
+				params: null,
+				timeout: timeout,
+				interval: interval,
+				maxTime: maxTime,
+				method: 'POST',
+				dataJ: null,
+				scopes: ['conversate']
+			})!
+
+			_function_return(_result_function())
+		},
+		readAll: function () {
+			var ctxt = _arguments()
+
+
+			var timeout = Number(ctxt.timeout) || 5000
+			var interval = Number(ctxt.interval) || 3000
+			var maxTime = Number(ctxt.maxTime) || 60000
+
+			var path = '/conversations/read-all'
+
+			_call_function(_LZTAPI.request.make, {
+				path: path,
+				params: null,
+				timeout: timeout,
+				interval: interval,
+				maxTime: maxTime,
+				method: 'POST',
+				dataJ: null,
+				scopes: ['read', 'conversate']
+			})!
+
+			_function_return(_result_function())
+		},
+		star: function () {
+			var ctxt = _arguments()
+
+
+			var timeout = Number(ctxt.timeout) || 5000
+			var interval = Number(ctxt.interval) || 3000
+			var maxTime = Number(ctxt.maxTime) || 60000
+
+			var path = '/conversations/' + ctxt.conversationId + '/star'
+
+			_call_function(_LZTAPI.request.make, {
+				path: path,
+				params: null,
+				timeout: timeout,
+				interval: interval,
+				maxTime: maxTime,
+				method: 'POST',
+				dataJ: null,
+				scopes: ['post', 'conversate']
+			})!
+
+			_function_return(_result_function())
+		},
+		unstar: function () {
+			var ctxt = _arguments()
+
+
+			var timeout = Number(ctxt.timeout) || 5000
+			var interval = Number(ctxt.interval) || 3000
+			var maxTime = Number(ctxt.maxTime) || 60000
+
+			var path = '/conversations/' + ctxt.conversationId + '/star'
+
+			_call_function(_LZTAPI.request.make, {
+				path: path,
+				params: null,
+				timeout: timeout,
+				interval: interval,
+				maxTime: maxTime,
+				method: 'DELETE',
+				scopes: ['post', 'conversate']
+			})!
+
+			_function_return(_result_function())
+		},
+		alerts: {
+			enable: function () {
+				var ctxt = _arguments()
+
+
+				var timeout = Number(ctxt.timeout) || 5000
+				var interval = Number(ctxt.interval) || 3000
+				var maxTime = Number(ctxt.maxTime) || 60000
+
+				var path = '/conversations/' + ctxt.conversationId + '/alerts'
+
+				_call_function(_LZTAPI.request.make, {
+					path: path,
+					params: null,
+					timeout: timeout,
+					interval: interval,
+					maxTime: maxTime,
+					method: 'POST',
+					dataJ: null,
+					scopes: ['post', 'conversate']
+				})!
+
+				_function_return(_result_function())
+			},
+			disable: function () {
+				var ctxt = _arguments()
+
+
+				var timeout = Number(ctxt.timeout) || 5000
+				var interval = Number(ctxt.interval) || 3000
+				var maxTime = Number(ctxt.maxTime) || 60000
+
+				var path = '/conversations/' + ctxt.conversationId + '/alerts'
+
+				_call_function(_LZTAPI.request.make, {
+					path: path,
+					params: null,
+					timeout: timeout,
+					interval: interval,
+					maxTime: maxTime,
+					method: 'DELETE',
+					scopes: ['post', 'conversate']
+				})!
+
+				_function_return(_result_function())
+			},
+		},
+		save: function () {
+			var ctxt = _arguments()
+
+
+			var timeout = Number(ctxt.timeout) || 5000
+			var interval = Number(ctxt.interval) || 3000
+			var maxTime = Number(ctxt.maxTime) || 60000
+
+			var path = '/conversations/save'
+
+			var dataJ = _LZTAPI.tools.cleanObject(ctxt, ['link'])
+
+			_call_function(_LZTAPI.request.make, {
+				path: path,
+				params: null,
+				timeout: timeout,
+				interval: interval,
+				maxTime: maxTime,
+				method: 'POST',
+				dataJ: dataJ,
+				scopes: ['conversate']
+			})!
+
+			_function_return(_result_function())
+		},
+		search: function () {
+			var ctxt = _arguments()
+
+
+			var timeout = Number(ctxt.timeout) || 5000
+			var interval = Number(ctxt.interval) || 3000
+			var maxTime = Number(ctxt.maxTime) || 60000
+
+			var path = '/conversations/search'
+
+			var dataJ = _LZTAPI.tools.cleanObject(ctxt, ['q', 'conversation_id', 'search_recipients'])
+
+			_call_function(_LZTAPI.request.make, {
+				path: path,
+				params: null,
+				timeout: timeout,
+				interval: interval,
+				maxTime: maxTime,
+				method: 'POST',
+				dataJ: dataJ,
 				scopes: ['read', 'conversate']
 			})!
 
@@ -2412,6 +3412,75 @@ _LZTAPI = {
 					maxTime: maxTime,
 					method: 'DELETE',
 					scopes: ['post']
+				})!
+
+				_function_return(_result_function())
+			},
+			online: function () {
+				var ctxt = _arguments()
+
+				var params = _LZTAPI.tools.cleanObject(ctxt, ['room_id'])
+
+				var timeout = Number(ctxt.timeout) || 5000
+				var interval = Number(ctxt.interval) || 3000
+				var maxTime = Number(ctxt.maxTime) || 60000
+
+				var path = '/chatbox/messages/online'
+
+				_call_function(_LZTAPI.request.make, {
+					path: path,
+					params: params,
+					timeout: timeout,
+					interval: interval,
+					maxTime: maxTime,
+					method: 'GET',
+					scopes: ['chatbox']
+				})!
+
+				_function_return(_result_function())
+			},
+			leaderboard: function () {
+				var ctxt = _arguments()
+
+				var params = _LZTAPI.tools.cleanObject(ctxt, ['duration'])
+
+				var timeout = Number(ctxt.timeout) || 5000
+				var interval = Number(ctxt.interval) || 3000
+				var maxTime = Number(ctxt.maxTime) || 60000
+
+				var path = '/chatbox/messages/leaderboard'
+
+				_call_function(_LZTAPI.request.make, {
+					path: path,
+					params: params,
+					timeout: timeout,
+					interval: interval,
+					maxTime: maxTime,
+					method: 'GET',
+					scopes: ['chatbox']
+				})!
+
+				_function_return(_result_function())
+			},
+			reportReasons: function () {
+				var ctxt = _arguments()
+
+				var params = _LZTAPI.tools.cleanObject(ctxt, ['message_id'])
+
+				var timeout = Number(ctxt.timeout) || 5000
+				var interval = Number(ctxt.interval) || 3000
+				var maxTime = Number(ctxt.maxTime) || 60000
+
+				var path = '/chatbox/messages/report'
+
+				_call_function(_LZTAPI.request.make, {
+					path: path,
+					params: params,
+					timeout: timeout,
+					interval: interval,
+					maxTime: maxTime,
+					method: 'GET',
+					scopes: ['chatbox']
 				})!
 
 				_function_return(_result_function())
@@ -2861,6 +3930,101 @@ _LZTAPI = {
 			_call_function(_LZTAPI.request.make, {
 				path: path,
 				params: params,
+				timeout: timeout,
+				interval: interval,
+				maxTime: maxTime,
+				method: 'POST',
+				dataJ: null,
+				scopes: ['post']
+			})!
+
+			_function_return(_result_function())
+		},
+		users: function () {
+			var ctxt = _arguments()
+
+
+			var timeout = Number(ctxt.timeout) || 5000
+			var interval = Number(ctxt.interval) || 3000
+			var maxTime = Number(ctxt.maxTime) || 60000
+
+			var path = '/search/users'
+
+			var dataJ = _LZTAPI.tools.cleanObject(ctxt, ['q'])
+
+			_call_function(_LZTAPI.request.make, {
+				path: path,
+				params: null,
+				timeout: timeout,
+				interval: interval,
+				maxTime: maxTime,
+				method: 'POST',
+				dataJ: dataJ,
+				scopes: ['post']
+			})!
+
+			_function_return(_result_function())
+		},
+		results: function () {
+			var ctxt = _arguments()
+
+
+			var timeout = Number(ctxt.timeout) || 5000
+			var interval = Number(ctxt.interval) || 3000
+			var maxTime = Number(ctxt.maxTime) || 60000
+
+			var path = '/search/' + ctxt.searchId + '/results'
+
+			_call_function(_LZTAPI.request.make, {
+				path: path,
+				params: null,
+				timeout: timeout,
+				interval: interval,
+				maxTime: maxTime,
+				method: 'GET',
+				scopes: ['post']
+			})!
+
+			_function_return(_result_function())
+		}
+	},
+	__Forms: {
+		list: function () {
+			var ctxt = _arguments()
+
+			var params = _LZTAPI.tools.cleanObject(ctxt, ['page'])
+
+			var timeout = Number(ctxt.timeout) || 5000
+			var interval = Number(ctxt.interval) || 3000
+			var maxTime = Number(ctxt.maxTime) || 60000
+
+			var path = '/forms'
+
+			_call_function(_LZTAPI.request.make, {
+				path: path,
+				params: params,
+				timeout: timeout,
+				interval: interval,
+				maxTime: maxTime,
+				method: 'GET',
+				scopes: ['read']
+			})!
+
+			_function_return(_result_function())
+		},
+		create: function () {
+			var ctxt = _arguments()
+
+
+			var timeout = Number(ctxt.timeout) || 5000
+			var interval = Number(ctxt.interval) || 3000
+			var maxTime = Number(ctxt.maxTime) || 60000
+
+			var path = '/forms/save'
+
+			_call_function(_LZTAPI.request.make, {
+				path: path,
+				params: null,
 				timeout: timeout,
 				interval: interval,
 				maxTime: maxTime,
