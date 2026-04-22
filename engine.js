@@ -3096,15 +3096,13 @@ _LZTAPI = {
 			var ctxt = _arguments()
 
 
-			var params = _LZTAPI.tools.cleanObject(ctxt, [
-				'delete_type', 'conversation_id'
-			])
-
 			var timeout = Number(ctxt.timeout) || 5000
 			var interval = Number(ctxt.interval) || 3000
 			var maxTime = Number(ctxt.maxTime) || 60000
 
 			var path = '/conversations'
+
+			var dataJ = _LZTAPI.tools.cleanObject(ctxt, ['conversation_id', 'delete_type'])
 
 			_call_function(_LZTAPI.request.make, {
 				path: path,
@@ -3113,6 +3111,7 @@ _LZTAPI = {
 				interval: interval,
 				maxTime: maxTime,
 				method: 'DELETE',
+				dataJ: dataJ,
 				scopes: ['post', 'conversate']
 			})!
 

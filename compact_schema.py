@@ -17,39 +17,70 @@ import re
 
 
 def get_body_fields(operation):
-    """Извлекает поля из requestBody."""
+    """Извлекает поля из requestBody, включая oneOf/anyOf."""
     rb = operation.get('requestBody', {})
     content = rb.get('content', {})
     fields = []
     for ct, spec in content.items():
         schema = spec.get('schema', {})
-        props = schema.get('properties', {})
-        required = schema.get('required', [])
-        for name, prop in props.items():
-            ptype = prop.get('type', '?')
-            fmt = prop.get('format', '')
-            if ptype == 'array':
-                items_type = prop.get('items', {}).get('type', '?')
-                ptype = f"array<{items_type}>"
-            if fmt:
-                ptype = f"{ptype}({fmt})"
-            req = '*' if name in required else ''
-            enum = prop.get('enum', [])
-            examples = prop.get('examples', [])
-            extra = ''
-            if enum:
-                extra = f" [{','.join(str(e) for e in enum)}]"
-            elif examples:
-                extra = f" [{','.join(str(e) for e in examples)}]"
-            # Nested object
-            if prop.get('type') == 'object' and 'properties' in prop:
-                sub_fields = []
-                for sn, sp in prop['properties'].items():
-                    st = sp.get('type', '?')
-                    sub_fields.append(f"{sn}:{st}")
-                extra = f" {{{', '.join(sub_fields)}}}"
-            fields.append(f"    {req}{name}: {ptype}{extra}")
+
+        # Собираем все варианты schema (прямой + oneOf/anyOf)
+        variants = []
+        if 'properties' in schema:
+            variants.append(('', schema))
+        for key in ('oneOf', 'anyOf'):
+            for v in schema.get(key, []):
+                title = v.get('title', '')
+                variants.append((title, v))
+
+        if len(variants) > 1:
+            # Несколько вариантов — показываем каждый
+            for title, variant in variants:
+                if title:
+                    fields.append(f"    # --- {title} ---")
+                _add_variant_fields(fields, variant)
+        elif variants:
+            _add_variant_fields(fields, variants[0][1])
+
     return fields
+
+
+def _add_variant_fields(fields, schema):
+    """Добавляет поля одного варианта schema."""
+    props = schema.get('properties', {})
+    required = schema.get('required', [])
+    for name, prop in props.items():
+        ptype = prop.get('type', '?')
+        fmt = prop.get('format', '')
+        if ptype == 'array':
+            items_type = prop.get('items', {}).get('type', '?')
+            ptype = f"array<{items_type}>"
+        if fmt:
+            ptype = f"{ptype}({fmt})"
+        req = '*' if name in required else ''
+        enum = prop.get('enum', [])
+        examples = prop.get('examples', [])
+        extra = ''
+        if enum and len(enum) <= 10:
+            extra = f" [{','.join(str(e) for e in enum)}]"
+        elif enum:
+            extra = f" [{len(enum)} values]"
+        elif examples and len(examples) <= 8:
+            extra = f" [{','.join(str(e) for e in examples)}]"
+        # Nested object with properties
+        if prop.get('type') == 'object' and 'properties' in prop:
+            sub_fields = []
+            sub_req = set(prop.get('required', []))
+            for sn, sp in prop['properties'].items():
+                st = sp.get('type', '?')
+                sr = '*' if sn in sub_req else ''
+                se = sp.get('enum', [])
+                se_str = f" [{','.join(str(e) for e in se[:6])}{',...' if len(se)>6 else ''}]" if se else ''
+                sub_fields.append(f"      {sr}{sn}: {st}{se_str}")
+            fields.append(f"    {req}{name}: object")
+            fields.extend(sub_fields)
+        else:
+            fields.append(f"    {req}{name}: {ptype}{extra}")
 
 
 def get_scopes(operation):

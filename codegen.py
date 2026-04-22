@@ -607,16 +607,55 @@ def get_param_type(param):
     return 'string'
 
 
+def _extract_props_from_schema(schema):
+    """Извлекает properties из schema, включая oneOf/anyOf варианты."""
+    all_props = {}
+    all_required = set()
+
+    # Прямые properties
+    if 'properties' in schema:
+        all_required = set(schema.get('required', []))
+        for name, prop in schema['properties'].items():
+            all_props[name] = prop
+
+    # oneOf / anyOf — собираем все уникальные свойства из всех вариантов
+    for key in ('oneOf', 'anyOf'):
+        for variant in schema.get(key, []):
+            variant_required = set(variant.get('required', []))
+            for name, prop in variant.get('properties', {}).items():
+                if name not in all_props:
+                    all_props[name] = prop
+                # Поле required только если required во ВСЕХ вариантах
+                # (для oneOf это спорно, так что лучше не ставить)
+            # Вложенные properties в fields объектах внутри вариантов
+            for name, prop in variant.get('properties', {}).items():
+                if prop.get('type') == 'object' and 'properties' in prop:
+                    for sub_name, sub_prop in prop['properties'].items():
+                        full_name = f"{name}.{sub_name}"
+                        if full_name not in all_props:
+                            all_props[full_name] = {
+                                **sub_prop,
+                                '_parent_field': name,
+                                '_variant': variant.get('title', ''),
+                            }
+
+    return all_props, all_required
+
+
 def get_body_params(operation):
     params = []
     rb = operation.get('requestBody', {})
     content = rb.get('content', {})
     for ct, spec in content.items():
         schema = spec.get('schema', {})
-        props = schema.get('properties', {})
-        required = schema.get('required', [])
-        for name, prop in props.items():
-            # Рекурсия для вложенных объектов типа fields.telegram
+        all_props, all_required = _extract_props_from_schema(schema)
+
+        for name, prop in all_props.items():
+            # Пропускаем вложенные fields.X — они обрабатываются отдельно
+            if '.' in name:
+                continue
+
+            # Рекурсия для вложенных объектов типа fields
             if prop.get('type') == 'object' and 'properties' in prop and name == 'fields':
                 for sub_name, sub_prop in prop['properties'].items():
                     params.append({
@@ -631,10 +670,34 @@ def get_body_params(operation):
                 params.append({
                     'name': name,
                     'in': 'body',
-                    'required': name in required,
+                    'required': name in all_required,
                     'description': prop.get('description', ''),
                     'schema': prop,
                 })
+
+        # Обработка вложенных fields.X из oneOf вариантов
+        variant_fields = {}
+        for full_name, prop in all_props.items():
+            if '.' in full_name and prop.get('_parent_field') == 'fields':
+                sub_name = full_name.split('.', 1)[1]
+                if sub_name not in variant_fields:
+                    variant_fields[sub_name] = prop
+
+        for sub_name, prop in variant_fields.items():
+            # Проверяем что fields.X ещё не добавлен через прямой парсинг
+            if not any(p['name'] == sub_name for p in params):
+                clean_prop = {k: v for k, v in prop.items()
+                              if not k.startswith('_')}
+                params.append({
+                    'name': sub_name,
+                    'in': 'body',
+                    'required': False,
+                    'description': prop.get('description', ''),
+                    'schema': clean_prop,
+                    '_parent_field': 'fields',
+                    '_variant': prop.get('_variant', ''),
+                })
+
     return params
 
 
@@ -1071,7 +1134,7 @@ def gen_engine_method(endpoint):
     L.append("")
 
     # Body data
-    has_body = method in ('POST', 'PUT', 'PATCH') and bparams
+    has_body = bparams  # Любой метод может иметь body (включая DELETE)
     if has_body:
         bnames_str = ', '.join(f"'{p['name']}'" for p in bparams)
         L.append(f"\t\t\tvar dataJ = _LZTAPI.tools.cleanObject(ctxt, [{bnames_str}])")
