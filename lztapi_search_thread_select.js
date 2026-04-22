@@ -1,0 +1,50 @@
+var q = GetInputConstructorValue('q', loader)
+var tag = GetInputConstructorValue('tag', loader)
+var forum_id = GetInputConstructorValue('forum_id', loader)
+var user_id = GetInputConstructorValue('user_id', loader)
+var page = GetInputConstructorValue('page', loader)
+var limit = GetInputConstructorValue('limit', loader)
+var data_limit = GetInputConstructorValue('data_limit', loader)
+
+var timeout = GetInputConstructorValue('timeout', loader)
+if (timeout['original'].length == 0) {
+	Invalid(tr('The parameter "') + tr('Timeout') + tr('" is not specified'))
+	return
+}
+var interval = GetInputConstructorValue('interval', loader)
+if (interval['original'].length == 0) {
+	Invalid(tr('The parameter "') + tr('Interval') + tr('" is not specified'))
+	return
+}
+var maxTime = GetInputConstructorValue('maxTime', loader)
+if (maxTime['original'].length == 0) {
+	Invalid(
+		tr('The parameter "') + tr('Time threshold') + tr('" is not specified')
+	)
+	return
+}
+var Save = this.$el.find('#Save').val().toUpperCase()
+try {
+	var code =
+		loader.GetAdditionalData() +
+		_.template($('#lztapi_search_thread_code').html())({
+			q: q['updated'],
+			tag: tag['updated'],
+            forum_id: forum_id['updated'],
+			user_id: user_id['updated'],
+			page: page['updated'],
+            limit: limit['updated'],
+            data_limit: data_limit['updated'],
+			timeout: timeout['updated'],
+			maxTime: maxTime['updated'],
+			interval: interval['updated'],
+			variable: 'VAR_' + Save
+		})
+	code = Normalize(code, 0)
+	BrowserAutomationStudio_Append(
+		'',
+		BrowserAutomationStudio_SaveControls() + code,
+		action,
+		DisableIfAdd
+	)
+} catch (e) {}

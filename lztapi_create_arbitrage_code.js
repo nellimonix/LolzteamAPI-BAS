@@ -1,0 +1,26 @@
+_call_function(_LZTAPI.__Threads.__Arbitrage.create, {
+    as_is_market_deal: (<%= as_is_market_deal %>),
+    as_responder: (<%= as_responder %>),
+    as_amount: (<%= as_amount %>),
+    as_market_item_id: (<%= as_market_item_id %>),
+    as_data: (<%= as_data %>),
+    currency: (<%= currency %>),
+    transfer_type: (<%= transfer_type %>),
+    pay_claim: (<%= pay_claim %>),
+    as_funds_receipt: (<%= as_funds_receipt %>),
+    as_tg_login_screenshot: (<%= as_tg_login_screenshot %>),
+    post_body:  (<%= post_body %>),
+    tags:  (<%= tags %>),
+    hide_contacts:  (<%= hide_contacts %>),
+    allow_ask_hidden_content:  (<%= allow_ask_hidden_content %>),
+    reply_group:  (<%= reply_group %>),
+    comment_ignore_group:  (<%= comment_ignore_group %>),
+    dont_alert_followers:  (<%= dont_alert_followers %>),
+    watch_thread_state:  (<%= watch_thread_state %>),
+    watch_thread:  (<%= watch_thread %>),
+    watch_thread_email:  (<%= watch_thread_email %>),
+    timeout:  (<%= timeout %>) * 1000,
+    interval: (<%= interval %>) * 1000,
+    maxTime: (<%= maxTime %>) * 1000
+})!
+<%= variable %> = _result_function()

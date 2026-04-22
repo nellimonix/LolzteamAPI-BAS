@@ -1,0 +1,37 @@
+name: Package Release
+
+on:
+  release:
+    types: [published]
+
+permissions:
+  contents: write
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Create archive
+        run: |
+          mkdir -p "LOLZTEAM API"
+
+          # Copy everything except excluded items
+          rsync -a \
+            --exclude='README.md' \
+            --exclude='README' \
+            --exclude='README.txt' \
+            --exclude='.github' \
+            --exclude='.gitignore' \
+            ./ "LOLZTEAM API/"
+
+          zip -r "LOLZTEAM API.zip" "LOLZTEAM API"
+
+      - name: Upload archive to release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release upload "${{ github.event.release.tag_name }}" "LOLZTEAM API.zip" --clobber

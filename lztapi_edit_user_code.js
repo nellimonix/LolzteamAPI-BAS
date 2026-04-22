@@ -1,0 +1,26 @@
+_call_function(_LZTAPI.__Users.edit, {
+  userId: (<%= userId %>),
+  user_title:  (<%= user_title %>),
+  primary_group_id:  (<%= primary_group_id %>),
+  secondary_group_ids:  (<%= secondary_group_ids %>),
+  display_group_id:  (<%= display_group_id %>),
+  user_dob_day:  (<%= user_dob_day %>),
+  user_dob_month:  (<%= user_dob_month %>),
+  user_dob_year:  (<%= user_dob_year %>),
+  location:  (<%= location %>),
+  occupation:  (<%= occupation %>),
+  homepage:  (<%= homepage %>),
+  interests:  (<%= interests %>),
+  lztInnovationLink:  (<%= lztInnovationLink %>),
+  lztInnovation20Link:  (<%= lztInnovation20Link %>),
+  lztInnovation30Link:  (<%= lztInnovation30Link %>),
+  telegram:  (<%= telegram %>),
+  vk:  (<%= vk %>),
+  discord:  (<%= discord %>),
+  steam:  (<%= steam %>),
+  jabber:  (<%= jabber %>),
+  timeout:  (<%= timeout %>) * 1000,
+  interval: (<%= interval %>) * 1000,
+  maxTime: (<%= maxTime %>) * 1000
+})!
+<%= variable %> = _result_function()
